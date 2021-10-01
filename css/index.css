@@ -1,0 +1,241 @@
+*{box-sizing: border-box;}
+
+:root{
+    --clr-accent: #ec005b;
+    --clr-light: #fff;
+    --clr-dark: #444;
+}
+@font-face {
+    font-family: Primary;
+    src: url("../fonts/HugeGothic-Bold.woff");
+  }
+
+@font-face {
+    font-family: Secondary;
+    src: url("../fonts/Tobias-Regular.ttf");
+}
+
+body, h1{
+    margin:0;
+    padding:0;
+}
+body{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-items: center;
+    font-family: Primary, "sans-serif";
+    transition: background-color 800ms;
+    /* background: url("../img/6.jpg"); */
+    background-size: cover;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+.bgColor1{
+    background-color:rgb(103, 131, 106);
+}
+.bgColor2{
+    background-color: rgb(187, 150, 101);
+}
+.bgColor3{
+    background-color: rgb(172, 118, 145);
+}
+
+#logo{
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    width: 150px;
+    
+}
+
+#blinking-cursor{
+    font-family: Secondary;
+    line-height: 0.5em;
+}
+.container{
+    width: 100%;
+
+}
+
+h1{
+    font-size: 4em;
+    padding: 0.5em 1.5em;
+    line-height: 1.2em;
+    color: var(--clr-light);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+h1 #dynamic-text{
+    display:block;
+}
+
+.nav {
+    position: fixed;
+    background: rgba(0,0,0,0.9);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 600ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__list li + li {
+    margin-top: 1em;
+}
+
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 2em;
+    top: 2.2em;
+    z-index: 1000;
+}
+.nav-toggle:focus{
+    outline: none;
+}
+
+.nav-open .nav {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-12px);
+}
+
+.nav-open .hamburger::after {
+    transform: rotate(-90deg) translateX(-12px);
+}
+
+.nav-open .hamburger,
+.nav-open .hamburger::before,
+.nav-open .hamburger::after {
+    box-shadow: none;
+    background: var(--clr-accent);
+    
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-light);
+    width: 4em;
+    height: 5px;
+    border-radius: 2em;
+    box-shadow: 2px 4px 2px rgba(0,0,0,0.2);
+    transition: all 400ms ease-in-out;
+}
+
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before { top: 12px; }
+.hamburger::after { bottom: 12px; }
+
+
+.nav__link {
+    color: var(--clr-light);
+    font-size: 3.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 500ms;
+}
+
+
+.nav__link:hover{
+    color: var(--clr-accent);
+}
+
+.nav__link:after{
+    display:block;
+    content: '';
+    border-bottom: 2px solid var(--clr-accent);  
+    transform: scaleX(0);  
+    transition: transform 350ms ease-in-out;
+    transform-origin:  0% 50%;
+    padding-bottom:5px;
+}
+.nav__link:hover:after{
+    transform: scaleX(1); 
+    transform-origin:  0% 50%;
+}
+
+#logo-90{
+    padding-left: 20px;
+    width: 70px;
+    position: absolute;
+    bottom:50%;
+    transform: translateY(50%);
+}
+
+
+@media (max-width: 700px){
+ 
+    #logo-90{
+        display: none;
+    }
+
+}
+
+@media (max-width: 430px){
+    .nav__link{
+        font-size: 2.5em;
+    }
+    .nav__list li + li {
+        margin-top: 3em;
+    }
+    h1{
+        font-size: 4em;
+        padding: 0.2em 0.5em;
+        line-height: 1.3em;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        width: 3em;
+    }
+
+    .nav-toggle{
+        right: 1em;
+    }
+}
