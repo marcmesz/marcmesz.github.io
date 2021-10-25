@@ -1,6 +1,6 @@
 const text = document.getElementById("text")
 const blinkingCursor = document.getElementById("blinking-cursor")
-const myString = ["honlapot készíteni. 💻","igényes munkát végezni. 😎","azért lazulni is. 🎷🍺🎸"]
+const myString = ["új honlapra? 💻😎","dinamikus webáruházra? 👕👟","minőségi portfólióra? 📸🎸"]
 const myColorBg = ["bgColor1","bgColor2","bgColor3"]
 let myColorNum = 1
 let currentPhrase = 0
@@ -20,13 +20,13 @@ function displayCharacters(){
     const kiir = setInterval(()=>{
       if(currentChar===myString[currentPhrase].length){
           clearInterval(kiir)
-          setTimeout(deleteCharacters, 3000)
+          setTimeout(deleteCharacters, 2000)
       }
       else{
           currentChar++
           text.innerHTML+=myString[currentPhrase].split("")[currentChar-1]
       }
-    },50)
+    },60)
 }
 
 function deleteCharacters(){

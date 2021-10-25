@@ -28,7 +28,7 @@ body{
     align-items: center;
     font-family: Primary, "sans-serif";
     transition: background-color 800ms;
-    /* background: url("../img/6.jpg"); */
+    /* background: url("../img/1.jpg"); */
     background-size: cover;
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
@@ -59,16 +59,45 @@ body{
 
 }
 
-h1{
-    font-size: 4em;
-    padding: 0.5em 1.8em;
-    line-height: 1.2em;
+.dynamic{
+    min-height: 5.5em;
+    font-size: 1.8em;
+    margin: 0 3em;
+    line-height: 2.2em;
     color: var(--clr-light);
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
-h1 #dynamic-text{
+.dynamic #dynamic-text{
+    font-size: 1.6em;
     display:block;
+}
+
+.btn{
+    margin: 0;
+    margin-left: 5.4em;
+    font-size: 1em;
+    background: linear-gradient(180deg, white, rgba(0, 0, 0, 0.1));
+    padding: 0.35em 1em;
+    font-family: Primary;
+    border-radius: .4em;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+    transition: all 300ms;
+}
+
+.btn + .btn{
+    margin-left: 1.2em;
+}
+.btn:hover{
+    background: linear-gradient(180deg, white, rgba(255, 255, 255, 0.5));
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.btn-igen{
+
 }
 
 .nav {
@@ -124,7 +153,8 @@ h1 #dynamic-text{
 }
 
 .nav-open .hamburger {
-    transform: rotate(.625turn);
+    /* transform: rotate(.625turn); */
+    transform: rotate(45deg);
 }
 
 .nav-open .hamburger::before {
@@ -140,6 +170,7 @@ h1 #dynamic-text{
 .nav-open .hamburger::after {
     box-shadow: none;
     background: var(--clr-accent);
+    width: 3em;
     
 }
 
@@ -156,7 +187,7 @@ h1 #dynamic-text{
     height: 5px;
     border-radius: 2em;
     box-shadow: 2px 4px 2px rgba(0,0,0,0.2);
-    transition: all 400ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 
 
@@ -223,10 +254,10 @@ h1 #dynamic-text{
     .nav__list li + li {
         margin-top: 3em;
     }
-    h1{
-        font-size: 4em;
-        padding: 0.2em 0.5em;
-        line-height: 1.3em;
+    .dynamic{
+        font-size: 1.2em;
+        margin: 0 0.6em;
+        overflow-x: hidden;
     }
 
     .hamburger,
