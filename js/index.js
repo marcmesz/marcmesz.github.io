@@ -1,4 +1,5 @@
 const text = document.getElementById("text")
+const hero = document.getElementById("hero")
 const blinkingCursor = document.getElementById("blinking-cursor")
 const myString = ["Új honlap? 💻😎","Modern webáruház? 👕","Minőségi portfólió? 📸"]
 const myColorBg = ["bgColor1","bgColor2","bgColor3"]
@@ -39,29 +40,14 @@ function deleteCharacters(){
         clearInterval(torol)
         currentChar = 0
         currentReverse = 0
-        if(currentPhrase<myString.length-1){
-          currentPhrase++
-        }
-        else{
-          currentPhrase=0
-        }
-
-        if(myColorNum<myColorBg.length-1)
-        {
-          myColorNum++
-        }
-        else{
-          myColorNum=0
-        }
+        currentPhrase<myString.length-1 ? currentPhrase++ : currentPhrase=0
+        myColorNum<myColorBg.length-1 ? myColorNum++ : myColorNum=0
         displayCharacters()
-
     }
   },20)
 
-  document.body.classList.add(myColorBg[myColorNum])
-  if(myColorNum===0){
-    document.body.classList.remove("bgColor2","bgColor3")
-  }
+  hero.classList.add(myColorBg[myColorNum])
+  myColorNum===0 && hero.classList.remove("bgColor2","bgColor3") 
   
 }
 
