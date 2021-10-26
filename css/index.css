@@ -15,7 +15,7 @@
     src: url("../fonts/Tobias-Regular.ttf");
 }
 
-body, h1{
+body{
     margin:0;
     padding:0;
 }
@@ -28,10 +28,9 @@ body{
     align-items: center;
     font-family: Primary, "sans-serif";
     transition: background-color 800ms;
-    /* background: url("../img/1.jpg"); */
-    background-size: cover;
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
+
 .bgColor1{
     background-color:rgb(103, 131, 106);
 }
@@ -52,31 +51,32 @@ body{
 
 #blinking-cursor{
     font-family: Secondary;
-    line-height: 0.5em;
+    line-height: 1em;
 }
 .container{
     width: 100%;
-
+    padding: 4em;
 }
 
-.dynamic{
-    min-height: 5.5em;
-    font-size: 1.8em;
-    margin: 0 3em;
-    line-height: 2.2em;
+h1,h2{
+    margin:0;
+}
+
+h2{
+    margin-bottom: 1em;
+    font-size: 2.2em;
+}
+
+#dynamic-text{
+    font-size: 5em;
     color: var(--clr-light);
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-}
-
-.dynamic #dynamic-text{
-    font-size: 1.6em;
-    display:block;
+    min-height: 1.5em;
+    line-height: 1.5em;
 }
 
 .btn{
-    margin: 0;
-    margin-left: 5.4em;
-    font-size: 1em;
+    font-size: 1.5em;
     background: linear-gradient(180deg, white, rgba(0, 0, 0, 0.1));
     padding: 0.35em 1em;
     font-family: Primary;
@@ -95,10 +95,6 @@ body{
 .btn:hover{
     background: linear-gradient(180deg, white, rgba(255, 255, 255, 0.5));
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
-}
-
-.btn-igen{
-
 }
 
 .nav {
@@ -255,9 +251,15 @@ body{
     .nav__list li + li {
         margin-top: 3em;
     }
-    .dynamic{
-        font-size: 1.2em;
-        margin: 0 0.6em;
+    .container{
+        padding: 1.5em;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    #dynamic-text{
+        font-size: 3em;
+        line-height: 1.5em;
         overflow-x: hidden;
     }
 
