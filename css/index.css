@@ -1,5 +1,7 @@
 *{box-sizing: border-box;}
-
+html{
+    scroll-behavior: smooth;
+}
 :root{
     --clr-accent: #ec005b;
     --clr-light: #fff;
@@ -20,15 +22,67 @@ body{
     padding:0;
     font-size: calc(12px + (24 - 12) * ((100vw - 300px) / (1600 - 300)));
     font-family: Primary, "sans-serif";
+    transition: background-color 300ms;
 }
 
-#hero{
+p{
+    font-family: Secondary, "sans-serif";
+    font-size: calc(16px + (28 - 16) * ((100vw - 300px) / (1600 - 300)));
+    color: var(--clr-dark);
+}
+
+h1,h2{
+    margin:0;
+}
+
+h2{
+    margin-bottom: 1em;
+    font-size: 2.2em;
+}
+
+h1{
+    font-size: 5em;
+    transition: all 500ms;
+}
+
+section{
     height: 100vh;
+}
+
+.kezdolap{
+    background-color: white;
+    
+}
+
+.kezdolap #szolgaltatasok h1, .kezdolap #szolgaltatasok p{
+    color: white;
+    
+}
+
+.szolgaltatasok{
+    background-color: khaki;
+}
+
+.portfolio{
+    background-color: lightpink;
+}
+
+.kapcsolat{
+    background-color: lightblue;
+}
+
+.nav-open .current-link{
+    color: var(--clr-accent);
+}
+
+
+#kezdolap{
     display: flex;
     flex-direction: column;
     place-content: center;
     transition: background-color 800ms;
 }
+
 
 
 .bgColor1{
@@ -45,16 +99,6 @@ body{
 #blinking-cursor{
     font-family: Secondary;
     line-height: 1em;
-}
-
-
-h1,h2{
-    margin:0;
-}
-
-h2{
-    margin-bottom: 1em;
-    font-size: 2.2em;
 }
 
 #dynamic-text{
@@ -100,9 +144,17 @@ h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
-/*     padding: 15px;
-    padding: 1em 4em; */
     z-index: 1000;
+    transition: all 350ms;
+}
+
+.nav-active{
+    background-color: rgba(0,0,0,0.2);
+    padding: 0.5em 4em;
+}
+
+.nav-open .nav-active{
+    background-color: transparent;
 }
 
 #logo{
@@ -289,5 +341,8 @@ h2{
     }
     #logo{
         width: 120px;
+    }
+    .navbar{
+        padding: 0.6em 1.5em;
     }
 }
