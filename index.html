@@ -13,9 +13,6 @@
         <button class="nav-toggle" aria-label="toggle navigation" title="Menü">
             <span class="hamburger"></span>
         </button>
-    </header>
-
-    <section id="kezdolap" class="hero-section container bgColor1">
         <nav class="nav">
             <a href="#"><img id="logo-90" src="img/webjazz-logo-white-90.png" alt="Kezdőlap" title="Kezdőlap"/></a>
             <ul class="nav__list">
@@ -25,8 +22,15 @@
                 <li class="nav__item"><a href="#kapcsolat" class="nav__link">Kapcsolat</a></li>
             </ul>
         </nav>
-        
-        <div class="dynamic">
+    </header>
+
+    <section id="kezdolap" class="hero-section container">
+        <video autoplay muted loop id="myVideo">
+            <source src="img/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>   
+
+        <div class="dynamic container">
             <h1 id="dynamic-text"><span id="text"></span><span id="blinking-cursor">|</span></h1>
             <h2>Mindenre van megoldásunk.</h2>
             <a href="#szolgaltatasok" class="btn">Tovább</a>
@@ -34,7 +38,7 @@
     </section>
 
     <section id="szolgaltatasok" class="container">
-        <h1>Szolgáltatások</h1>
+        <h2 class="section-title">Szolgáltatások</h2>
         <p>
             Egyedi és WordPress alapú weboldalak, webáruházak készítése
             Webdesign, grafikai tervezés, branding-arculattervezés
@@ -42,11 +46,11 @@
     </section>
 
     <section id="portfolio" class="container">
-        <h1>Portfólió</h1>
+        <h2 class="section-title">Portfólió</h2>
     </section>
 
     <section id="kapcsolat" class="container">
-        <h1>Kapcsolat</h1>
+        <h2 class="section-title">Kapcsolat</h2>
     </section>
 
     <script src="js/index.js"></script>

@@ -1,13 +1,10 @@
 const text = document.getElementById("text")
-const hero = document.getElementById("kezdolap")
 const navbar = document.querySelector(".navbar")
 const navLinks = document.querySelectorAll(".nav__link")
 const sections = document.querySelectorAll("section")
 const blinkingCursor = document.getElementById("blinking-cursor")
-const myString = ["Új honlap? 💻😎","Modern webáruház? 👕","Minőségi portfólió? 📸"]
-const myColorBg = ["bgColor1","bgColor2","bgColor3"]
+const myString = ["Új honlap?","Modern webáruház?","Minőségi portfólió?"]
 
-let myColorNum = 1
 let currentPhrase = 0
 let isBlinking = true
 let currentChar = 0
@@ -51,14 +48,9 @@ function deleteCharacters(){
         currentChar = 0
         currentReverse = 0
         currentPhrase<myString.length-1 ? currentPhrase++ : currentPhrase=0
-        myColorNum<myColorBg.length-1 ? myColorNum++ : myColorNum=0
         displayCharacters()
     }
-  },20)
-
-  hero.classList.add(myColorBg[myColorNum])
-  myColorNum===0 && hero.classList.remove("bgColor2","bgColor3") 
-  
+  },20)  
 }
 
 const cursorBlinking = setInterval(()=>{
