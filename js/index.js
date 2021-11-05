@@ -3,7 +3,7 @@ const navbar = document.querySelector(".navbar")
 const navLinks = document.querySelectorAll(".nav__link")
 const sections = document.querySelectorAll("section")
 const blinkingCursor = document.getElementById("blinking-cursor")
-const myString = ["Új honlap?","Modern webáruház?","Minőségi portfólió?"]
+const myString = ["Weboldal?","Webáruház?","Portfólió?"]
 
 let currentPhrase = 0
 let isBlinking = true
@@ -25,16 +25,17 @@ navLinks.forEach(item=>item.addEventListener("click",()=>{
 
 function displayCharacters(){
 
-    const kiir = setInterval(()=>{
-      if(currentChar===myString[currentPhrase].length){
-          clearInterval(kiir)
-          setTimeout(deleteCharacters, 2000)
-      }
-      else{
-          currentChar++
-          text.innerHTML+=myString[currentPhrase].split("")[currentChar-1]
-      }
-    },50)
+  const kiir = setInterval(()=>{
+    if(currentChar===myString[currentPhrase].length){
+        clearInterval(kiir)
+        setTimeout(deleteCharacters, 2000)
+    }
+    else{
+        currentChar++
+        text.innerHTML+=myString[currentPhrase].split("")[currentChar-1]
+    }
+  },70)
+
 }
 
 function deleteCharacters(){
@@ -50,7 +51,7 @@ function deleteCharacters(){
         currentPhrase<myString.length-1 ? currentPhrase++ : currentPhrase=0
         displayCharacters()
     }
-  },20)  
+  },40)  
 }
 
 const cursorBlinking = setInterval(()=>{
@@ -71,37 +72,15 @@ displayCharacters()
 
 
 /* Navbar Add Background on scroll */
-
+let currentSection = ""
 window.onscroll = () => {
-  window.scrollY > 400 ? navbar.classList.add('nav-active') : navbar.classList.remove('nav-active')
+  window.scrollY > 200 ? navbar.classList.add('nav-active') : navbar.classList.remove('nav-active')
 
-  let currentSection = ""
   sections.forEach((section) => {
-  const sectionTop = section.offsetTop;
-  if (scrollY >= sectionTop - 400) {
-    currentSection=section.getAttribute("id")
-    let currentClass = ""
-    switch(currentSection){
-      case "kezdolap":
-            currentClass = "kezdolap"
-            document.body.classList.remove("szolgaltatasok", "portfolio","kapcsolat")
-            break
-      case "szolgaltatasok":
-            currentClass = "szolgaltatasok"
-            document.body.classList.remove("kezdolap", "portfolio", "kapcsolat")
-            break
-      case "portfolio":
-            currentClass = "portfolio"
-            document.body.classList.remove("kezdolap", "szolgaltatasok", "kapcsolat")
-            break
-      case "kapcsolat":
-            currentClass = "kapcsolat"
-            document.body.classList.remove("kezdolap", "szolgaltatasok", "portfolio")
-            break
-    }
-    document.body.classList.add(currentClass)
-  }  
-})
-}
+  const sectionTop = section.offsetTop
+  scrollY >= sectionTop - 500 ? currentSection=section.getAttribute("id") : null
 
+})
+  document.body.className=currentSection
+}
 

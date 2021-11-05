@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/all.css">
     <title>WebJazz Portfolio</title>
 </head>
-<body>
+<body class="kezdolap">
     <header class="navbar container">
         <a href="#kezdolap"><img id="logo" class="" src="img/webjazz-logo-white.png" alt="Kezdőlap" title="Kezdőlap"/></a>
-        <button class="nav-toggle" aria-label="toggle navigation" title="Menü">
+        <button type="button" class="nav-toggle" aria-label="toggle navigation" title="Menü">
             <span class="hamburger"></span>
         </button>
         <nav class="nav">
@@ -27,7 +29,7 @@
     <section id="kezdolap" class="hero-section container">
         <video autoplay muted loop id="myVideo">
             <source src="img/video.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
+            Az Ön böngészője nem támogatja a HTML5 videólejátszást.
           </video>   
 
         <div class="dynamic container">
@@ -39,10 +41,42 @@
 
     <section id="szolgaltatasok" class="container">
         <h2 class="section-title">Szolgáltatások</h2>
-        <p>
-            Egyedi és WordPress alapú weboldalak, webáruházak készítése
-            Webdesign, grafikai tervezés, branding-arculattervezés
-        </p>
+        <p>Egyedi és WordPress alapú weboldalak, webáruházak készítése</p>
+        <p>Webdesign, grafikai tervezés, branding-arculattervezés</p>
+
+        <div class="szolgaltatasok-box">
+            <div class="szolgaltatasok-item">
+                <i class="fas fa-laptop-code"></i> 
+                <h3>Honlapkészítés</h3>
+                <p>Mobil-reszponzív és funkció-gazdag weboldalak készítése egyedi igények alapján. WordPress rendszeren alapuló, könnyedén kezelhető felület.</p>
+            </div>
+            <div class="szolgaltatasok-item">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Webáruház</h3>
+                <p>Professzionális, hatékony webáruházak készítése. Modulárisan fejleszthető,
+                    intuitív felhasználói felület, könnyű kezelhetőség.</p>
+            </div>
+            <div class="szolgaltatasok-item">
+                <i class="fas fa-pencil-ruler"></i>
+                <h3>Webdesign</h3>
+                <p>Modern, trendeket követő
+                    letisztult webes megjelenés.
+                    Mobil-barát, reszponzív design tervezés.</p>
+            </div>
+            <div class="szolgaltatasok-item">
+                <i class="fas fa-magic"></i>
+                <h3>Branding</h3>
+                <p>Design, arculatterv, logó.
+                    A webes arculat kialakítása az igénylő elképzelései szerint.</p>
+            </div>
+            <div class="szolgaltatasok-item">
+                <i class="fas fa-life-ring"></i>
+                <h3>Support</h3>
+                <p>Tartalomfrissítés, rendszerkarbantartás, biztonsági mentés.</p>
+            </div>
+        </div>
+
+
     </section>
 
     <section id="portfolio" class="container">
