@@ -84,3 +84,36 @@ window.onscroll = () => {
   document.body.className=currentSection
 }
 
+
+/* Portfólió */
+
+const links = document.querySelectorAll(".portfolio-link")
+links.forEach(link=>{
+  link.addEventListener("click",()=>{
+    links.forEach(item=>item.classList.remove("btn-current"))
+    const currentLink = link.getAttribute("id")
+    document.getElementById(currentLink).classList.add("btn-current")
+
+    if(currentLink==="btn-weboldal"){
+      document.querySelectorAll(".webaruhaz").forEach(item=>{
+        item.classList.add("portfolio-hidden")
+      })
+      document.querySelectorAll(".weboldal").forEach(item=>{
+        item.classList.remove("portfolio-hidden")
+      })
+    }
+    else if(currentLink==="btn-webaruhaz"){
+      document.querySelectorAll(".weboldal").forEach(item=>{
+        item.classList.add("portfolio-hidden")
+      })
+      document.querySelectorAll(".webaruhaz").forEach(item=>{
+        item.classList.remove("portfolio-hidden")
+      })
+    }
+    else{
+      document.querySelectorAll(".portfolio-item").forEach(item=>{
+        item.classList.remove("portfolio-hidden")
+      })
+    }
+  })
+})
