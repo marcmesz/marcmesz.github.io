@@ -87,7 +87,7 @@ window.onscroll = () => {
 
 /* Portfólió */
 
-const links = document.querySelectorAll(".portfolio-link")
+const links = document.querySelectorAll(".portfolio-btn")
 links.forEach(link=>{
   link.addEventListener("click",()=>{
     links.forEach(item=>item.classList.remove("btn-current"))
