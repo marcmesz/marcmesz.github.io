@@ -540,10 +540,50 @@ section{
     font-size: 1.4em;
 }
 
+.kapcsolat-form{
+    display: grid;
+}
+
+.kapcsolat-form input, .kapcsolat-form textarea, .kapcsolat-form button{
+    font-family: Primary, "sans-serif";
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+
 @media (min-width: 1450px){
     .arlista-wrap{
         grid-template-columns: repeat(auto-fit,minmax(auto,380px));
     }
+}
+
+@media (min-width: 968px){
+
+    .kapcsolat-form{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas:
+            "input1 input2"
+            "textarea textarea"
+            "button button";
+        gap: .5em;
+    }
+    .username{
+        grid-area: input1;
+    }
+    .useremail{
+        grid-area: input2;
+    }
+    .usertext{
+        grid-area: textarea;
+    }
+    .formsubmit{
+        grid-area: button;
+    }
+
 }
 
 @media (max-width: 966px){

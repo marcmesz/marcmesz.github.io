@@ -117,3 +117,10 @@ links.forEach(link=>{
     }
   })
 })
+
+/* Kapcsolat */
+
+document.getElementById("kapcsolat-form").addEventListener("submit",(e)=>{
+  e.preventDefault()
+  alert("Sikeres üzenetküldés!")
+})
