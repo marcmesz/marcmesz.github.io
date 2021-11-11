@@ -22,6 +22,41 @@ body{
     transition: background-color 500ms;
 }
 
+
+.nav-open .current-link,
+.szolgaltatasok-item i,
+.green-color,
+#arlista i{
+    color: var(--clr-accent);
+}
+
+h3,
+.section-subtitle,
+.portfolio #screen-text,
+.portfolio #portfolio h3{
+    color: var(--clr-dark);
+}
+
+.szolgaltatasok, .arlista{
+    background-color: #C8E3D4;
+}
+
+.portfolio, .kapcsolat{
+    background-color: var(--clr-accent);
+}
+
+
+.portfolio .nav-active, .kapcsolat .nav-active{
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 .navbar{
     left: 0;
     top: 0;
@@ -49,11 +84,6 @@ body{
     transform: scale(0.9);
 }
 
-.nav-open .current-link, .szolgaltatasok-item i{
-    color: var(--clr-accent);
-}
-
-
 
 .container{
     width: 100%;
@@ -65,12 +95,10 @@ p{
     margin: .3em 0;
 }
 
-h1,h2,h3,.nav,.btn,#screen-text{
+h1,h2,h3,h4,.nav,.btn,#screen-text{
     font-family: Primary;
 }
-h3, .section-subtitle{
-    color: var(--clr-dark);
-}
+
 
 h1,h2,h4{
     margin:0;
@@ -217,22 +245,7 @@ section{
     margin-bottom: 8em;
 }
 
-.szolgaltatasok, .arlista{
-    background-color: #C8E3D4;
-}
 
-.portfolio, .kapcsolat{
-    background-color: var(--clr-accent);
-}
-
-
-.portfolio #screen-text, .portfolio #portfolio h3{
-    color: var(--clr-dark);
-}
-
-.portfolio .nav-active, .kapcsolat .nav-active{
-    background-color: rgba(0,0,0,0.6);
-}
 
 .box-style{
     border-radius: 25px;
@@ -360,11 +373,11 @@ section{
     gap: .4em;
 }
 
-.arlista-wrap{
+.arlista-wrap, .arlista-melyiket{
     display: grid;
     justify-content: center;
     gap: 1.5em;
-    grid-template-columns: repeat(auto-fit,minmax(250px,0.25fr));
+    grid-template-columns: repeat(auto-fit,minmax(250px,0.4fr));
     margin-bottom: 2em;
 }
 
@@ -462,29 +475,90 @@ section{
     margin-top: 3px;
 }
 
-#arlista i{
-    color: var(--clr-accent);
+.arlista-infobox img{
+    width: 100%;
+    max-width: 50%;
 }
 
-.arlista-melyiket{
-    display: grid;
-    gap: 1.5em;
-    grid-template-columns: repeat(auto-fit,minmax(auto,380px));
-    justify-content: center;
+.arlista-infobox{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3em;
 }
 
-.arlista-melyiket h4, .arlista-melyiket p{
-    font-size: 1rem;
-}
-
-.info-box{
+.arlista-infobox-info{
     text-align: left;
 }
 
+.arlista-infobox-leiras{
+    border-bottom: 1px solid var(--clr-accent);
+    margin-bottom: .4em;
+    padding-bottom: 0;
+}
+
+.arlista-infobox-leiras:nth-last-child(1){
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.arlista-infobox-leiras p{
+    font-size: 1.1rem;
+}
+
+.arlista-infobox-leiras h4{
+    font-size: 1.3rem;
+}
+
+.arlista-infobox-pelda{
+    font-size: 1rem !important;
+    margin-top: 1rem;
+}
+.arlista-infobox-pelda a{
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+    padding: .35rem .7em;
+    border-radius: 10px;
+    display:inline-block;
+    margin-bottom: .5em;
+    margin-right: .5rem;
+}
+
+.arlista-infobox-pelda a:hover{
+    background-color: var(--clr-light);
+    color: var(--clr-accent);
+}
+
+.melyiket-valasszam{
+    margin-top: 2em !important;
+}
+
+.arlista-tajekoztato{
+    margin-bottom: 5em;
+}
+
+.arlista-tajekoztato p{
+    font-size: 1.4em;
+}
+
+@media (min-width: 1450px){
+    .arlista-wrap{
+        grid-template-columns: repeat(auto-fit,minmax(auto,380px));
+    }
+}
 
 @media (max-width: 966px){
     .arlista-wrap{
         grid-template-columns: repeat(auto-fit,minmax(auto, 450px));
+    }
+    .arlista-infobox{
+        flex-direction: column;
+    }
+    .arlista-infobox img{
+        margin-bottom: 2em;
+        max-width: 100%;
+    }
+    .arlista-infobox-leiras{
+        margin-bottom: 2em;
     }
 }
 
@@ -519,8 +593,6 @@ section{
         padding: 1.5em;
     }
     
-
-
     .arlista-title{
         font-size: 1.8rem;
     }
@@ -529,6 +601,13 @@ section{
     }
     .arlista-btn{
         font-size: 1.3em;
+    }
+}
+
+@media (max-width: 615px){
+    .portfolio-links{
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -581,10 +660,7 @@ section{
     .section-title{
         font-size: 2.5em !important;
     }
-    .portfolio-links{
-        flex-direction: column;
-        align-items: center;
-    }
+
     .portfolio-wrap{
         grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     }
@@ -605,6 +681,10 @@ section{
     }
     .arlista-title .nepszeru{
         top: 2em;
+    }
+    .arlista-infobox-pelda a{
+        display: block;
+        text-align: center;
     }
 }
 
