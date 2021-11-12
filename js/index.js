@@ -109,6 +109,20 @@ function setLanguage(){
       }
     })
 
+    document.querySelector(".arlista-feltuntetett-arak").textContent=data.priceListText1[setLang]
+    document.querySelector(".arlista-egyedi-arajanlat").textContent=data.priceListText2[setLang]
+    document.querySelector(".title-melyiket-valasszam").textContent=data.whichOneToChose[setLang]
+    for(let i = 0; i<data.priceCategoriesTitle.length; i++){
+      document.querySelectorAll(".arlista-info-maintitle")[i].textContent=data.priceCategoriesTitle[i][setLang]+" "
+    }
+    document.querySelectorAll(".arlista-info-subtitle")[0].textContent=data.website[setLang]
+    document.querySelectorAll(".arlista-info-subtitle")[1].textContent=data.website[setLang]
+    document.querySelectorAll(".arlista-info-subtitle")[2].textContent=data.webshop[setLang]
+    for(let i = 0; i<data.whichOneDescription.length; i++){
+      document.querySelectorAll(".arlista-info-pelda-szoveg")[i].textContent=data.whichOneDescription[i][setLang]
+    }
+    
+
   })
 }
 

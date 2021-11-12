@@ -42,14 +42,14 @@
         "hu": [
             "Egyedi és WordPress alapú weboldalak, webáruházak készítése",
             "Kiemelt referencia munkák",
-            "Árkategóriák",
+            "Kategóriák",
             "Kérdése van? Árajánlatot kérne?"
         ],
         "en": [
             "Creating WordPress based and custom developed sites and stores",
             "Featured works",
-            "Categories",
-            "Got a question? Do you need a price offer?"
+            "Select a plan",
+            "Got a question? Do you need an offer?"
         ]
     },
     "servicesItems": [
@@ -310,5 +310,31 @@
             "hu": "1 hónap ingyenes karbantartás",
             "en": "1 month free maintenance"
         }
-    ]
+    ],
+    "priceListText1": {
+        "hu": "A feltüntetett árak tájékoztató jellegűek.",
+        "en": "The prices shown are for information only."
+    },
+    "priceListText2": {
+        "hu": "Minden esetben az igényeknek megfelelően kalkulálunk egyedi árajánlatot.",
+        "en": "In each case, we calculate an individual offer according to your needs."
+    },
+    "whichOneToChose": {
+        "hu": "Melyiket válasszam",
+        "en": "Which one to chose"
+    },
+    "whichOneDescription": [
+        {
+            "hu": "Gyors és egyszerű megoldás a vállalkozásoknak az online megjelenésre. Céges tevékenység bemutatására, egyszerűbb tartalmak megjelenítésére szolgál.",
+            "en": "A quick and easy solution for businesses to appear online. It is used to present business activities and display simpler content."
+        },
+        {
+            "hu": "Elszánt vállalkozásoknak, akik szeretnék megjelenésüket professzionális szintre emelni. Számos olyan kiegészítővel rendelkezik, melyek növelik a weboldal hatékonyságát.",
+            "en": "For determined businesses who want to raise their profile to a professional level. It has a number of add-ons that increase the efficiency of your website."
+        },
+        {
+            "hu": "Az alapvető funkciók mellett számos kiegészítővel rendelkezik, melyek leegyszerűsítik a webáruház üzemeltetését. A termékek, a fizetési- és szállítási opciók kezelése egyszerű. Teljes mértékben testreszabható az egyedi igények alapján.",
+            "en": "In addition to the basic features, it has a number of add-ons that simplify the operation of the web store. Products, payment and shipping options are easy to manage. Fully customizable to your individual needs."
+        }
+        ]
 }
