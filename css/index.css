@@ -781,6 +781,9 @@ section:nth-last-of-type(1){
     .nav-open #language-selector{
         display: flex;
     }
+    .nav-open .space, .nav-open #logo{
+        display: none !important;
+    }
 }
 
 @media (max-width: 275px){
@@ -836,8 +839,14 @@ section:nth-last-of-type(1){
     .arlista-infobox-pelda a{
         word-break: break-all;
     }
-    .nav-open .space, .nav-open #logo{
+    .space{
         display: none !important;
+    }
+    #language-selector{
+        font-size: 1em;
+    }
+    #language-selector img{
+        width: 20px;
     }
 }
 
@@ -847,14 +856,5 @@ section:nth-last-of-type(1){
     }
     .arlista-title .nepszeru{
         display: none !important;
-    }
-    .space{
-        display: none !important;
-    }
-    #language-selector{
-        font-size: 1em;
-    }
-    #language-selector img{
-        width: 20px;
     }
 }
