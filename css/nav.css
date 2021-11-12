@@ -46,6 +46,7 @@
 }
 
 .nav-open #logo{
+    visibility: hidden;
     opacity: 0;
 }
 

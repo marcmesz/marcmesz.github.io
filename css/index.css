@@ -71,20 +71,40 @@ a {
     transition: all 500ms;
 }
 
+.language-hamburger{
+    display: flex;
+    gap: 1em;
+}
+
 #language-selector{
+    visibility: hidden;
+    opacity: 0;
     display: flex;
     align-items: center;
     gap: .5em;
     font-size: 1rem;
-    position: absolute;
-    color: var(--clr-light);
-    left: 3em;
-    top: 1.3em;
+    color: rgba(255,255,255,0.5);
     cursor: pointer;
+    transition: all 350ms;
+    z-index: 1000;
+}
+
+.nav-open #language-selector{
+    visibility: visible;
+    opacity: 1;
 }
 
 #language-selector:hover{
-    color: var(--clr-accent);
+    color: var(--clr-light);
+}
+
+#language-selector img{
+    opacity: 0.6;
+    transition: opacity 350ms;
+}
+
+#language-selector:hover img{
+    opacity: 1;
 }
 
 .space{
@@ -94,6 +114,7 @@ a {
 
 #logo{
     width: 150px;
+    visibility: visible;
     opacity: 1;
     transition: all 500ms;
     vertical-align: middle;
