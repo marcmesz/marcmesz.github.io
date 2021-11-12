@@ -30,14 +30,7 @@ function setLanguage(){
     lang ? setLang = "hu" : setLang = "en"
     lang ? setTitle = "Magyar" : setTitle = "English"
     lang ? setImgTitle = "Switch to English" : setImgTitle = "Váltás Magyar nyelvre"
-    document.querySelectorAll(".tol").forEach(item=>{
-      if(!lang){
-        item.style.order=1
-        item.textContent="from"
-      }
-    })
-    document.querySelectorAll(".amount").forEach(item=>!lang ? item.style.order=2 : null)
-    document.querySelectorAll(".ft").forEach(item=>!lang ? item.style.order=3 : null)
+    
     document.documentElement.setAttribute("lang",setLang)
     document.title="WebJazz – "+data.pageTitle[setLang]
     document.getElementById("language-icon").setAttribute("src","img/"+setLang+".png")
@@ -94,6 +87,27 @@ function setLanguage(){
     for(let i = 0; i<data.businessWebshop.length; i++){
       document.querySelectorAll(".arlista-list-business")[i].textContent=data.businessWebshop[i][setLang]
     }
+
+    document.querySelectorAll(".amount").forEach(item=>!lang ? item.style.order=2 : null)
+    document.querySelectorAll(".tol").forEach(item=>{
+      if(!lang){
+        item.style.order=1
+        item.textContent="from"
+      }
+      else{
+        item.style.order=3
+        item.textContent="-tól"
+      }
+    })
+    document.querySelectorAll(".ft").forEach(item=>{
+      if(!lang){
+        item.style.order=3
+        item.textContent="HUF"
+      }
+      else{
+        item.textContent="Ft"
+      }
+    })
 
   })
 }
