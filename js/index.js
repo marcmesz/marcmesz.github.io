@@ -3,14 +3,75 @@ const navbar = document.querySelector(".navbar")
 const navLinks = document.querySelectorAll(".nav__link")
 const sections = document.querySelectorAll("section")
 const blinkingCursor = document.getElementById("blinking-cursor")
-const myString = ["Weboldal?","Webáruház?","Portfólió?"]
-
+const langBtn = document.getElementById("language-selector")
+const menuBtn = document.querySelector(".nav-toggle")
 let currentPhrase = 0
 let isBlinking = true
 let currentChar = 0
 let currentReverse = 0
+let lang = true
+let setLang = ""
+let setTitle = ""
+let setImgTitle = ""
 
-const menuBtn = document.querySelector(".nav-toggle")
+setLanguage()
+
+langBtn.addEventListener("click",()=>{
+  lang = !lang
+  setLanguage()
+})
+
+function setLanguage(){
+  fetch("./js/content.json")
+  .then(res => res.json())
+  .then(data=>{
+
+    lang ? setLang = "hu" : setLang = "en"
+    lang ? setTitle = "Magyar" : setTitle = "English"
+    lang ? setImgTitle = "Switch to English" : setImgTitle = "Váltás Magyar nyelvre"
+    document.documentElement.setAttribute("lang",setLang)
+    document.title="WebJazz – "+data.pageTitle[setLang]
+    document.getElementById("language-icon").setAttribute("src","img/"+setLang+".png")
+    document.getElementById("language-selector").setAttribute("title",setImgTitle)
+    document.getElementById("language-selector-title").textContent=setTitle
+    document.querySelector(".dynamic-slogan").textContent=data.slogan[setLang]
+    document.getElementById("screen-text").textContent=data.servicesFooterText[setLang]
+    document.getElementById("dynamic-btn").textContent=data.allButtonText[0][setLang]
+    document.getElementById("btn-osszes").textContent=data.allButtonText[1][setLang]
+    document.getElementById("btn-weboldal").textContent=data.allButtonText[2][setLang]
+    document.getElementById("btn-webaruhaz").textContent=data.allButtonText[3][setLang]
+    document.getElementById("btn-submit").textContent=data.allButtonText[5][setLang]
+    document.querySelectorAll(".arlista-btn").forEach(item=>item.textContent=data.allButtonText[4][setLang])
+
+        
+    for(let i = 0; i<data.sectionTitle.hu.length; i++){
+      document.querySelectorAll(".nav__link")[i].textContent=data.sectionTitle[setLang][i]
+    }
+
+    for(let i = 0; i<data.sectionTitle.hu.length-1; i++){
+      document.querySelectorAll(".section-title")[i].textContent=data.sectionTitle[setLang][i+1]
+      document.querySelectorAll(".section-subtitle")[i].textContent=data.sectionSubTitle[setLang][i]
+    }
+
+    for(let i = 0; i<data.servicesItems.length; i++){
+      document.querySelectorAll(".szolgaltatasok-item-title")[i].textContent=data.servicesItems[i].title[setLang]
+      document.querySelectorAll(".szolgaltatasok-item-content")[i].textContent=data.servicesItems[i].content[setLang]
+    }
+
+    const portfolioItemSpan = document.querySelectorAll(".portfolio-item-description")
+    const portfolioItem = document.querySelectorAll(".portfolio-item")
+    for(let i = 0; i<data.portfolioItems.length; i++){
+      if(portfolioItem[i].classList.contains("weboldal")){
+        portfolioItemSpan[i].textContent=data.website[setLang]+" · "+data.portfolioItems[i][setLang]
+      }
+      else if(portfolioItem[i].classList.contains("webaruhaz")){
+        portfolioItemSpan[i].textContent=data.webshop[setLang]+" · "+data.portfolioItems[i][setLang]
+      }
+    }
+
+  })
+}
+
 
 menuBtn.addEventListener("click",()=>{
   document.body.classList.toggle("nav-open")
@@ -24,6 +85,8 @@ navLinks.forEach(item=>item.addEventListener("click",()=>{
 
 
 function displayCharacters(){
+
+  lang ? myString = ["Weboldal?","Webáruház?","Portfólió?"] : myString = ["Website?","Webshop?","Portfolio?"]
 
   const kiir = setInterval(()=>{
     if(currentChar===myString[currentPhrase].length){
@@ -124,3 +187,4 @@ document.getElementById("kapcsolat-form").addEventListener("submit",(e)=>{
   e.preventDefault()
   alert("Sikeres üzenetküldés!")
 })
+

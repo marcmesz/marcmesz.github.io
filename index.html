@@ -14,18 +14,22 @@
 <body class="kezdolap">
     <header class="navbar container">
         <div class="space"></div>
-        <a class="logo-link" href="#kezdolap"><img id="logo" src="img/webjazz-logo-white.png" alt="Webjazz Logo" title="Kezdőlap"/></a>
+        <a class="logo-link" href="#kezdolap"><img id="logo" src="img/webjazz-logo-white.png" alt="Webjazz Logo" /></a>
         <button type="button" class="nav-toggle" aria-label="toggle navigation" title="Menü">
             <span class="hamburger"></span>
         </button>
         <nav class="nav">
+            <a id="language-selector">
+                <img id="language-icon" src="img/hu.png" alt="" />
+                <span id="language-selector-title"></span>
+            </a>
             <a href="#"><img id="logo-90" src="img/webjazz-logo-white-90.png" alt="Kezdőlap" title="Kezdőlap"/></a>
             <ul class="nav__list">
-                <li class="nav__item"><a href="#kezdolap" class="nav__link">Kezdőlap</a></li>
-                <li class="nav__item"><a href="#szolgaltatasok" class="nav__link">Szolgáltatások</a></li>
-                <li class="nav__item"><a href="#portfolio" class="nav__link">Portfólió</a></li>
-                <li class="nav__item"><a href="#arlista" class="nav__link">Árlista</a></li>
-                <li class="nav__item"><a href="#kapcsolat" class="nav__link">Kapcsolat</a></li>
+                <li class="nav__item"><a href="#kezdolap" class="nav__link"></a></li>
+                <li class="nav__item"><a href="#szolgaltatasok" class="nav__link"></a></li>
+                <li class="nav__item"><a href="#portfolio" class="nav__link"></a></li>
+                <li class="nav__item"><a href="#arlista" class="nav__link"></a></li>
+                <li class="nav__item"><a href="#kapcsolat" class="nav__link"></a></li>
             </ul>
         </nav>
     </header>
@@ -38,175 +42,220 @@
 
         <div class="dynamic container">
             <h1 id="dynamic-text"><span id="text"></span><span id="blinking-cursor">|</span></h1>
-            <h2 class="dynamic-slogan">Mindenre van megoldásunk.</h2>
-            <a href="#szolgaltatasok" class="btn">Tovább</a>
+            <h2 class="dynamic-slogan"></h2>
+            <a id="dynamic-btn" href="#szolgaltatasok" class="btn"></a>
         </div>
     </section>
 
     <section id="szolgaltatasok" class="container">
-        <h2 class="section-title">Szolgáltatások</h2>
-        <h3 class="section-subtitle">Egyedi és WordPress alapú weboldalak, webáruházak készítése</h3>
+        <h2 class="section-title"></h2>
+        <h3 class="section-subtitle"></h3>
 
         <div class="szolgaltatasok-box">
             <div class="szolgaltatasok-item box-style">
                 <i class="fas fa-laptop-code"></i> 
-                <h3>Honlapkészítés</h3>
-                <p>Mobilbarát és funkciógazdag weboldalak készítése egyedi vagy WordPress rendszeren.</p>
-                <p>Modern és trendeket követő letisztult webes megjelenés.</p>
+                <h3 class="szolgaltatasok-item-title"></h3>
+                <p class="szolgaltatasok-item-content"></p>
             </div>
             <div class="szolgaltatasok-item box-style">
                 <i class="fas fa-shopping-cart"></i>
-                <h3>Webáruház</h3>
-                <p>Az egyszerű üzemeltetés mellett olyan funkciókkal ruházzuk fel webáruházadat, 
-                    melyek növelik a forgalmat és a vásárlói élményt is.</p>
+                <h3 class="szolgaltatasok-item-title"></h3>
+                <p class="szolgaltatasok-item-content"></p>
             </div>
 
             <div class="szolgaltatasok-item box-style">
                 <i class="fas fa-magic"></i>
-                <h3>Branding</h3>
-                <p>Az arculat, logótervezés során a legkreatívabb megoldásokra törekszünk vállalkozásod sikeres megjelenése érdekében.</p>
+                <h3 class="szolgaltatasok-item-title"></h3>
+                <p class="szolgaltatasok-item-content"></p>
             </div>
 
             <div class="szolgaltatasok-item box-style">
                 <i class="fas fa-life-ring"></i>
-                <h3>Karbantartás</h3>
-                <p>A webhely optimalizálása, rendszeres biztonsági másolat készítése.</p>
-                <p>Bővítmények frissítése. Tartalmak feltöltése.</p>
+                <h3 class="szolgaltatasok-item-title"></h3>
+                <p class="szolgaltatasok-item-content"></p>
             </div>
 
             <div class="szolgaltatasok-item box-style">
                 <i class="fas fa-search"></i>
-                <h3>SEO</h3>
-                <p>Keresőoptimalizálás a megfelelő kulcsszavakra, hogy a webhely minél jobb helyezést érjen el a keresők találatai között.</p>
+                <h3 class="szolgaltatasok-item-title"></h3>
+                <p class="szolgaltatasok-item-content"></p>
             </div>
         </div>
         <div class="macbook">
             <img class="laptop" src="img/responsive-feature2.png" alt="reszponzív webdesign" />
-            <p id="screen-text">Reszponzív kialakítás, &nbsp;jól olvasható tartalom minden eszközön.</p>
+            <p id="screen-text"></p>
         </div>
 
     </section>
 
     <section id="portfolio" class="container">
-        <h2 class="section-title">Portfólió</h2>
-        <h3 class="section-subtitle">Kiemelt referencia munkák</h3>
+        <h2 class="section-title"></h2>
+        <h3 class="section-subtitle"></h3>
         <div class="portfolio-links">
-            <button type="button" id="btn-osszes" class="portfolio-btn btn btn-current">Összes</button>
-            <button type="button" id="btn-weboldal" class="portfolio-btn btn ">Weboldal</button>
-            <button type="button" id="btn-webaruhaz" class="portfolio-btn btn">Webáruház</button>
+            <button type="button" id="btn-osszes" class="portfolio-btn btn btn-current"></button>
+            <button type="button" id="btn-weboldal" class="portfolio-btn btn "></button>
+            <button type="button" id="btn-webaruhaz" class="portfolio-btn btn"></button>
         </div>
         <div class="portfolio-wrap">
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.talenttestingservice.hu/" target="_blank">talenttestingservice.hu<span>weboldal · egészségügy</span></a>
+                    <a href="https://www.aluconcept.hu/" target="_blank">
+                        aluconcept.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
+                </div>
+                <img src="img/portfolio/aluconcept.jpg" alt="Talent Testing Service" />
+            </div>
+            <div class="portfolio-item box-style weboldal">
+                <div class="portfolio-desc">
+                    <a href="https://www.goldpearl.hu/" target="_blank">
+                        goldpearl.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
+                </div>
+                <img src="img/portfolio/goldpearl.jpg" alt="Talent Testing Service" />
+            </div>
+            <div class="portfolio-item box-style weboldal">
+                <div class="portfolio-desc">
+                    <a href="https://www.talenttestingservice.hu/" target="_blank">
+                        talenttestingservice.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/talenttestingservice.jpg" alt="Talent Testing Service" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.qualiconnex.hu/" target="_blank">qualiconnex.hu<span>weboldal · villanyszerelés</span></a>
+                    <a href="https://www.qualiconnex.hu/" target="_blank">
+                        qualiconnex.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/qualiconnex.png" alt="Qualiconnex" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.hajlasszogkft.hu/" target="_blank">hajlasszogkft.hu<span>weboldal · tetőfedés</span></a>
+                    <a href="https://www.hajlasszogkft.hu/" target="_blank">
+                        hajlasszogkft.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/hajlasszog.jpg" alt="Hajlásszög Kft" />
             </div>
             <div class="portfolio-item box-style webaruhaz">
                 <div class="portfolio-desc">
-                    <a href="https://www.vinyfafashion.hu/" target="_blank">vinyfafashion.hu<span>webáruház · női ruházat</span></a>
+                    <a href="https://www.vinyfafashion.hu/" target="_blank">
+                        vinyfafashion.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/vinfya.jpg" alt="Vinyfa Fashion" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.gepifoldmunka-daralas.hu/" target="_blank">gepifoldmunka-daralas.hu<span>weboldal · gépi földmunka</span></a>
+                    <a href="https://www.gepifoldmunka-daralas.hu/" target="_blank">
+                        gepifoldmunka-daralas.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/gepifoldmunka.jpg" alt="Gépi Földmunka és darálás" />
             </div>
-            <div class="portfolio-item box-style weboldal">
+            <div class="portfolio-item box-style webaruhaz">
                 <div class="portfolio-desc">
-                    <a href="https://www.honeybeeamps.com/" target="_blank">honeybeeamps.com<span>weboldal · hangtechnika</span></a>
+                    <a href="https://www.honeybeeamps.com/" target="_blank">
+                        honeybeeamps.com
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/honeybeeamps.jpg" alt="Honey Bee Amps" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.fedaszdental.com/" target="_blank">fedaszdental.com<span>weboldal · fogászati klinika</span></a>
+                    <a href="https://www.fedaszdental.com/" target="_blank">
+                        fedaszdental.com
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/FedaszDentalcom.jpg" alt="Fedasz dental" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.fedaszdental.hu/" target="_blank">fedaszdental.hu<span>weboldal · fogászati klinika</span></a>
+                    <a href="https://www.fedaszdental.hu/" target="_blank">
+                        fedaszdental.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/FedaszDentalHu.jpg" alt="Fedasz dental" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="http://www.veneziasolymar.hu/" target="_blank">veneziasolymar.hu<span>weboldal · étterem</span></a>
+                    <a href="http://www.veneziasolymar.hu/" target="_blank">
+                        veneziasolymar.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/venezia.jpg" alt="Venezia Solymár Étterem" />
             </div>
-            <div class="portfolio-item box-style weboldal">
-                <div class="portfolio-desc">
-                    <a href="https://www.matyasfoldlakopark.hu/" target="_blank">matyasfoldlakopark.hu<span>weboldal · lakópark</span></a>
-                </div>
-                <img src="img/portfolio/matyasfold.jpg" alt="Mátyásföld Lakópark" />
-            </div>
             <div class="portfolio-item box-style webaruhaz">
                 <div class="portfolio-desc">
-                    <a href="https://www.threee.hu/" target="_blank">threee.hu<span>webáruház · női ruházat</span></a>
+                    <a href="https://www.threee.hu/" target="_blank">
+                        threee.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/threee.jpg" alt="Threee Salon" />
             </div>
-            <div class="portfolio-item box-style webaruhaz">
-                <div class="portfolio-desc">
-                    <a href="https://www.uniquehomedecor.co.uk/" target="_blank">uniquehomedecor.co.uk<span>webáruház · kreatív dekoráció</span></a>
-                </div>
-                <img src="img/portfolio/unique.jpg" alt="Unique Home Decor" />
-            </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="http://www.jaak-coop.hu/" target="_blank">jaak-coop.hu<span>weboldal · kenőanyag és akkumulátor</span></a>
+                    <a href="http://www.jaak-coop.hu/" target="_blank">
+                        jaak-coop.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/jaak.jpg" alt="Jaak-Coop" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.invitoetterem.hu/" target="_blank">invitoetterem.hu<span>weboldal · étterem</span></a>
+                    <a href="https://www.invitoetterem.hu/" target="_blank">
+                        invitoetterem.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/invito.jpg" alt="Invito Étterem Solymár" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="https://www.beautybox-huvi.hu/" target="_blank">beautybox-huvi.hu<span>weboldal · kozmetika</span></a>
-                </div>
-                <img src="img/portfolio/beauty.jpg" alt="BeautyBox Hüvi" />
-            </div>
-            <div class="portfolio-item box-style weboldal">
-                <div class="portfolio-desc">
-                    <a href="http://www.szilagyi-huto.hu/" target="_blank">szilagyi-huto.hu<span>weboldal · hűtő-klíma szerviz</span></a>
+                    <a href="http://www.szilagyi-huto.hu/" target="_blank">
+                        szilagyi-huto.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/htk.jpg" alt="Szilágyi Hűtő Kft. Budapest" />
             </div>
             <div class="portfolio-item box-style weboldal">
                 <div class="portfolio-desc">
-                    <a href="http://www.strack.hu/" target="_blank">strack.hu<span>weboldal · szerszámgyártó</span></a>
+                    <a href="http://www.strack.hu/" target="_blank">
+                        strack.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/strack.jpg" alt="Strack Szerszámgyártó Kft. Solymár" />
             </div>
             <div class="portfolio-item box-style webaruhaz">
                 <div class="portfolio-desc">
-                    <a href="https://www.skpshop.hu/" target="_blank">skpshop.hu<span>webáruház · fodrászat és kozmetika</span></a>
+                    <a href="https://www.skpshop.hu/" target="_blank">
+                        skpshop.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/skp.jpg" alt="Schwarzkopf SKPSHOP.hu" />
             </div>
             <div class="portfolio-item box-style webaruhaz">
                 <div class="portfolio-desc">
-                    <a href="https://www.ihajapolas.hu/" target="_blank">ihajapolas.hu <span>webáruház · fodrászat és kozmetika</span></a>
+                    <a href="https://www.ihajapolas.hu/" target="_blank">
+                        ihajapolas.hu
+                        <span class="portfolio-item-description"></span>
+                    </a>
                 </div>
                 <img src="img/portfolio/ihajapolas.jpg" alt="Schwarzkopf iHajápolás.hu" />
             </div>
@@ -215,8 +264,8 @@
     </section>
 
     <section id="arlista" class="container">
-        <h2 class="section-title">Árlista</h2>
-        <h3 class="section-subtitle">Árkategóriák</h3>
+        <h2 class="section-title"></h2>
+        <h3 class="section-subtitle"></h3>
 
         <div class="arlista-wrap">
             <div class="arlista-item box-style">
@@ -231,7 +280,7 @@
                         <li><i class="fas fa-check"></i>Landing page vagy 4-5 aloldal</li>
                         <li><i class="fas fa-check"></i>Gyors elkészülési idő</li>
                     </ul>
-                <a id="btn-bemutatkozo" href="#kapcsolat" class="arlista-btn btn">Érdekel</a>
+                <a id="btn-bemutatkozo-erdekel" href="#kapcsolat" class="arlista-btn btn">Érdekel</a>
             </div>
 
             <div class="arlista-item box-style">
@@ -247,7 +296,7 @@
                     <li><i class="fas fa-check"></i>Közösségi média integráció</li>
                     <li><i class="fas fa-gift"></i>1 hónap <strong>ingyenes</strong> karbantartás</li>
                 </ul>
-                <a id="premium" href="#kapcsolat" class="arlista-btn btn">Érdekel</a>
+                <a id="btn-premium-erdekel" href="#kapcsolat" class="arlista-btn btn">Érdekel</a>
             </div>
 
             <div class="arlista-item box-style">
@@ -265,7 +314,7 @@
                     <li><i class="fas fa-check"></i>Bankkártyás fizetési lehetőség</li>                          
                     <li><i class="fas fa-gift"></i>1 hónap <strong>ingyenes</strong> karbantartás</li>
                 </ul>
-                <a id="webaruhaz" href="#kapcsolat" class="arlista-btn btn">Érdekel</a>
+                <a id="btn-webaruhaz-erdekel" href="#kapcsolat" class="arlista-btn btn">Érdekel</a>
             </div>
         </div>
 
@@ -273,7 +322,7 @@
             <p>A feltüntetett árak tájékoztató jellegűek.</p>
             <p>Minden esetben az igényeknek megfelelően kalkulálunk egyedi árajánlatot.</p>
         </div>
-        <h3 class="section-subtitle">Melyiket válasszam <i class="fas fa-question-circle"></i></h3>
+        <h3 class="section-melyiket-valasszam">Melyiket válasszam <i class="fas fa-question-circle"></i></h3>
 
         <div class="arlista-infobox">
             <img src="img/responsive-feature2.png" alt="Macbook Pro Laptop"/>
@@ -285,10 +334,9 @@
                         Céges tevékenység bemutatására, egyszerűbb tartalmak megjelenítésére szolgál. 
                     </p>
                     <p class="arlista-infobox-pelda">
-                        
-                        <a href="https://www.qualiconnex.hu/" target="_blank" aria-label="Qualiconnex Villanyszerelés" title="Qualiconnex villanyszerelés">qualiconnex.hu</a>
-                        <a href="http://www.szilagyi-huto.hu/" target="_blank" aria-label="Szilágyi hűtő-klíma szerviz" title="Szilágyi hűtő-klíma szerviz">szilagyi-huto.hu</a>
-                        <a href="http://www.invitoetterem.hu/" target="_blank" aria-label="Invito Étterem Solymár" title="Invito Étterem Solymár">invitoetterem.hu</a>
+                        <a href="https://www.qualiconnex.hu/" target="_blank" title="Qualiconnex Villanyszerelés">qualiconnex.hu</a>
+                        <a href="https://www.goldpearl.hu/" target="_blank" title="Goldpearl - Háztartási tisztítószerek">goldpearl.hu</a>
+                        <a href="http://www.szilagyi-huto.hu/" target="_blank" title="Szilágyi Hűtő-klíma szerviz">szilagyi-huto.hu</a>                       
                     </p>
                 </div>
                 <div class="arlista-infobox-leiras">
@@ -298,10 +346,9 @@
                         Számos olyan kiegészítővel rendelkezik, melyek növelik a weboldal hatékonyságát.
                     </p>
                     <p class="arlista-infobox-pelda">
-                        
-                        <a href="https://www.gepifoldmunka-daralas.hu/" target="_blank" aria-label="Gépi földmunka és darálás" title="Gépi földmunka és darálás">gepifoldmunka-daralas.hu</a>
-                        <a href="https://talenttestingservice.hu/" target="_blank" aria-label="Talent Testing Service Kft. - Egészségügy" title="Talent Testing Service Kft. - Egészségügy">talenttestingservice.hu</a>
-                        <a href="https://www.hajlasszogkft.hu/" target="_blank" aria-label="Hajlásszög Kft. - Tetőfedés" title="Hajlásszög Kft. - Tetőfedés">hajlasszogkft.hu</a>
+                        <a href="https://www.aluconcept.hu/" target="_blank" title="Aluconcept - Alumínium nyílászárók">aluconcept.hu</a>
+                        <a href="https://www.gepifoldmunka-daralas.hu/" target="_blank" title="Gépi földmunka és darálás">gepifoldmunka-daralas.hu</a>
+                        <a href="https://talenttestingservice.hu/" target="_blank" title="Talent Testing Service Kft. - Egészségügy">talenttestingservice.hu</a>
                     </p>
                 </div>
                 <div class="arlista-infobox-leiras">
@@ -312,9 +359,9 @@
                     </p>
                     <p class="arlista-infobox-pelda">
                         
-                        <a href="https://www.skpshop.hu/" target="_blank" aria-label="Schwarzkopf Professional e-Shop" title="Schwarzkopf Professional e-Shop">skpshop.hu</a>
-                        <a href="https://www.vinyfafashion.hu/" target="_blank" aria-label="Vinyfa Fashion - Női ruházat" title="Vinyfa Fashion - Női ruházat">vinyfafashion.hu</a>
-                        <a href="https://www.honeybeeamps.com/" target="_blank" aria-label="Honey Bee Amps - Hangtechnika" title="Honey Bee Amps - Hangtechnika">honeybeeamps.com</a>
+                        <a href="https://www.skpshop.hu/" target="_blank" title="Schwarzkopf Professional e-Shop">skpshop.hu</a>
+                        <a href="https://www.vinyfafashion.hu/" target="_blank" title="Vinyfa Fashion - Női ruházat">vinyfafashion.hu</a>
+                        <a href="https://www.honeybeeamps.com/" target="_blank" title="Honey Bee Amps - Hangtechnika">honeybeeamps.com</a>
                     </p>
                 </div>
             </div>
@@ -324,14 +371,14 @@
     </section>
 
     <section id="kapcsolat" class="container">
-        <h2 class="section-title">Kapcsolat</h2>
-        <h3 class="section-subtitle">Kérdése van, árajánlatot kérne?</h3>
+        <h2 class="section-title"></h2>
+        <h3 class="section-subtitle"></h3>
 
         <form id="kapcsolat-form" class="kapcsolat-form">
             <input type="text" class="box-style username" name="username" placeholder="Név"/>
             <input type="email" class="box-style useremail" name="useremail" placeholder="E-mail"/>
             <textarea name="usertext" class="box-style usertext" rows="10"></textarea>
-            <button type="submit" class="portfolio-btn btn box-style formsubmit">Küldés</button>
+            <button id="btn-submit" type="submit" class="portfolio-btn btn box-style formsubmit"></button>
         </form>
 
     </section>
