@@ -190,5 +190,125 @@
             "hu": "fodrászat és kozmetika",
             "en": "hairdressing and cosmetics"
         }
+    ],
+    "priceCategoriesTitle": [
+        {
+            "hu": "Bemutatkozó",
+            "en": "Introductive"
+        },
+        {
+            "hu": "Prémium",
+            "en": "Premium"
+        },
+        {
+            "hu": "Üzleti",
+            "en": "Business"
+        }
+    ],
+    "bestSeller": {
+        "hu": "Népszerű",
+        "en": "Bestseller"
+    },
+    "introductiveWebsite": [
+        {
+            "hu": "WordPress tartalomkezelő",
+            "en": "WordPress content manager"
+        },
+        {
+            "hu": "Könnyen kezelhető felület",
+            "en": "Easy to use interface"
+        },
+        {
+            "hu": "Tartalomfeltöltés",
+            "en": "Upload content"
+        },
+        {
+            "hu": "Sablon kinézet",
+            "en": "Template look"
+        },
+        {
+            "hu": "Landing page vagy 4-5 aloldal",
+            "en": "Landing page or 4-5 subpages"
+        },
+        {
+            "hu": "Gyors elkészülési idő",
+            "en": "It's done very fast"
+        }
+    ],
+    "premiumWebsite": [
+        {
+            "hu": "WordPress vagy egyedi fejlesztés",
+            "en": "WordPress or custom developed"
+        },
+        {
+            "hu": "Domain és tárhely ügyintézés",
+            "en": "Domain and hosting management"
+        },
+        {
+            "hu": "Könnyen kezelhető felület",
+            "en": "Easy to use interface"
+        },
+        {
+            "hu": "Tartalomfeltöltés",
+            "en": "Upload content"
+        },
+        {
+            "hu": "Személyreszabott kinézet",
+            "en": "Personalized look"
+        },
+        {
+            "hu": "Keresőoptimalizálás",
+            "en": "Search Engine Optimization"
+        },
+        {
+            "hu": "Közösségi média integráció",
+            "en": "Social media integration"
+        },
+        {
+            "hu": "1 hónap ingyenes karbantartás",
+            "en": "1 month free maintenance"
+        }
+    ],
+    "businessWebshop": [
+        {
+            "hu": "WooCommerce webáruház",
+            "en": "WooCommerce webshop"
+        },
+        {
+            "hu": "Domain és tárhely ügyintézés",
+            "en": "Domain and hosting management"
+        },
+        {
+            "hu": "Könnyen kezelhető felület",
+            "en": "Easy to use interface"
+        },
+        {
+            "hu": "Korlátlan termékfeltöltés",
+            "en": "Unlimited product uploads"
+        },
+        {
+            "hu": "Személyreszabott kinézet",
+            "en": "Personalized look"
+        },
+        {
+            "hu": "Keresőoptimalizálás",
+            "en": "Search Engine Optimization"
+        },
+        {
+            "hu": "Közösségi média integráció",
+            "en": "Social media integration"
+        },
+        {
+            "hu": "GDPR megfelelés",
+            "en": "GDPR compliance"
+        },
+        {
+            "hu": "Bankkártyás fizetési lehetőség",
+            "en": "Credit card payment option"
+        },
+        {
+            "hu": "1 hónap ingyenes karbantartás",
+            "en": "1 month free maintenance"
+        }
     ]
 }

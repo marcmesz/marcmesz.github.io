@@ -4,6 +4,8 @@ const navLinks = document.querySelectorAll(".nav__link")
 const sections = document.querySelectorAll("section")
 const blinkingCursor = document.getElementById("blinking-cursor")
 const langBtn = document.getElementById("language-selector")
+const portfolioItemSpan = document.querySelectorAll(".portfolio-item-description")
+const portfolioItem = document.querySelectorAll(".portfolio-item")
 const menuBtn = document.querySelector(".nav-toggle")
 let currentPhrase = 0
 let isBlinking = true
@@ -25,10 +27,17 @@ function setLanguage(){
   fetch("./js/content.json")
   .then(res => res.json())
   .then(data=>{
-
     lang ? setLang = "hu" : setLang = "en"
     lang ? setTitle = "Magyar" : setTitle = "English"
     lang ? setImgTitle = "Switch to English" : setImgTitle = "Váltás Magyar nyelvre"
+    document.querySelectorAll(".tol").forEach(item=>{
+      if(!lang){
+        item.style.order=1
+        item.textContent="from"
+      }
+    })
+    document.querySelectorAll(".amount").forEach(item=>!lang ? item.style.order=2 : null)
+    document.querySelectorAll(".ft").forEach(item=>!lang ? item.style.order=3 : null)
     document.documentElement.setAttribute("lang",setLang)
     document.title="WebJazz – "+data.pageTitle[setLang]
     document.getElementById("language-icon").setAttribute("src","img/"+setLang+".png")
@@ -58,8 +67,6 @@ function setLanguage(){
       document.querySelectorAll(".szolgaltatasok-item-content")[i].textContent=data.servicesItems[i].content[setLang]
     }
 
-    const portfolioItemSpan = document.querySelectorAll(".portfolio-item-description")
-    const portfolioItem = document.querySelectorAll(".portfolio-item")
     for(let i = 0; i<data.portfolioItems.length; i++){
       if(portfolioItem[i].classList.contains("weboldal")){
         portfolioItemSpan[i].textContent=data.website[setLang]+" · "+data.portfolioItems[i][setLang]
@@ -67,6 +74,25 @@ function setLanguage(){
       else if(portfolioItem[i].classList.contains("webaruhaz")){
         portfolioItemSpan[i].textContent=data.webshop[setLang]+" · "+data.portfolioItems[i][setLang]
       }
+    }
+
+    for(let i = 0; i<data.priceCategoriesTitle.length; i++){
+      document.querySelectorAll(".arlista-main-title")[i].textContent=data.priceCategoriesTitle[i][setLang]
+    }
+
+    document.querySelectorAll(".arlista-sub-title")[0].textContent=data.website[setLang]
+    document.querySelectorAll(".arlista-sub-title")[1].textContent=data.website[setLang]
+    document.querySelectorAll(".arlista-sub-title")[2].textContent=data.webshop[setLang]
+    document.querySelector(".nepszeru").textContent=data.bestSeller[setLang]
+
+    for(let i = 0; i<data.introductiveWebsite.length; i++){
+      document.querySelectorAll(".arlista-list-introduction")[i].textContent=data.introductiveWebsite[i][setLang]
+    }
+    for(let i = 0; i<data.premiumWebsite.length; i++){
+      document.querySelectorAll(".arlista-list-premium")[i].textContent=data.premiumWebsite[i][setLang]
+    }
+    for(let i = 0; i<data.businessWebshop.length; i++){
+      document.querySelectorAll(".arlista-list-business")[i].textContent=data.businessWebshop[i][setLang]
     }
 
   })

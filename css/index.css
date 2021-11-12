@@ -40,12 +40,12 @@ h3,
 
 .szolgaltatasok, .arlista{
     background-color: #C8E3D4;
-    background-image: url(../img/webjazz-pattern.png);
+    background-image: url(../img/bg-pattern.png);
 }
 
 .portfolio, .kapcsolat{
     background-color: var(--clr-accent);
-    background-image: url(../img/webjazz-pattern.png);
+    background-image: url(../img/bg-pattern.png);
 }
 
 
@@ -283,6 +283,9 @@ section{
     text-align: center;
     margin-bottom: 8em;
 }
+section:nth-last-of-type(1){
+    margin-bottom: 2em;
+}
 
 
 
@@ -442,7 +445,7 @@ section{
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-.arlista-title span{
+.arlista-title .arlista-sub-title{
     display: block;
     margin-top: -8px;
     font-size: .5em;
@@ -466,7 +469,7 @@ section{
     font-size: .4em;
     right: -50px;
     transform: rotate(45deg);
-    top: 2.3em;
+    top: 2.1em;
     padding: .3em 4.5em;
     z-index: 0;
     letter-spacing: 1px;
@@ -474,6 +477,9 @@ section{
 
 .arlista-price{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5em;
     color: var(--clr-dark);
     margin: 0;
@@ -639,6 +645,9 @@ section{
     .arlista-infobox-leiras{
         margin-bottom: 2em;
     }
+    .arlista-price{
+        font-size: 4em;
+    }
 }
 
 @media (max-width: 700px){
@@ -764,6 +773,10 @@ section{
     .arlista-infobox-pelda a{
         display: block;
         text-align: center;
+        margin-right: 0;
+    }
+    #language-selector{
+        display: none;
     }
 }
 
@@ -777,6 +790,12 @@ section{
     }
     .hamburger::after{
         bottom: 8px !important;
+    }
+    .nav-open .hamburger::after {
+        transform: rotate(-90deg) translateX(-8px) !important;
+    }
+    .nav-open .hamburger::before {
+        transform: rotate(90deg) translateX(-8px) !important;
     }
     #logo{
         width: 90px;
@@ -805,7 +824,15 @@ section{
     .arlista-list li{
         padding-left: 2em;
     }
-
+    .arlista-price{
+        font-size: 3.2em;
+    }
+    .arlista-infobox-leiras p{
+        font-size: 1.3em;
+    }
+    .arlista-infobox-pelda a{
+        word-break: break-all;
+    }
 }
 
 @media (max-width: 200px){
