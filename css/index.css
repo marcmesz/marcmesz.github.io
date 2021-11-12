@@ -778,6 +778,9 @@ section:nth-last-of-type(1){
     #language-selector{
         display: none;
     }
+    .nav-open #language-selector{
+        display: flex;
+    }
 }
 
 @media (max-width: 275px){
@@ -833,6 +836,9 @@ section:nth-last-of-type(1){
     .arlista-infobox-pelda a{
         word-break: break-all;
     }
+    .nav-open .space, .nav-open #logo{
+        display: none !important;
+    }
 }
 
 @media (max-width: 200px){
@@ -844,5 +850,11 @@ section:nth-last-of-type(1){
     }
     .space{
         display: none !important;
+    }
+    #language-selector{
+        font-size: 1em;
+    }
+    #language-selector img{
+        width: 20px;
     }
 }
