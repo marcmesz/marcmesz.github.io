@@ -523,12 +523,14 @@ section:nth-last-of-type(1){
 .arlista-infobox img{
     width: 100%;
     max-width: 50%;
+    align-self: center;
 }
 
 .arlista-infobox{
     display: flex;
     align-items: flex-start;
     margin-bottom: 3em;
+    gap: 2em;
 }
 
 .arlista-infobox-info{
