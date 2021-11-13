@@ -242,3 +242,7 @@ document.getElementById("kapcsolat-form").addEventListener("submit",(e)=>{
   alert("Sikeres üzenetküldés!")
 })
 
+
+
+
+
