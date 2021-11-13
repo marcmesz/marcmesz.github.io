@@ -22,6 +22,9 @@ body{
     transition: background-color 500ms;
 }
 
+.seo-only{
+    display: none;
+}
 
 .nav-open .current-link,
 .szolgaltatasok-item i,
@@ -149,10 +152,6 @@ h2{
     font-size: 2.2em;
 }
 
-h1{
-    font-size: 5em;
-}
-
 
 #kezdolap{
     padding: 0 !important;
@@ -224,6 +223,7 @@ h1{
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     min-height: 1.5em;
     line-height: 1.5em;
+    margin:0;
 }
 
 .dynamic-slogan{
