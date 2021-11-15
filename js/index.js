@@ -145,7 +145,7 @@ function displayCharacters(){
   const kiir = setInterval(()=>{
     if(currentChar===myString[currentPhrase].length){
         clearInterval(kiir)
-        setTimeout(deleteCharacters, 2000)
+        setTimeout(deleteCharacters, 1500)
     }
     else{
         currentChar++
