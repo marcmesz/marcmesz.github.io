@@ -546,7 +546,6 @@ section:nth-last-of-type(1){
 }
 
 .arlista-infobox img{
-    width: 100%;
     max-width: 50%;
     align-self: center;
 }
@@ -626,6 +625,7 @@ section:nth-last-of-type(1){
     border: none;
     outline: none;
     margin-bottom: 10px;
+    min-width: 10px;
 }
 
 
@@ -853,17 +853,27 @@ section:nth-last-of-type(1){
     .szolgaltatasok-item p, .szolgaltatasok-item h3, #dynamic-text{
         word-break: break-all;
     }
-    .portfolio-wrap{
+    .portfolio-wrap, .arlista-wrap{
         grid-template-columns: repeat(auto-fit, minmax(110px,1fr));
     }
     .portfolio-item{
         height: 200px;
     }
+    .portfolio-item img{
+        height: 100%;
+    }
+    .portfolio-btn{
+        font-size: 1.2em;
+    }
+    .arlista-title, .arlista-price{
+        font-size: 2em;
+    }
+    .arlista-sub-title{
+        line-height: 1.2em;
+    }
     .arlista-list li{
         padding-left: 2em;
-    }
-    .arlista-price{
-        font-size: 3.2em;
+        font-size: 1em;
     }
     .arlista-infobox-leiras p{
         font-size: 1.3em;
@@ -888,5 +898,11 @@ section:nth-last-of-type(1){
     }
     .arlista-title .nepszeru{
         display: none !important;
+    }
+    .arlista-title{
+        font-size: 1.5em;
+    }
+    .arlista-info-maintitle, .arlista-info-subtitle, .section-subtitle, .szolgaltatasok-item{
+        font-size: .8em;
     }
 }
