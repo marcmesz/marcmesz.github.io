@@ -119,14 +119,6 @@
     },
     "portfolioItems": [
         {
-            "hu": "alumínium nyílászárók",
-            "en": "aluminum doors and windows"
-        },
-        {
-            "hu": "háztartási tisztítószerek",
-            "en": "household cleaners"
-        },
-        {
             "hu": "egészségügy",
             "en": "medical care"
         },
@@ -149,6 +141,14 @@
         {
             "hu": "hangtechnika",
             "en": "handwired amplifiers"
+        },
+        {
+            "hu": "alumínium nyílászárók",
+            "en": "aluminum doors and windows"
+        },
+        {
+            "hu": "háztartási tisztítószerek",
+            "en": "household cleaners"
         },
         {
             "hu": "fogászati klinika",
