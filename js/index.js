@@ -16,15 +16,12 @@ let setLang = ""
 let setTitle = ""
 let setImgTitle = ""
 
-
-
 langBtn.addEventListener("click",()=>{
   lang = !lang
   setLanguage()
 })
 
 function setLanguage(){
-  alert("Ez már a JSON file-ból jön!")
   fetch("./js/content.json")
   .then(res => res.json())
   .then(data=>{
