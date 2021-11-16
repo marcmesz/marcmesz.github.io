@@ -10,7 +10,7 @@ $postUserName = $_POST['name'];
 $postUserEmail = $_POST['email'];
 $postUserText = $_POST['text'];
 $postHiddenValue = $_POST['hidden'];
-$postLang = $_POST['lang'];
+$postLang = $_POST['setLang'];
 $webjazz = "WebJazz.hu - ";
 
 if(!empty($postUserName) && !empty($postUserEmail) && !empty($postUserText)){	

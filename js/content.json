@@ -352,5 +352,13 @@
     "contactTextPlaceholder": {
         "hu": "Üzenet",
         "en": "Message"
+    },
+    "errorRequired": {
+        "hu": "Hiba! A mezők kitöltése kötelező!",
+        "en": "Error! Input fields are required!"
+    },
+    "sendingMessage": {
+        "hu": "Üzenet küldése...",
+        "en": "Sending message..."
     }
 }

@@ -118,13 +118,18 @@ function setLanguage(){
     document.getElementById("kapcsolat-usertext").setAttribute("placeholder",data.contactTextPlaceholder[setLang])
     if(document.querySelector(".valasztott-kategoria").classList[1] === "btn-bemutatkozo-erdekel"){
       document.querySelector(".valasztott-kategoria").textContent=data.chosenPlan[setLang]+data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang]
+      document.querySelector(".valasztott-hidden").value=data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang]
     }
     if(document.querySelector(".valasztott-kategoria").classList[1] === "btn-premium-erdekel"){
       document.querySelector(".valasztott-kategoria").textContent=data.chosenPlan[setLang]+data.priceCategoriesTitle[1][setLang]+" "+data.website[setLang]
+      document.querySelector(".valasztott-hidden").value=data.priceCategoriesTitle[1][setLang]+" "+data.website[setLang]
     }
     if(document.querySelector(".valasztott-kategoria").classList[1] === "btn-webaruhaz-erdekel"){
       document.querySelector(".valasztott-kategoria").textContent=data.chosenPlan[setLang]+data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang]
+      document.querySelector(".valasztott-hidden").value=data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang]
     }
+    document.querySelector(".error-input").textContent=data.errorRequired[setLang]
+    
   })
 }
 
@@ -273,31 +278,27 @@ document.querySelectorAll(".arlista-btn").forEach(btn=>btn.addEventListener("cli
 $(document).ready(function(){
   $('#kapcsolat-form').on('submit', function(e){
     e.preventDefault()
+    !setLang ? setLang="hu" : null
     var name = $('#kapcsolat-username').val()
     var email = $('#kapcsolat-useremail').val()
     var text = $('#kapcsolat-usertext').val()
     var hidden = $('#valasztott-hidden').val()
-
     if(!name || !email || !text){
-      if(!setLang || setLang==="hu")
-      {
-        $('.error-input').html('Hiba! A mezők kitöltése kötelező!')
-      }
-      else{
-        $('.error-input').html('Error! Input fields are required!')
-      }
-      
-      $('.error-input').show()
+      fetch('./js/content.json')
+      .then(res=>res.json())
+      .then(data=>{
+        $('.error-input').html(data.errorRequired[setLang])
+        $('.error-input').show()
+      })
     }
     else{
       $('.error-input').html('')
       $('.error-input').hide()
-      if(!setLang || setLang==="hu"){
-        $('.uzenet-kuldese').html('Üzenet küldése...')
-      }
-      else{
-        $('.uzenet-kuldese').html('Sending the message...')
-      }
+      fetch('./js/content.json')
+      .then(res=>res.json())
+      .then(data=>{
+        $('.uzenet-kuldese').html(data.sendingMessage[setLang])
+      })
       $('.kapcsolat-form-uzenet').attr("style","display:flex;")
       $.ajax({
           type: "POST",
@@ -307,7 +308,7 @@ $(document).ready(function(){
             email: email,
             text: text,
             hidden: hidden,
-            lang: setLang
+            setLang: setLang
           },
           success: function(data){
             $('.kapcsolat-form-uzenet').addClass("sikeres-uzenetkuldes box-style")
