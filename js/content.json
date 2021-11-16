@@ -205,6 +205,10 @@
             "en": "Business"
         }
     ],
+    "chosenPlan": {
+        "hu": "Kiválasztott: ",
+        "en": "Chosen plan: "
+    },
     "bestSeller": {
         "hu": "Népszerű",
         "en": "Bestseller"

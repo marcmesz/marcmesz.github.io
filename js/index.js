@@ -116,6 +116,15 @@ function setLanguage(){
     document.getElementById("kapcsolat-username").setAttribute("placeholder",data.contactUserPlaceholder[setLang])
     document.getElementById("kapcsolat-useremail").setAttribute("placeholder",data.contactEmailPlaceholder[setLang])
     document.getElementById("kapcsolat-usertext").setAttribute("placeholder",data.contactTextPlaceholder[setLang])
+    if(document.querySelector(".valasztott-kategoria").classList[1] === "btn-bemutatkozo-erdekel"){
+      document.querySelector(".valasztott-kategoria").textContent=data.chosenPlan[setLang]+data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang]
+    }
+    if(document.querySelector(".valasztott-kategoria").classList[1] === "btn-premium-erdekel"){
+      document.querySelector(".valasztott-kategoria").textContent=data.chosenPlan[setLang]+data.priceCategoriesTitle[1][setLang]+" "+data.website[setLang]
+    }
+    if(document.querySelector(".valasztott-kategoria").classList[1] === "btn-webaruhaz-erdekel"){
+      document.querySelector(".valasztott-kategoria").textContent=data.chosenPlan[setLang]+data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang]
+    }
   })
 }
 
@@ -241,15 +250,23 @@ links.forEach(link=>{
 
 document.querySelectorAll(".arlista-btn").forEach(btn=>btn.addEventListener("click",()=>{
   const valasztottKat = document.querySelector(".valasztott-kategoria")
-  let valasztottHidden = document.querySelector(".valasztott-hidden")
-  let displayMessage=""
-  btn.getAttribute("id")==="btn-bemutatkozo-erdekel" ? displayMessage="Bemutatkozó weboldal" : null
-  btn.getAttribute("id")==="btn-premium-erdekel" ? displayMessage="Prémium weboldal" : null
-  btn.getAttribute("id")==="btn-webaruhaz-erdekel" ? displayMessage="Üzleti webáruház" : null
-  valasztottKat.style.display="block"
-  valasztottKat.textContent="Kiválasztott: "+displayMessage
-  valasztottHidden.value=displayMessage
+  const valasztottHidden = document.querySelector(".valasztott-hidden")
+  valasztottKat.className="valasztott-kategoria"
+  valasztottKat.classList.add(btn.getAttribute("id"))
+  fetch("./js/content.json")
+  .then(res=>res.json())
+  .then(data=>{
+    lang ? setLang = "hu" : setLang = "en"
+    btn.getAttribute("id")==="btn-bemutatkozo-erdekel" ? displayMessage=data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang] : null
+    btn.getAttribute("id")==="btn-premium-erdekel" ? displayMessage=data.priceCategoriesTitle[1][setLang]+" "+data.website[setLang] : null
+    btn.getAttribute("id")==="btn-webaruhaz-erdekel" ? displayMessage=data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang] : null
+    
+    valasztottKat.style.display="block"
+    valasztottKat.textContent=data.chosenPlan[setLang]+displayMessage
+    valasztottHidden.value=displayMessage
+  })
 }))
+
 
 /* Kapcsolat */
 
