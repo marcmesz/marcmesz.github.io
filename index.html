@@ -309,12 +309,17 @@
     <section id="kapcsolat" class="container">
         <h2 class="section-title">Kapcsolat</h2>
         <h3 class="section-subtitle">Kérdése van? Árajánlatot kérne?</h3>
+        <p class="valasztott-kategoria">Kiválasztott: Prémium weboldal</p>
         <form id="kapcsolat-form" class="kapcsolat-form">
-            <input type="text" class="box-style username" name="username" placeholder="Név" /> <input type="email" class="box-style useremail" name="useremail" placeholder="E-mail" />
-            <textarea name="usertext" class="box-style usertext" rows="10"></textarea> <button id="btn-submit" type="submit" class="portfolio-btn btn box-style formsubmit">Küldés</button>
+            <input type="text" id="kapcsolat-username" class="box-style username" placeholder="Név" />
+            <input type="email" id="kapcsolat-useremail" class="box-style useremail" placeholder="E-mail" />
+            <textarea id="kapcsolat-usertext" class="box-style usertext" rows="9" placeholder="Üzenet"></textarea>
+            <input type="hidden" id="valasztott-hidden" class="valasztott-hidden" value="">
+            <button id="btn-submit" type="submit" class="portfolio-btn btn box-style formsubmit">Küldés</button>
         </form>
+        <div class="kapcsolat-form-uzenet"></div>
     </section>
-
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

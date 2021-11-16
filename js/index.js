@@ -43,21 +43,17 @@ function setLanguage(){
     document.getElementById("btn-submit").textContent=data.allButtonText[5][setLang]
     document.querySelectorAll(".arlista-btn").forEach(item=>item.textContent=data.allButtonText[4][setLang])
 
-        
     for(let i = 0; i<data.sectionTitle.hu.length; i++){
       document.querySelectorAll(".nav__link")[i].textContent=data.sectionTitle[setLang][i]
     }
-
     for(let i = 0; i<data.sectionTitle.hu.length-1; i++){
       document.querySelectorAll(".section-title")[i].textContent=data.sectionTitle[setLang][i+1]
       document.querySelectorAll(".section-subtitle")[i].textContent=data.sectionSubTitle[setLang][i]
     }
-
     for(let i = 0; i<data.servicesItems.length; i++){
       document.querySelectorAll(".szolgaltatasok-item-title")[i].textContent=data.servicesItems[i].title[setLang]
       document.querySelectorAll(".szolgaltatasok-item-content")[i].textContent=data.servicesItems[i].content[setLang]
     }
-
     for(let i = 0; i<data.portfolioItems.length; i++){
       if(portfolioItem[i].classList.contains("weboldal")){
         portfolioItemSpan[i].textContent=data.website[setLang]+" · "+data.portfolioItems[i][setLang]
@@ -66,11 +62,9 @@ function setLanguage(){
         portfolioItemSpan[i].textContent=data.webshop[setLang]+" · "+data.portfolioItems[i][setLang]
       }
     }
-
     for(let i = 0; i<data.priceCategoriesTitle.length; i++){
       document.querySelectorAll(".arlista-main-title")[i].textContent=data.priceCategoriesTitle[i][setLang]
     }
-
     document.querySelectorAll(".arlista-sub-title")[0].textContent=data.website[setLang]
     document.querySelectorAll(".arlista-sub-title")[1].textContent=data.website[setLang]
     document.querySelectorAll(".arlista-sub-title")[2].textContent=data.webshop[setLang]
@@ -85,7 +79,6 @@ function setLanguage(){
     for(let i = 0; i<data.businessWebshop.length; i++){
       document.querySelectorAll(".arlista-list-business")[i].textContent=data.businessWebshop[i][setLang]
     }
-
     document.querySelectorAll(".amount").forEach(item=>!lang ? item.style.order=2 : null)
     document.querySelectorAll(".tol").forEach(item=>{
       if(!lang){
@@ -119,8 +112,6 @@ function setLanguage(){
     for(let i = 0; i<data.whichOneDescription.length; i++){
       document.querySelectorAll(".arlista-info-pelda-szoveg")[i].textContent=data.whichOneDescription[i][setLang]
     }
-    
-
   })
 }
 
@@ -134,6 +125,8 @@ navLinks.forEach(item=>item.addEventListener("click",()=>{
   navLinks.forEach(link=>link.classList.remove("current-link"))
   item.classList.add("current-link")
 }))
+
+
 
 
 function displayCharacters(){
@@ -193,7 +186,13 @@ window.onscroll = () => {
 
   sections.forEach((section) => {
   const sectionTop = section.offsetTop
-  scrollY >= sectionTop - 500 ? currentSection=section.getAttribute("id") : null
+  if(scrollY >= sectionTop - 500){
+    currentSection=section.getAttribute("id")
+    navLinks.forEach(link=>{
+      link.classList.remove("current-link")
+      currentSection===link.getAttribute("href").substring(1) ? link.classList.add("current-link") : null
+    })
+  }
 
 })
   document.body.className=currentSection
@@ -233,12 +232,51 @@ links.forEach(link=>{
   })
 })
 
+
+/* Árlista */
+
+document.querySelectorAll(".arlista-btn").forEach(btn=>btn.addEventListener("click",()=>{
+  const valasztottKat = document.querySelector(".valasztott-kategoria")
+  let valasztottHidden = document.querySelector(".valasztott-hidden")
+  let displayMessage=""
+  btn.getAttribute("id")==="btn-bemutatkozo-erdekel" ? displayMessage="Bemutatkozó weboldal" : null
+  btn.getAttribute("id")==="btn-premium-erdekel" ? displayMessage="Prémium weboldal" : null
+  btn.getAttribute("id")==="btn-webaruhaz-erdekel" ? displayMessage="Üzleti webáruház" : null
+  valasztottKat.style.display="block"
+  valasztottKat.textContent="Kiválasztott: "+displayMessage
+  valasztottHidden.value=displayMessage
+}))
+
 /* Kapcsolat */
 
-document.getElementById("kapcsolat-form").addEventListener("submit",(e)=>{
-  e.preventDefault()
-  alert("Sikeres üzenetküldés!")
-})
+$(document).ready(function(){
+  $('#kapcsolat-form').on('submit', function(e){
+    e.preventDefault()
+    var name = $('#kapcsolat-username').val()
+    var email = $('#kapcsolat-useremail').val()
+    var text = $('#kapcsolat-usertext').val()
+    var hidden = $('#valasztott-hidden').val()
+    $.ajax({
+        type: "POST",
+        url: '../email/index.php',
+        data: {
+          name: name,
+          email: email,
+          text: text,
+          hidden: hidden
+        },
+        success: function(data){
+          $('.kapcsolat-form-uzenet').html(data)
+          $('.valasztott-kategoria').html('')
+          $('.valasztott-kategoria').hide()
+          $('#kapcsolat-username').val('')
+          $('#kapcsolat-useremail').val('')
+          $('#kapcsolat-usertext').val('')
+          $('#valasztott-hidden').val('')
+        }
+    });
+  });
+});
 
 
 

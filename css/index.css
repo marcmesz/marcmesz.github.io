@@ -167,7 +167,7 @@ h2{
 
 .section-title{
     font-size: 5.5em;
-    margin-top: .3em;
+    margin-top: .25em;
     margin-bottom: .15em;
     transition: all 500ms;
 }
@@ -608,12 +608,26 @@ section:nth-last-of-type(1){
 
 .kapcsolat-form{
     display: grid;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.kapcsolat-form input, .kapcsolat-form .usertext{
+    font-family: Primary, "Inter";
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.kapcsolat-form #btn-submit{
+    width: 200px;
+    max-width: 200px;
+    margin: 0 auto;
+    font-size: 1em;
 }
 
 .kapcsolat-form input, .kapcsolat-form textarea, .kapcsolat-form button{
-    font-family: Primary, "sans-serif";
-    font-size: 1em;
-    padding: 1em;
+    font-size: 1.4rem;
+    padding: 1.2rem;
     border-radius: 25px;
     border: none;
     outline: none;
@@ -621,6 +635,12 @@ section:nth-last-of-type(1){
     min-width: 10px;
 }
 
+.valasztott-kategoria{
+    display: none;
+    color: var(--clr-light);
+    font-weight: normal;
+    margin-bottom: 1.5em;
+}
 
 @media (min-width: 1450px){
     .arlista-wrap{
@@ -642,6 +662,9 @@ section:nth-last-of-type(1){
             "textarea textarea"
             "button button";
         gap: .5em;
+    }
+    .checkbox{
+        grid-area: checkbox;
     }
     .username{
         grid-area: input1;
