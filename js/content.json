@@ -336,5 +336,17 @@
             "hu": "Az alapvető funkciók mellett számos kiegészítővel rendelkezik, melyek leegyszerűsítik a webáruház üzemeltetését. A termékek, a fizetési- és szállítási opciók kezelése egyszerű. Teljes mértékben testreszabható az egyedi igények alapján.",
             "en": "In addition to the basic features, it has a number of add-ons that simplify the operation of the web store. Products, payment and shipping options are easy to manage. Fully customizable to your individual needs."
         }
-        ]
+        ],
+    "contactUserPlaceholder": {
+        "hu": "Név",
+        "en": "Name"
+    },
+    "contactEmailPlaceholder": {
+        "hu": "E-mail cím",
+        "en": "E-mail address"
+    },
+    "contactTextPlaceholder": {
+        "hu": "Üzenet",
+        "en": "Message"
+    }
 }

@@ -10,10 +10,12 @@ $postUserName = $_POST['name'];
 $postUserEmail = $_POST['email'];
 $postUserText = $_POST['text'];
 $postHiddenValue = $_POST['hidden'];
+$postLang = $_POST['lang'];
+$webjazz = "WebJazz.hu - ";
 
-if(isset($postUserName) && !empty($postUserName) && isset($postUserEmail) && !empty($postUserEmail) && isset($postUserText) && !empty($postUserText)){	
+if(!empty($postUserName) && !empty($postUserEmail) && !empty($postUserText)){	
 	
-	if(isset($postHiddenValue) && !empty($postHiddenValue)){
+	if(!empty($postHiddenValue)){
 		$subject = $postHiddenValue;
 	}
 	else{
@@ -37,21 +39,35 @@ if(isset($postUserName) && !empty($postUserName) && isset($postUserEmail) && !em
 	$mail->WordWrap = 80; // Sortores allitasa
 	$mail->IsHTML(true); // Kuldes HTML-kent
 
-	$mail->Subject = $subject; // A level targya
+	$mail->Subject = $webjazz.$subject; // A level targya
 	$mail->Body = $postUserText; // A level tartalma
 	$mail->AltBody = strip_tags($postUserText); // A level szoveges tartalma
 
 	if (!$mail->Send()) {
-	$msg = 'Sikertelen üzenetküldés! A hiba oka: ' . $mail->ErrorInfo;
-	exit;
+		if(empty($postLang) || $postLang==="hu"){
+			$msg = 'Sikertelen üzenetküldés! A hiba oka: ' . $mail->ErrorInfo;
+		}
+		else{
+			$msg = 'Error while sending! ' . $mail->ErrorInfo;
+		}
+		
+		exit;
 	}
-
-	$msg = '<p>Sikeres üzenetküldés!</p><p>Hamarosan válaszolunk a megadott címre: ' . $postUserEmail . '</p>';
-	
+	if(empty($postLang) || $postLang==="hu"){
+		$msg = '<p class="sikeres-uzenet-p">Sikeres üzenetküldés!</p><p class="megadott-cimre">Hamarosan válaszolunk a megadott címre:</p><p class="e-mail-cim">' . $postUserEmail . '</p>';
+	}
+	else{
+		$msg = '<p class="sikeres-uzenet-p">Message sent successfully!</p><p class="megadott-cimre">We will respond to the email you provided shortly:</p><p class="e-mail-cim">' . $postUserEmail . '</p>';
+	}
 	
 }
 else{
-	$msg = '<p>Hiba! A mezők kitöltése kötelező!</p>';
+	if(empty($postLang) || $postLang==="hu"){
+		$msg = '<p class="hiba-kitoltes-kotelezo">Hiba! A mezők kitöltése kötelező!</p>';
+	}
+	else{
+		$msg = '<p class="hiba-kitoltes-kotelezo">Error! Input fields are required!</p>';
+	}
 }
 
 echo $msg;

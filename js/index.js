@@ -112,6 +112,10 @@ function setLanguage(){
     for(let i = 0; i<data.whichOneDescription.length; i++){
       document.querySelectorAll(".arlista-info-pelda-szoveg")[i].textContent=data.whichOneDescription[i][setLang]
     }
+    
+    document.getElementById("kapcsolat-username").setAttribute("placeholder",data.contactUserPlaceholder[setLang])
+    document.getElementById("kapcsolat-useremail").setAttribute("placeholder",data.contactEmailPlaceholder[setLang])
+    document.getElementById("kapcsolat-usertext").setAttribute("placeholder",data.contactTextPlaceholder[setLang])
   })
 }
 
@@ -256,25 +260,52 @@ $(document).ready(function(){
     var email = $('#kapcsolat-useremail').val()
     var text = $('#kapcsolat-usertext').val()
     var hidden = $('#valasztott-hidden').val()
-    $.ajax({
-        type: "POST",
-        url: '../email/index.php',
-        data: {
-          name: name,
-          email: email,
-          text: text,
-          hidden: hidden
-        },
-        success: function(data){
-          $('.kapcsolat-form-uzenet').html(data)
-          $('.valasztott-kategoria').html('')
-          $('.valasztott-kategoria').hide()
-          $('#kapcsolat-username').val('')
-          $('#kapcsolat-useremail').val('')
-          $('#kapcsolat-usertext').val('')
-          $('#valasztott-hidden').val('')
-        }
-    });
+
+    if(!name || !email || !text){
+      if(!setLang || setLang==="hu")
+      {
+        $('.error-input').html('Hiba! A mezők kitöltése kötelező!')
+      }
+      else{
+        $('.error-input').html('Error! Input fields are required!')
+      }
+      
+      $('.error-input').show()
+    }
+    else{
+      $('.error-input').html('')
+      $('.error-input').hide()
+      if(!setLang || setLang==="hu"){
+        $('.uzenet-kuldese').html('Üzenet küldése...')
+      }
+      else{
+        $('.uzenet-kuldese').html('Sending the message...')
+      }
+      $('.kapcsolat-form-uzenet').attr("style","display:flex;")
+      $.ajax({
+          type: "POST",
+          url: '../email/index.php',
+          data: {
+            name: name,
+            email: email,
+            text: text,
+            hidden: hidden,
+            lang: setLang
+          },
+          success: function(data){
+            $('.kapcsolat-form-uzenet').addClass("sikeres-uzenetkuldes box-style")
+            $('.kapcsolat-form-uzenet').html(data)
+            $('.valasztott-kategoria').html('')
+            $('.valasztott-kategoria').hide()
+            $('#kapcsolat-username').val('')
+            $('#kapcsolat-useremail').val('')
+            $('#kapcsolat-usertext').val('')
+            $('#valasztott-hidden').val('')
+            $('#kapcsolat-form').hide()
+          }
+      });
+    }
+
   });
 });
 
