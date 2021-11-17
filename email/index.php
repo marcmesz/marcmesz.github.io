@@ -1,6 +1,7 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 require './PHPMailer.php';
 require './Exception.php';
@@ -21,23 +22,27 @@ if(!empty($postUserName) && !empty($postUserEmail) && !empty($postUserText)){
 	else{
 		$subject = "Üzenet a honlapról";
 	}
-
+	
 	$mail = new PHPMailer();
+	$mail->isSMTP();
 	$mail->CharSet = 'UTF-8';
-	$mail->IsSMTP();
-	$mail->Host = gethostname(); // SMTP szerverek
 	$mail->SMTPAuth = true;
-	$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+	$mail->SMTPSecure = 'ssl';
+	$mail->Host = 'smtp.gmail.com';
 	$mail->Port = 465;
-	$mail->Username = 'info@webjazz.hu';
-	$mail->Password = 'v4*rQq%3nEFr';
+	$mail->IsHTML(true);
+	
+	$mail->Username = 'webjazz.hu@gmail.com';
+	$mail->Password = '@w#Hja89W0321bR';
+
+
 	$mail->From = $postUserEmail; // Felado e-mail cime
 	$mail->FromName = strip_tags($postUserName); // Felado neve
 	$mail->AddAddress('meszoly.marton@gmail.com', 'Mészöly Márton'); // Cimzett es neve
 	$mail->AddReplyTo($postUserEmail, $postUserName); // Valaszlevel ide
 
 	$mail->WordWrap = 80; // Sortores allitasa
-	$mail->IsHTML(true); // Kuldes HTML-kent
+	
 
 	$mail->Subject = $webjazz.$subject; // A level targya
 	$mail->Body = $postUserText; // A level tartalma

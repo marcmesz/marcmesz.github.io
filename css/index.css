@@ -688,7 +688,8 @@ section:nth-last-of-type(1){
     display: none;
     background-color: rgb(255, 204, 204);
     color: red;
-    font-family: Primary, "Rubik";
+    font-family: Primary, "Inter";
+    font-weight: bold;
     letter-spacing: 2px;
     padding: 0.6em;
     max-width: 1000px;
