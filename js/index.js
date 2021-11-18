@@ -144,6 +144,16 @@ navLinks.forEach(item=>item.addEventListener("click",()=>{
   item.classList.add("current-link")
 }))
 
+document.getElementById("adatvedelem-btn").addEventListener("click",(e)=>{
+  e.preventDefault()
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.toggle("adatvedelem-open")
+})
+document.getElementById("impresszum-btn").addEventListener("click",(e)=>{
+  e.preventDefault()
+  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.toggle("impresszum-open")
+})
 
 
 

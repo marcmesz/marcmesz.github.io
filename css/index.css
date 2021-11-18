@@ -55,7 +55,7 @@ h3,
     color: var(--clr-dark);
 }
 
-.szolgaltatasok, .arlista{
+.szolgaltatasok, .arlista, #adatvedelmi-iranyelvek, #impresszum{
     background-color: #C8E3D4;
     background-image: url(../img/bg-pattern.png);
 }
@@ -316,8 +316,8 @@ section:nth-last-of-type(1){
     transition: 350ms transform ease-in-out;
 }
 
-.szolgaltatasok-item p{
-    font-size: 1.3rem;
+.szolgaltatasok-item-content{
+    font-size: 1.12rem;
 }
 
 .szolgaltatasok-item i{
@@ -545,6 +545,7 @@ section:nth-last-of-type(1){
 
 .arlista-infobox{
     display: flex;
+    justify-content: center;
     align-items: flex-start;    
 }
 
@@ -619,10 +620,9 @@ section:nth-last-of-type(1){
 }
 
 .kapcsolat-form #btn-submit{
-    width: 200px;
-    max-width: 200px;
-    margin: 0 auto;
-    font-size: 1em;
+    padding: .8em 1.8em;
+    margin: 1rem auto;
+    font-size: 1.7rem;
 }
 
 .kapcsolat-form input, .kapcsolat-form textarea, .kapcsolat-form button{
@@ -698,36 +698,75 @@ section:nth-last-of-type(1){
     border-radius: 25px;
 }
 
-footer{
+#footer{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    padding-top: .6em !important;
+    padding-bottom: .6em !important;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+.footer-copy{
+    font-size: .9rem !important;
+    color: var(--clr-light);
+    margin: 0;
     padding: 0;
-    background-color: #333;
 }
-
-.footer-links{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1em;
+.footer-up{
+    margin: 0;
 }
-
-
 .footer-up i{
     margin: 0;
-    font-size: 1.5rem;
-    padding: .4rem .4rem;
+    font-size: 1.6rem;
+    padding: .4rem .6rem;
     border-radius: 6px;
+    color: var(--clr-accent);
+}
+.footer-up i:hover{
     background-color: rgba(255,255,255,0.05);
 }
-
-footer p{
+.footer-copy-text{
+    display: block;
+}
+.footer-links{
+    color: var(--clr-accent);
+}
+.footer-links:hover{
     color: var(--clr-light);
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
+}
+
+#adatvedelmi-iranyelvek, #impresszum{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    transform: translateY(100%);
+    transition: all 500ms;
+}
+
+.adatvedelem-open #adatvedelmi-iranyelvek,
+.impresszum-open #impresszum{
+    transform: translateY(0);
+}
+
+#adatvedelmi-iranyelvek .section-subtitle,
+#impresszum .section-subtitle{
+    text-align: center;
+}
+
+#adatvedelmi-iranyelvek .content, #impresszum .content{
+    max-height: 100%;
+    overflow-y:scroll;
 }
 
 @keyframes spin {
@@ -836,9 +875,6 @@ footer p{
         font-size: 1.5em;
     }
 
-    .szolgaltatasok-item p{
-        font-size: 1.5em;
-    }
     .szolgaltatasok-item i{
         font-size: 4em;
     }
@@ -857,7 +893,7 @@ footer p{
         right: -40px;
     }
     .arlista-btn{
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 }
 
@@ -915,7 +951,7 @@ footer p{
     }
 
     .section-title{
-        font-size: 2.5em !important;
+        font-size: 3em !important;
     }
 
     .portfolio-wrap{
@@ -953,6 +989,37 @@ footer p{
     .nav-open .space, .nav-open #logo{
         display: none !important;
     }
+    footer{
+        flex-direction: column;
+    }
+    .footer-copy{
+        text-align: center;
+    }
+    .footer-copy-text{
+        margin-bottom: .5em !important;
+    }
+    .footer-kotojel{
+        display: none;
+    }
+    .footer-links{
+        display: block;
+    }
+
+    .kapcsolat-form #btn-submit{
+        padding: .5em 1.2em;
+        font-size: 1.8em;
+    }
+    .kapcsolat-form input, .kapcsolat-form textarea{
+        font-size: 1.4em;
+    }
+    .szolgaltatasok-item-content{
+        font-size: 1.3em;
+    }
+
+    #adatvedelmi-iranyelvek, #impresszum{
+        padding-top: 60px;
+        padding-bottom: 120px;
+    }
 }
 
 @media (max-width: 275px){
@@ -982,12 +1049,12 @@ footer p{
         font-size: 2.5em;
     }
     .section-title{
-        font-size: 1.5em !important;
+        font-size: 2.2em !important;
     }
     .szolgaltatasok-box{
         grid-template-columns: repeat(auto-fit,minmax(10em,1fr));
     }
-    .szolgaltatasok-item p, .szolgaltatasok-item h3, #dynamic-text{
+    .szolgaltatasok-item h3, #dynamic-text{
         word-break: break-all;
     }
     .portfolio-wrap, .arlista-wrap{
@@ -1003,7 +1070,7 @@ footer p{
         font-size: 1.2em;
     }
     .arlista-title, .arlista-price{
-        font-size: 2em;
+        font-size: 2.5em;
     }
     .arlista-sub-title{
         line-height: 1.2em;
@@ -1027,6 +1094,13 @@ footer p{
     #language-selector img{
         width: 20px;
     }
+    #adatvedelmi-iranyelvek .section-subtitle,
+    #impresszum .section-subtitle{
+        font-size: 1rem;
+    }
+    #adatvedelmi-iranyelvek, #impresszum{
+        padding-right: 0;
+    }
 }
 
 @media (max-width: 200px){
@@ -1041,5 +1115,11 @@ footer p{
     }
     .arlista-info-maintitle, .arlista-info-subtitle, .section-subtitle, .szolgaltatasok-item{
         font-size: .8em;
+    }
+    .section-title{
+        font-size: 1.6em !important;
+    }
+    .arlista-price{
+        font-size: 2em;
     }
 }
