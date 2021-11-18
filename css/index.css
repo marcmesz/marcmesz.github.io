@@ -704,8 +704,8 @@ section:nth-last-of-type(1){
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding-top: .6em !important;
-    padding-bottom: .6em !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
     background-color: rgba(0,0,0,0.5);
     z-index: 1000;
 }
@@ -741,7 +741,10 @@ section:nth-last-of-type(1){
 #adatvedelmi-iranyelvek, #impresszum{
     position: fixed;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    place-items: center;
+    justify-content: space-between;
     left: 0;
     right: 0;
     top: 0;
@@ -766,7 +769,16 @@ section:nth-last-of-type(1){
 
 #adatvedelmi-iranyelvek .content, #impresszum .content{
     max-height: 100%;
-    overflow-y:scroll;
+    overflow-y:auto;
+}
+
+.btn-close{
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--clr-light);
+    margin-top: .8em;
+    margin-bottom: .5em;
 }
 
 @keyframes spin {
@@ -989,8 +1001,9 @@ section:nth-last-of-type(1){
     .nav-open .space, .nav-open #logo{
         display: none !important;
     }
-    footer{
+    #footer{
         flex-direction: column;
+        padding-bottom: 0 !important;
     }
     .footer-copy{
         text-align: center;
@@ -1101,6 +1114,12 @@ section:nth-last-of-type(1){
     #adatvedelmi-iranyelvek, #impresszum{
         padding-right: 0;
     }
+    .btn-close{
+        font-size: 1rem;
+    }
+    .footer-copy-text{
+        font-size: .8em;
+    }
 }
 
 @media (max-width: 200px){
@@ -1121,5 +1140,8 @@ section:nth-last-of-type(1){
     }
     .arlista-price{
         font-size: 2em;
+    }
+    #adatvedelem-btn, #impresszum-btn{
+        font-size: .75em;
     }
 }

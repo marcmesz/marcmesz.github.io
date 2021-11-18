@@ -154,6 +154,14 @@ document.getElementById("impresszum-btn").addEventListener("click",(e)=>{
   document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
   document.body.classList.toggle("impresszum-open")
 })
+document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click",()=>{
+  if(document.body.classList.contains("adatvedelem-open")){
+    document.body.classList.remove("adatvedelem-open")
+  }
+  else if(document.body.classList.contains("impresszum-open")){
+    document.body.classList.remove("impresszum-open")
+  }
+}))
 
 
 
