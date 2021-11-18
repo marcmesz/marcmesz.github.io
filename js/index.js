@@ -144,22 +144,34 @@ navLinks.forEach(item=>item.addEventListener("click",()=>{
   item.classList.add("current-link")
 }))
 
-document.getElementById("adatvedelem-btn").addEventListener("click",(e)=>{
+document.querySelector(".adatvedelem-btn").addEventListener("click",(e)=>{
   e.preventDefault()
   document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
   document.body.classList.toggle("adatvedelem-open")
 })
-document.getElementById("impresszum-btn").addEventListener("click",(e)=>{
+document.querySelector(".impresszum-btn").addEventListener("click",(e)=>{
   e.preventDefault()
   document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
   document.body.classList.toggle("impresszum-open")
 })
+document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
+  e.preventDefault()
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.toggle("cookie-kezeles-open")
+}))
+
 document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click",()=>{
   if(document.body.classList.contains("adatvedelem-open")){
     document.body.classList.remove("adatvedelem-open")
   }
   else if(document.body.classList.contains("impresszum-open")){
     document.body.classList.remove("impresszum-open")
+  }
+  else{
+    document.body.classList.remove("cookie-kezeles-open")
   }
 }))
 

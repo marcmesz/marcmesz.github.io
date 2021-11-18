@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 @font-face {
     font-family: Primary;
@@ -31,7 +31,7 @@ body{
     transition: background-color 500ms;
 }
 
-h1,h2,h3,h4,.nav,.btn,#screen-text{
+h1,h2,h3,h4,h5,.nav,.btn,#screen-text{
     font-family: Primary, "Inter";
     font-weight: normal;
 }
@@ -55,7 +55,7 @@ h3,
     color: var(--clr-dark);
 }
 
-.szolgaltatasok, .arlista, #adatvedelmi-iranyelvek, #impresszum{
+.szolgaltatasok, .arlista, #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles{
     background-color: #C8E3D4;
     background-image: url(../img/bg-pattern.png);
 }
@@ -738,7 +738,7 @@ section:nth-last-of-type(1){
     color: var(--clr-light);
 }
 
-#adatvedelmi-iranyelvek, #impresszum{
+#adatvedelmi-iranyelvek, #cookie-kezeles, #impresszum{
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -758,18 +758,76 @@ section:nth-last-of-type(1){
 }
 
 .adatvedelem-open #adatvedelmi-iranyelvek,
+.cookie-kezeles-open #cookie-kezeles,
 .impresszum-open #impresszum{
     transform: translateY(0);
 }
 
 #adatvedelmi-iranyelvek .section-subtitle,
-#impresszum .section-subtitle{
+#impresszum .section-subtitle,
+#cookie-kezeles .section-subtitle{
     text-align: center;
+    margin-bottom: 1rem;
 }
 
-#adatvedelmi-iranyelvek .content, #impresszum .content{
+#adatvedelmi-iranyelvek .content,
+#impresszum .content,
+#cookie-kezeles .content{
     max-height: 100%;
-    overflow-y:auto;
+    overflow-y: auto;
+    padding-right: .5em;
+}
+
+#adatvedelmi-iranyelvek .content h4,
+#adatvedelmi-iranyelvek .content h5,
+#cookie-kezeles .content h4,
+#cookie-kezeles .content h5,
+#impresszum .content h4,
+#impresszum .content h5{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+#adatvedelmi-iranyelvek .content h5,
+#impresszum .content h5,
+#cookie-kezeles .content h5{
+    color: var(--clr-accent);
+    margin: .5rem 0;
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+}
+
+#adatvedelmi-iranyelvek .content a,
+#impresszum .content a{
+    color: var(--clr-accent);
+    font-weight: bold;
+}
+
+#cookie-kezeles .content a{
+    color: #000;
+    text-decoration: underline;
+}
+
+#adatvedelmi-iranyelvek .content a:hover,
+#impresszum .content a:hover,
+#cookie-kezeles .content a:hover{
+    color: var(--clr-dark);
+}
+
+#adatvedelmi-iranyelvek .leiras,
+#adatvedelmi-iranyelvek .leiras p,
+#impresszum .leiras,
+#impresszum .leiras p,
+#cookie-kezeles .leiras,
+#cookie-kezeles .leiras p{
+    font-size: 1.1rem;
+}
+
+#adatvedelmi-iranyelvek .leiras p,
+#impresszum .leiras p,
+#cookie-kezeles .leiras p{
+    margin: 1em 0;
+    text-align: justify;
 }
 
 .btn-close{
