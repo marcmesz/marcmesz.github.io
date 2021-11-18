@@ -1059,21 +1059,21 @@ section:nth-last-of-type(1){
     .nav-open .space, .nav-open #logo{
         display: none !important;
     }
+
     #footer{
-        flex-direction: column;
-        padding-bottom: 0 !important;
+        padding: 1em !important;
     }
-    .footer-copy{
-        text-align: center;
-    }
+
     .footer-copy-text{
         margin-bottom: .5em !important;
+        font-size: .85em !important;
     }
     .footer-kotojel{
         display: none;
     }
     .footer-links{
         display: block;
+        font-size: .85em !important;
     }
 
     .kapcsolat-form #btn-submit{
@@ -1087,7 +1087,7 @@ section:nth-last-of-type(1){
         font-size: 1.3em;
     }
 
-    #adatvedelmi-iranyelvek, #impresszum{
+    #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles{
         padding-top: 60px;
         padding-bottom: 120px;
     }
@@ -1166,10 +1166,11 @@ section:nth-last-of-type(1){
         width: 20px;
     }
     #adatvedelmi-iranyelvek .section-subtitle,
-    #impresszum .section-subtitle{
+    #impresszum .section-subtitle,
+    #cookie-kezeles .section-subtitle{
         font-size: 1rem;
     }
-    #adatvedelmi-iranyelvek, #impresszum{
+    #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles{
         padding-right: 0;
     }
     .btn-close{
@@ -1199,7 +1200,7 @@ section:nth-last-of-type(1){
     .arlista-price{
         font-size: 2em;
     }
-    #adatvedelem-btn, #impresszum-btn{
+    .adatvedelem-btn, .impresszum-btn, .cookie-kezeles-btn{
         font-size: .75em;
     }
 }

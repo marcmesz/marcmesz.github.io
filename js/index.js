@@ -363,11 +363,9 @@ $(document).ready(function(){
 });
 
 
-setTimeout(()=>{document.querySelector(".CybotCookiebotDialogBodyBottomWrapper").innerHTML+=`
-  <div id="CybotCookiebotDialogBodyEdgeMoreDetails2">
-    <a id="CybotCookiebotDialogBodyEdgeMoreDetailsLink2" class="cookie-kezeles-btn" href="#" onClick="cookieButtons()">
-      Cookie Kezelési Tájékoztató
+setTimeout(()=>{document.querySelector("#CybotCookiebotDialogBodyEdgeMoreDetails").innerHTML=`
+    <a id="CybotCookiebotDialogBodyEdgeMoreDetailsLink" class="cookie-kezeles-btn" href="#CookieKezeles" onClick="cookieButtons()">
+      Sütikezelési Tájékoztató
     </a>
-  </div>
 `},500)
 
