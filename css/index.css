@@ -1254,3 +1254,6 @@ section:nth-last-of-type(1){
 .cookie-kezeles-open #CybotCookiebotDialog{
     z-index: 0 !important;
 }
+.cookie-kezeles-open .navbar{
+    z-index: 0 !important;
+}
