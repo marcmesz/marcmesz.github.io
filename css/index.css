@@ -1203,3 +1203,53 @@ section:nth-last-of-type(1){
         font-size: .75em;
     }
 }
+
+
+#CybotCookiebotDialog a,
+#CybotCookiebotDialogNav .CybotCookiebotDialogNavItemLink.active{
+    color: var(--clr-accent) !important;
+}
+#CybotCookiebotDialogFooter .CybotCookiebotDialogBodyButton,
+#CybotCookiebotDialogNav .CybotCookiebotDialogNavItemLink.active{
+    border-color: var(--clr-accent) !important;
+}
+#CybotCookiebotDialogFooter #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+#CybotCookiebotDialogTabContent input:checked+.CybotCookiebotDialogBodyLevelButtonSlider{
+    background-color: var(--clr-accent) !important;
+}
+
+#CybotCookiebotDialogBodyEdgeMoreDetails2{
+    display: inline-flex;
+    height: 2em;
+    margin: 0;
+}
+
+#CybotCookiebotDialogBodyEdgeMoreDetailsLink2{
+    display: flex;
+}
+
+#CybotCookiebotDialogBodyEdgeMoreDetails + #CybotCookiebotDialogBodyEdgeMoreDetails2{
+    margin-left: 20px;
+}
+
+#CybotCookiebotDialog.CybotEdge #CybotCookiebotDialogBodyEdgeMoreDetails2 a{
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+}
+
+#CybotCookiebotDialog.CybotEdge #CybotCookiebotDialogBodyEdgeMoreDetails2 a:after {
+    border-style: solid;
+    border-width: 0.15em 0.15em 0 0;
+    color: #141414;
+    content: "";
+    display: block;
+    height: 0.563em;
+    margin-left: 1em;
+    transform: rotate(45deg);
+    width: 0.563em;
+}
+
+.cookie-kezeles-open #CybotCookiebotDialog{
+    z-index: 0 !important;
+}

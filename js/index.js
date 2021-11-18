@@ -158,10 +158,15 @@ document.querySelector(".impresszum-btn").addEventListener("click",(e)=>{
 })
 document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
   e.preventDefault()
+  cookieButtons()
+}))
+
+function cookieButtons(){
   document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
   document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
   document.body.classList.toggle("cookie-kezeles-open")
-}))
+}
+
 
 document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click",()=>{
   if(document.body.classList.contains("adatvedelem-open")){
@@ -358,6 +363,11 @@ $(document).ready(function(){
 });
 
 
-
-
+setTimeout(()=>{document.querySelector(".CybotCookiebotDialogBodyBottomWrapper").innerHTML+=`
+  <div id="CybotCookiebotDialogBodyEdgeMoreDetails2">
+    <a id="CybotCookiebotDialogBodyEdgeMoreDetailsLink2" class="cookie-kezeles-btn" href="#" onClick="cookieButtons()">
+      Cookie Kezelési Tájékoztató
+    </a>
+  </div>
+`},500)
 
