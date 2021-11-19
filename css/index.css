@@ -841,6 +841,19 @@ section:nth-last-of-type(1){
     text-align: justify;
 }
 
+#impresszum .leiras{
+    display: flex;
+    gap: 2em;
+    width: 100%;
+}
+
+#aszf p{
+    padding-left: 1.5em;
+}
+#aszf .padding-left{
+    padding-left: 4em;
+}
+
 .btn-close{
     border: none;
     cursor: pointer;
@@ -1073,18 +1086,22 @@ section:nth-last-of-type(1){
 
     #footer{
         padding: 1em !important;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
     }
 
     .footer-copy-text{
         margin-bottom: .5em !important;
-        font-size: .85em !important;
     }
     .footer-kotojel{
         display: none;
     }
     .footer-links{
         display: block;
-        font-size: .85em !important;
+    }
+    .footer-links{
+        margin-bottom: .3rem;
     }
 
     .kapcsolat-form #btn-submit{
@@ -1128,6 +1145,19 @@ section:nth-last-of-type(1){
     #cookie-kezeles .leiras ul,
     #aszf .leiras ul{
         padding-left: 15px;
+    }
+    .cookie-kezeles-open .navbar,
+    .aszf-open .navbar,
+    .impresszum-open .navbar,
+    .adatvedelem-open .navbar,
+    .cookie-kezeles-open #footer,
+    .aszf-open #footer,
+    .impresszum-open #footer,
+    .adatvedelem-open #footer{
+        z-index: -1;
+    }
+    #cookie-kezeles, #aszf, #impresszum, #adatvedelmi-iranyelvek{
+        padding: 1.5em;
     }
 }
 
@@ -1215,29 +1245,6 @@ section:nth-last-of-type(1){
     .btn-close{
         font-size: 1rem;
     }
-    .footer-copy-text{
-        font-size: .8em;
-    }
-    .footer-up{
-        display: none;
-    }
-    #footer{
-        justify-content: center;
-        text-align: center;
-    }
-    .cookie-kezeles-open .navbar,
-    .aszf-open .navbar,
-    .impresszum-open .navbar,
-    .adatvedelem-open .navbar,
-    .cookie-kezeles-open #footer,
-    .aszf-open #footer,
-    .impresszum-open #footer,
-    .adatvedelem-open #footer{
-        z-index: -1;
-    }
-    #cookie-kezeles, #aszf, #impresszum, #adatvedelmi-iranyelvek{
-        padding: 1.5em;
-    }
 }
 
 @media (max-width: 200px){
@@ -1259,9 +1266,7 @@ section:nth-last-of-type(1){
     .arlista-price{
         font-size: 2em;
     }
-    .adatvedelem-btn, .impresszum-btn, .cookie-kezeles-btn, .aszf-btn{
-        font-size: .75em;
-    }
+
 }
 
 
