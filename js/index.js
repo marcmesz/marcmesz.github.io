@@ -148,13 +148,22 @@ document.querySelector(".adatvedelem-btn").addEventListener("click",(e)=>{
   e.preventDefault()
   document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
   document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
+  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
   document.body.classList.toggle("adatvedelem-open")
 })
 document.querySelector(".impresszum-btn").addEventListener("click",(e)=>{
   e.preventDefault()
   document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
   document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
+  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
   document.body.classList.toggle("impresszum-open")
+})
+document.querySelector(".aszf-btn").addEventListener("click",(e)=>{
+  e.preventDefault()
+  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.toggle("aszf-open")
 })
 document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
   e.preventDefault()
@@ -164,6 +173,8 @@ document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListen
 function cookieButtons(){
   document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
   document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
   document.body.classList.toggle("cookie-kezeles-open")
 }
 
@@ -174,6 +185,9 @@ document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click
   }
   else if(document.body.classList.contains("impresszum-open")){
     document.body.classList.remove("impresszum-open")
+  }
+  else if(document.body.classList.contains("aszf-open")){
+    document.body.classList.remove("aszf-open")
   }
   else{
     document.body.classList.remove("cookie-kezeles-open")
@@ -363,9 +377,17 @@ $(document).ready(function(){
 });
 
 
+setTimeout(()=>{
+  document.querySelector(".nav").style.display="block"
+  document.querySelector("#adatvedelmi-iranyelvek").style.display="flex"
+  document.querySelector("#cookie-kezeles").style.display="flex"
+  document.querySelector("#aszf").style.display="flex"
+  document.querySelector("#impresszum").style.display="flex"
+},200)
 setTimeout(()=>{document.querySelector("#CybotCookiebotDialogBodyEdgeMoreDetails").innerHTML=`
     <a id="CybotCookiebotDialogBodyEdgeMoreDetailsLink" class="cookie-kezeles-btn" href="#CookieKezeles" onClick="cookieButtons()">
       Sütikezelési Tájékoztató
     </a>
 `},500)
+
 

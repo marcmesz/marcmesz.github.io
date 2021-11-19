@@ -55,7 +55,7 @@ h3,
     color: var(--clr-dark);
 }
 
-.szolgaltatasok, .arlista, #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles{
+.szolgaltatasok, .arlista, #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles, #aszf{
     background-color: #C8E3D4;
     background-image: url(../img/bg-pattern.png);
 }
@@ -738,7 +738,7 @@ section:nth-last-of-type(1){
     color: var(--clr-light);
 }
 
-#adatvedelmi-iranyelvek, #cookie-kezeles, #impresszum{
+#adatvedelmi-iranyelvek, #cookie-kezeles, #impresszum, #aszf{
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -759,20 +759,23 @@ section:nth-last-of-type(1){
 
 .adatvedelem-open #adatvedelmi-iranyelvek,
 .cookie-kezeles-open #cookie-kezeles,
-.impresszum-open #impresszum{
+.impresszum-open #impresszum,
+.aszf-open #aszf{
     transform: translateY(0);
 }
 
 #adatvedelmi-iranyelvek .section-subtitle,
 #impresszum .section-subtitle,
-#cookie-kezeles .section-subtitle{
+#cookie-kezeles .section-subtitle,
+#aszf .section-subtitle{
     text-align: center;
     margin-bottom: 1rem;
 }
 
 #adatvedelmi-iranyelvek .content,
 #impresszum .content,
-#cookie-kezeles .content{
+#cookie-kezeles .content,
+#aszf .content{
     max-height: 100%;
     overflow-y: auto;
     padding-right: .5em;
@@ -783,14 +786,17 @@ section:nth-last-of-type(1){
 #cookie-kezeles .content h4,
 #cookie-kezeles .content h5,
 #impresszum .content h4,
-#impresszum .content h5{
+#impresszum .content h5,
+#aszf .content h4,
+#aszf .content h5{
     font-size: 1.5rem;
     letter-spacing: 1px;
 }
 
 #adatvedelmi-iranyelvek .content h5,
 #impresszum .content h5,
-#cookie-kezeles .content h5{
+#cookie-kezeles .content h5
+#aszf .content h5{
     color: var(--clr-accent);
     margin: .5rem 0;
     margin-top: 1.5rem;
@@ -798,7 +804,8 @@ section:nth-last-of-type(1){
 }
 
 #adatvedelmi-iranyelvek .content a,
-#impresszum .content a{
+#impresszum .content a,
+#aszf .content a{
     color: var(--clr-accent);
     font-weight: bold;
 }
@@ -810,7 +817,8 @@ section:nth-last-of-type(1){
 
 #adatvedelmi-iranyelvek .content a:hover,
 #impresszum .content a:hover,
-#cookie-kezeles .content a:hover{
+#cookie-kezeles .content a:hover,
+#aszf .content a:hover{
     color: var(--clr-dark);
 }
 
@@ -819,13 +827,16 @@ section:nth-last-of-type(1){
 #impresszum .leiras,
 #impresszum .leiras p,
 #cookie-kezeles .leiras,
-#cookie-kezeles .leiras p{
+#cookie-kezeles .leiras p,
+#aszf .leiras,
+#aszf .leiras p{
     font-size: 1.1rem;
 }
 
 #adatvedelmi-iranyelvek .leiras p,
 #impresszum .leiras p,
-#cookie-kezeles .leiras p{
+#cookie-kezeles .leiras p,
+#aszf .leiras p{
     margin: 1em 0;
     text-align: justify;
 }
@@ -1089,7 +1100,34 @@ section:nth-last-of-type(1){
 
     #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles{
         padding-top: 60px;
-        padding-bottom: 120px;
+        padding-bottom: 100px;
+        padding-right: 0 !important;
+    }
+    #adatvedelmi-iranyelvek .leiras h4, 
+    #impresszum .leiras h4,
+    #cookie-kezeles .leiras h4,
+    #adatvedelmi-iranyelvek .leiras h5, 
+    #impresszum .leiras h5,
+    #cookie-kezeles .leiras h5,
+    #aszf .leiras h4,
+    #aszf .leiras h5{
+        font-size: .85em !important;
+    }
+    #adatvedelmi-iranyelvek .leiras p, 
+    #impresszum .leiras p,
+    #cookie-kezeles .leiras p,
+    #adatvedelmi-iranyelvek .leiras ul, 
+    #impresszum .leiras ul,
+    #cookie-kezeles .leiras ul,
+    #aszf .leiras ul,
+    #aszf .leiras p{
+        font-size: .75em !important;
+    }
+    #adatvedelmi-iranyelvek .leiras ul, 
+    #impresszum .leiras ul,
+    #cookie-kezeles .leiras ul,
+    #aszf .leiras ul{
+        padding-left: 15px;
     }
 }
 
@@ -1167,10 +1205,11 @@ section:nth-last-of-type(1){
     }
     #adatvedelmi-iranyelvek .section-subtitle,
     #impresszum .section-subtitle,
-    #cookie-kezeles .section-subtitle{
+    #cookie-kezeles .section-subtitle,
+    #aszf .section-subtitle{
         font-size: 1rem;
     }
-    #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles{
+    #adatvedelmi-iranyelvek, #impresszum, #cookie-kezeles, #aszf{
         padding-right: 0;
     }
     .btn-close{
@@ -1178,6 +1217,26 @@ section:nth-last-of-type(1){
     }
     .footer-copy-text{
         font-size: .8em;
+    }
+    .footer-up{
+        display: none;
+    }
+    #footer{
+        justify-content: center;
+        text-align: center;
+    }
+    .cookie-kezeles-open .navbar,
+    .aszf-open .navbar,
+    .impresszum-open .navbar,
+    .adatvedelem-open .navbar,
+    .cookie-kezeles-open #footer,
+    .aszf-open #footer,
+    .impresszum-open #footer,
+    .adatvedelem-open #footer{
+        z-index: -1;
+    }
+    #cookie-kezeles, #aszf, #impresszum, #adatvedelmi-iranyelvek{
+        padding: 1.5em;
     }
 }
 
@@ -1200,7 +1259,7 @@ section:nth-last-of-type(1){
     .arlista-price{
         font-size: 2em;
     }
-    .adatvedelem-btn, .impresszum-btn, .cookie-kezeles-btn{
+    .adatvedelem-btn, .impresszum-btn, .cookie-kezeles-btn, .aszf-btn{
         font-size: .75em;
     }
 }
@@ -1253,4 +1312,11 @@ section:nth-last-of-type(1){
 
 .cookie-kezeles-open #CybotCookiebotDialog{
     z-index: 0 !important;
+}
+.nav-open #footer{
+    z-index: 0;
+}
+
+.nav, #adatvedelmi-iranyelvek, #cookie-kezeles, #aszf, #impresszum{
+    display: none;
 }
