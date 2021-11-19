@@ -374,6 +374,9 @@ $(document).ready(function(){
             $('#kapcsolat-usertext').val('')
             $('#valasztott-hidden').val('')
             $('#kapcsolat-form').hide()
+            setTimeout(function () {
+              location.reload(true);
+            }, 5000);
           }
       });
     }
