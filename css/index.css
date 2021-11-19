@@ -3,6 +3,7 @@
 @font-face {
     font-family: Primary;
     src: url("../fonts/HugeGothic-Bold.woff");
+    font-display: swap;
 }
 
 *{box-sizing: border-box;}
