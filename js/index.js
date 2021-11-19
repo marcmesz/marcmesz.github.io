@@ -130,6 +130,11 @@ function setLanguage(){
     }
     document.querySelector(".error-input").textContent=data.errorRequired[setLang]
     
+    document.querySelector(".footer-copy-text-switch").textContent=data.footerCopyTextSpan[setLang]
+    document.querySelector(".adatvedelem-btn").textContent=data.privacyPolicy[setLang]
+    document.querySelector(".cookie-kezeles-btn").textContent=data.cookieConsent[setLang]
+    document.querySelector(".aszf-btn").textContent=data.termsAndConditions[setLang]
+    document.querySelector(".impresszum-btn").textContent=data.imprint[setLang]
   })
 }
 
