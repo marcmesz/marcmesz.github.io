@@ -391,11 +391,11 @@ setTimeout(()=>{
   document.querySelector("#cookie-kezeles").style.display="flex"
   document.querySelector("#aszf").style.display="flex"
   document.querySelector("#impresszum").style.display="flex"
-},200)
+},300)
 setTimeout(()=>{document.querySelector("#CybotCookiebotDialogBodyEdgeMoreDetails").innerHTML=`
     <a id="CybotCookiebotDialogBodyEdgeMoreDetailsLink" class="cookie-kezeles-btn" href="#CookieKezeles" onClick="cookieButtons()">
       Sütikezelési Tájékoztató
     </a>
-`},500)
+`},700)
 
 
