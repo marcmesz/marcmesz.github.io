@@ -149,13 +149,13 @@ navLinks.forEach(item=>item.addEventListener("click",()=>{
   item.classList.add("current-link")
 }))
 
-document.querySelector(".adatvedelem-btn").addEventListener("click",(e)=>{
+document.querySelectorAll(".adatvedelem-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
   e.preventDefault()
   document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
   document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
   document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
   document.body.classList.toggle("adatvedelem-open")
-})
+}))
 document.querySelector(".impresszum-btn").addEventListener("click",(e)=>{
   e.preventDefault()
   document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
@@ -327,6 +327,29 @@ document.querySelectorAll(".arlista-btn").forEach(btn=>btn.addEventListener("cli
 }))
 
 
+setTimeout(()=>{
+  document.querySelector(".nav").style.display="block"
+  document.querySelector("#adatvedelmi-iranyelvek").style.display="flex"
+  document.querySelector("#cookie-kezeles").style.display="flex"
+  document.querySelector("#aszf").style.display="flex"
+  document.querySelector("#impresszum").style.display="flex"
+},500)
+
+
+/* Sutikezelesi Tajekoztato */
+if(!localStorage.getItem("suti-tajekoztato")){
+  document.querySelector(".suti-tajekoztato").style.opacity=1
+  document.querySelector(".suti-btn").addEventListener("click",(e)=>{
+    e.preventDefault()
+    localStorage.setItem("suti-tajekoztato","elfogadva")
+    document.querySelector(".suti-tajekoztato").style.opacity=0
+    setTimeout(()=>document.querySelector(".suti-tajekoztato").style.display="none",350)
+  })
+}
+else{
+  document.querySelector(".suti-tajekoztato").style.display="none"
+}
+
 /* Kapcsolat */
 
 $(document).ready(function(){
@@ -384,18 +407,5 @@ $(document).ready(function(){
   });
 });
 
-
-setTimeout(()=>{
-  document.querySelector(".nav").style.display="block"
-  document.querySelector("#adatvedelmi-iranyelvek").style.display="flex"
-  document.querySelector("#cookie-kezeles").style.display="flex"
-  document.querySelector("#aszf").style.display="flex"
-  document.querySelector("#impresszum").style.display="flex"
-},300)
-setTimeout(()=>{document.querySelector("#CybotCookiebotDialogBodyEdgeMoreDetails").innerHTML=`
-    <a id="CybotCookiebotDialogBodyEdgeMoreDetailsLink" class="cookie-kezeles-btn" href="#CookieKezeles" onClick="cookieButtons()">
-      Sütikezelési Tájékoztató
-    </a>
-`},700)
 
 

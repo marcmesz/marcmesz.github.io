@@ -480,6 +480,14 @@ section:nth-last-of-type(1){
     z-index: 1;
 }
 
+.cookie-kezeles-open .uzleti,
+.adatvedelem-open .uzleti,
+.impresszum-open .uzleti,
+.aszf-open .uzleti{
+    z-index: 0;
+}
+
+
 .arlista-title .nepszeru{
     position: absolute;
     background-color: white;
@@ -878,6 +886,42 @@ section:nth-last-of-type(1){
     margin-top: .8em;
     margin-bottom: .5em;
 }
+
+.suti-tajekoztato{
+    position: absolute;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0.6);
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 1000;
+    padding: .6rem 4em;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 350ms;
+}
+
+.suti-tajekoztato p,
+.suti-tajekoztato a{
+    font-size: .85rem;
+    color: var(--clr-light);
+}
+
+.suti-tajekoztato .suti-btn{
+    color: var(--clr-light);
+    font-size: 1.1rem;
+}
+.suti-tajekoztato a, .suti-tajekoztato .suti-btn:hover{
+    color: var(--clr-accent);
+}
+.suti-tajekoztato a:hover{
+    color: var(--clr-light);
+}
+
 
 @keyframes spin {
     from {
