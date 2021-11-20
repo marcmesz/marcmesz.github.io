@@ -915,6 +915,9 @@ section:nth-last-of-type(1){
     color: var(--clr-light);
     font-size: 1.1rem;
 }
+.suti-tajekoztato a{
+    display: inline-block;
+}
 .suti-tajekoztato a, .suti-tajekoztato .suti-btn:hover{
     color: var(--clr-accent);
 }
@@ -1221,6 +1224,22 @@ section:nth-last-of-type(1){
     #impresszum .section-subtitle,
     #adatvedelmi-iranyelvek .section-subtitle{
         margin-top: .5rem;
+    }
+    .suti-tajekoztato{
+        flex-direction: column;
+    }
+    .suti-tajekoztato .suti-elvalaszto{
+        display: none !important;
+    }
+    .suti-tajekoztato a{
+        display: block;
+        margin-bottom: 1em;
+    }
+    .suti-tajekoztato .suti-btn{
+        margin: 0;
+    }
+    .suti-tajekoztato a, .suti-tajekoztato p{
+        text-align: center;
     }
 }
 
