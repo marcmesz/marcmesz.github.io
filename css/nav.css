@@ -26,8 +26,8 @@
 }
 
 .nav__list li + li {
-    margin-top: 1em;
-}
+    margin-top: .7em;
+} 
 
 .nav-toggle {
     padding: 0.5em 0;
