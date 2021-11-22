@@ -357,6 +357,7 @@ section:nth-last-of-type(1){
     display: flex;
     align-items: flex-start;
     max-height: 350px;
+    height: 100%;
     position: relative;
     opacity: 1;
     transition: opacity 1s;
