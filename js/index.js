@@ -16,10 +16,245 @@ let setLang = ""
 let setTitle = ""
 let setImgTitle = ""
 
+checkCookie()
+displayCharacters()
+liveBackGround()
+displayHiddenPages()
+
+const cursorBlinking = setInterval(setBlinker,450)
+
 langBtn.addEventListener("click",()=>{
   lang = !lang
   setLanguage()
 })
+
+menuBtn.addEventListener("click",()=>{
+  document.body.classList.toggle("nav-open")
+})
+
+navLinks.forEach(item=>item.addEventListener("click",()=>{
+  document.body.classList.toggle("nav-open")
+  navLinks.forEach(link=>link.classList.remove("current-link"))
+  item.classList.add("current-link")
+}))
+
+document.querySelectorAll(".adatvedelem-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
+  e.preventDefault()
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
+  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
+  document.body.classList.toggle("adatvedelem-open")
+}))
+
+document.querySelector(".impresszum-btn").addEventListener("click",(e)=>{
+  e.preventDefault()
+  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
+  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
+  document.body.classList.toggle("impresszum-open")
+})
+
+document.querySelector(".aszf-btn").addEventListener("click",(e)=>{
+  e.preventDefault()
+  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.toggle("aszf-open")
+})
+
+document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
+  e.preventDefault()
+  cookieButtons()
+}))
+
+
+
+/* Hidden Pages Buttons */
+document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click",()=>{
+  if(document.body.classList.contains("adatvedelem-open")){
+    document.body.classList.remove("adatvedelem-open")
+  }
+  else if(document.body.classList.contains("impresszum-open")){
+    document.body.classList.remove("impresszum-open")
+  }
+  else if(document.body.classList.contains("aszf-open")){
+    document.body.classList.remove("aszf-open")
+  }
+  else{
+    document.body.classList.remove("cookie-kezeles-open")
+  }
+}))
+
+
+/* Portfolio Buttons */
+
+const links = document.querySelectorAll(".portfolio-btn")
+links.forEach(link=>{
+  link.addEventListener("click",()=>{
+    links.forEach(item=>item.classList.remove("btn-current"))
+    const currentLink = link.getAttribute("id")
+    document.getElementById(currentLink).classList.add("btn-current")
+
+    if(currentLink==="btn-weboldal"){
+      document.querySelectorAll(".webaruhaz").forEach(item=>{
+        item.classList.add("portfolio-hidden")
+      })
+      document.querySelectorAll(".weboldal").forEach(item=>{
+        item.classList.remove("portfolio-hidden")
+      })
+    }
+    else if(currentLink==="btn-webaruhaz"){
+      document.querySelectorAll(".weboldal").forEach(item=>{
+        item.classList.add("portfolio-hidden")
+      })
+      document.querySelectorAll(".webaruhaz").forEach(item=>{
+        item.classList.remove("portfolio-hidden")
+      })
+    }
+    else{
+      document.querySelectorAll(".portfolio-item").forEach(item=>{
+        item.classList.remove("portfolio-hidden")
+      })
+    }
+  })
+})
+
+
+/* Prices Buttons */
+
+document.querySelectorAll(".arlista-btn").forEach(btn=>btn.addEventListener("click",()=>{
+  const valasztottKat = document.querySelector(".valasztott-kategoria")
+  const valasztottHidden = document.querySelector(".valasztott-hidden")
+  valasztottKat.className="valasztott-kategoria"
+  valasztottKat.classList.add(btn.getAttribute("id"))
+  fetch("./js/content.json")
+  .then(res=>res.json())
+  .then(data=>{
+    lang ? setLang = "hu" : setLang = "en"
+    btn.getAttribute("id")==="btn-bemutatkozo-erdekel" ? displayMessage=data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang] : null
+    btn.getAttribute("id")==="btn-premium-erdekel" ? displayMessage=data.priceCategoriesTitle[1][setLang]+" "+data.website[setLang] : null
+    btn.getAttribute("id")==="btn-webaruhaz-erdekel" ? displayMessage=data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang] : null
+    valasztottKat.style.display="block"
+    valasztottKat.textContent=data.chosenPlan[setLang]+displayMessage
+    valasztottHidden.value=displayMessage
+  })
+}))
+
+
+/* Functions */
+
+function setBlinker(){
+  if(text.innerHTML.length===0 || text.innerHTML.length===myString[currentPhrase].length || !isBlinking){
+    if(isBlinking){
+      isBlinking=!isBlinking
+      blinkingCursor.style.display="none"
+    }
+    else{
+      isBlinking=!isBlinking
+      blinkingCursor.style.display="inline"
+    }
+  }
+}
+
+function displayCharacters(){
+  lang ? myString = ["Weboldal?","Webáruház?","Portfólió?"] : myString = ["Website?","Webshop?","Portfolio?"]
+  const kiir = setInterval(()=>{
+    if(currentChar===myString[currentPhrase].length){
+        clearInterval(kiir)
+        setTimeout(deleteCharacters, 1500)
+    }
+    else{
+        currentChar++
+        text.innerHTML+=myString[currentPhrase].split("")[currentChar-1]
+    }
+  },70)
+}
+
+function deleteCharacters(){
+  const torol = setInterval(()=>{
+    if(currentReverse!==-myString[currentPhrase].length){
+        currentReverse--    
+        text.innerHTML=myString[currentPhrase].slice(0,currentReverse)
+    }
+    else{
+        clearInterval(torol)
+        currentChar = 0
+        currentReverse = 0
+        currentPhrase<myString.length-1 ? currentPhrase++ : currentPhrase=0
+        displayCharacters()
+    }
+  },40)  
+}
+
+function liveBackGround(){
+  let currentSection = ""
+  window.onscroll = () => {
+  window.scrollY > 200 ? navbar.classList.add('nav-active') : navbar.classList.remove('nav-active')
+
+  sections.forEach((section) => {
+  const sectionTop = section.offsetTop
+  if(scrollY >= sectionTop - 500){
+    currentSection=section.getAttribute("id")
+    navLinks.forEach(link=>{
+      link.classList.remove("current-link")
+      currentSection===link.getAttribute("href").substring(1) ? link.classList.add("current-link") : null
+    })
+  }
+
+  })
+  document.body.className=currentSection
+  }
+}
+
+function displayHiddenPages(){
+  setTimeout(()=>{
+    document.querySelector(".nav").style.display="block"
+    document.querySelector("#adatvedelmi-iranyelvek").style.display="flex"
+    document.querySelector("#cookie-kezeles").style.display="flex"
+    document.querySelector("#aszf").style.display="flex"
+    document.querySelector("#impresszum").style.display="flex"
+  },500)
+}
+
+/* Sutikezelesi Tajekoztato */
+function checkCookie(){
+  if(!getCookie("_suti_Tajekoztato")){
+    document.querySelector(".suti-btn").addEventListener("click",(e)=>{
+      e.preventDefault()
+      const d = new Date()
+      document.cookie = "_suti_Tajekoztato=1;expires="+d.toUTCString(d.setTime(d.getTime()+730*24*60*60*1000))
+      document.querySelector(".suti-tajekoztato").style.opacity=0
+      setTimeout(()=>document.querySelector(".suti-tajekoztato").remove(),350)
+    })
+  }
+  else{
+    document.querySelector(".suti-tajekoztato").remove()
+  }
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function cookieButtons(){
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
+  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
+  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
+  document.body.classList.toggle("cookie-kezeles-open")
+}
 
 function setLanguage(){
   fetch("./js/content.json")
@@ -129,7 +364,6 @@ function setLanguage(){
       document.querySelector(".valasztott-hidden").value=data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang]
     }
     document.querySelector(".error-input").textContent=data.errorRequired[setLang]
-    
     document.querySelector(".footer-copy-text-switch").textContent=data.footerCopyTextSpan[setLang]
     document.querySelector(".adatvedelem-btn").textContent=data.privacyPolicy[setLang]
     document.querySelector(".cookie-kezeles-btn").textContent=data.cookieConsent[setLang]
@@ -139,218 +373,7 @@ function setLanguage(){
 }
 
 
-menuBtn.addEventListener("click",()=>{
-  document.body.classList.toggle("nav-open")
-})
-
-navLinks.forEach(item=>item.addEventListener("click",()=>{
-  document.body.classList.toggle("nav-open")
-  navLinks.forEach(link=>link.classList.remove("current-link"))
-  item.classList.add("current-link")
-}))
-
-document.querySelectorAll(".adatvedelem-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
-  e.preventDefault()
-  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
-  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
-  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
-  document.body.classList.toggle("adatvedelem-open")
-}))
-document.querySelector(".impresszum-btn").addEventListener("click",(e)=>{
-  e.preventDefault()
-  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
-  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
-  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
-  document.body.classList.toggle("impresszum-open")
-})
-document.querySelector(".aszf-btn").addEventListener("click",(e)=>{
-  e.preventDefault()
-  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
-  document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
-  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
-  document.body.classList.toggle("aszf-open")
-})
-document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
-  e.preventDefault()
-  cookieButtons()
-}))
-
-function cookieButtons(){
-  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
-  document.body.classList.contains("adatvedelem-open") ? document.body.classList.remove("adatvedelem-open") : null
-  document.body.classList.contains("aszf-open") ? document.body.classList.remove("aszf-open") : null
-  document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
-  document.body.classList.toggle("cookie-kezeles-open")
-}
-
-
-document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click",()=>{
-  if(document.body.classList.contains("adatvedelem-open")){
-    document.body.classList.remove("adatvedelem-open")
-  }
-  else if(document.body.classList.contains("impresszum-open")){
-    document.body.classList.remove("impresszum-open")
-  }
-  else if(document.body.classList.contains("aszf-open")){
-    document.body.classList.remove("aszf-open")
-  }
-  else{
-    document.body.classList.remove("cookie-kezeles-open")
-  }
-}))
-
-
-
-function displayCharacters(){
-
-  lang ? myString = ["Weboldal?","Webáruház?","Portfólió?"] : myString = ["Website?","Webshop?","Portfolio?"]
-
-  const kiir = setInterval(()=>{
-    if(currentChar===myString[currentPhrase].length){
-        clearInterval(kiir)
-        setTimeout(deleteCharacters, 1500)
-    }
-    else{
-        currentChar++
-        text.innerHTML+=myString[currentPhrase].split("")[currentChar-1]
-    }
-  },70)
-
-}
-
-function deleteCharacters(){
-  const torol = setInterval(()=>{
-    if(currentReverse!==-myString[currentPhrase].length){
-        currentReverse--    
-        text.innerHTML=myString[currentPhrase].slice(0,currentReverse)
-    }
-    else{
-        clearInterval(torol)
-        currentChar = 0
-        currentReverse = 0
-        currentPhrase<myString.length-1 ? currentPhrase++ : currentPhrase=0
-        displayCharacters()
-    }
-  },40)  
-}
-
-const cursorBlinking = setInterval(()=>{
-    if(text.innerHTML.length===0 || text.innerHTML.length===myString[currentPhrase].length || !isBlinking){
-      if(isBlinking){
-        isBlinking=!isBlinking
-        blinkingCursor.style.display="none"
-      }
-      else{
-        isBlinking=!isBlinking
-        blinkingCursor.style.display="inline"
-      }
-    }
-  },450)
-
-displayCharacters()
-
-
-
-/* Navbar Add Background on scroll */
-let currentSection = ""
-window.onscroll = () => {
-  window.scrollY > 200 ? navbar.classList.add('nav-active') : navbar.classList.remove('nav-active')
-
-  sections.forEach((section) => {
-  const sectionTop = section.offsetTop
-  if(scrollY >= sectionTop - 500){
-    currentSection=section.getAttribute("id")
-    navLinks.forEach(link=>{
-      link.classList.remove("current-link")
-      currentSection===link.getAttribute("href").substring(1) ? link.classList.add("current-link") : null
-    })
-  }
-
-})
-  document.body.className=currentSection
-}
-
-
-/* Portfólió */
-
-const links = document.querySelectorAll(".portfolio-btn")
-links.forEach(link=>{
-  link.addEventListener("click",()=>{
-    links.forEach(item=>item.classList.remove("btn-current"))
-    const currentLink = link.getAttribute("id")
-    document.getElementById(currentLink).classList.add("btn-current")
-
-    if(currentLink==="btn-weboldal"){
-      document.querySelectorAll(".webaruhaz").forEach(item=>{
-        item.classList.add("portfolio-hidden")
-      })
-      document.querySelectorAll(".weboldal").forEach(item=>{
-        item.classList.remove("portfolio-hidden")
-      })
-    }
-    else if(currentLink==="btn-webaruhaz"){
-      document.querySelectorAll(".weboldal").forEach(item=>{
-        item.classList.add("portfolio-hidden")
-      })
-      document.querySelectorAll(".webaruhaz").forEach(item=>{
-        item.classList.remove("portfolio-hidden")
-      })
-    }
-    else{
-      document.querySelectorAll(".portfolio-item").forEach(item=>{
-        item.classList.remove("portfolio-hidden")
-      })
-    }
-  })
-})
-
-
-/* Árlista */
-
-document.querySelectorAll(".arlista-btn").forEach(btn=>btn.addEventListener("click",()=>{
-  const valasztottKat = document.querySelector(".valasztott-kategoria")
-  const valasztottHidden = document.querySelector(".valasztott-hidden")
-  valasztottKat.className="valasztott-kategoria"
-  valasztottKat.classList.add(btn.getAttribute("id"))
-  fetch("./js/content.json")
-  .then(res=>res.json())
-  .then(data=>{
-    lang ? setLang = "hu" : setLang = "en"
-    btn.getAttribute("id")==="btn-bemutatkozo-erdekel" ? displayMessage=data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang] : null
-    btn.getAttribute("id")==="btn-premium-erdekel" ? displayMessage=data.priceCategoriesTitle[1][setLang]+" "+data.website[setLang] : null
-    btn.getAttribute("id")==="btn-webaruhaz-erdekel" ? displayMessage=data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang] : null
-    
-    valasztottKat.style.display="block"
-    valasztottKat.textContent=data.chosenPlan[setLang]+displayMessage
-    valasztottHidden.value=displayMessage
-  })
-}))
-
-
-setTimeout(()=>{
-  document.querySelector(".nav").style.display="block"
-  document.querySelector("#adatvedelmi-iranyelvek").style.display="flex"
-  document.querySelector("#cookie-kezeles").style.display="flex"
-  document.querySelector("#aszf").style.display="flex"
-  document.querySelector("#impresszum").style.display="flex"
-},500)
-
-
-/* Sutikezelesi Tajekoztato */
-if(!localStorage.getItem("suti-tajekoztato")){
-  document.querySelector(".suti-tajekoztato").style.opacity=1
-  document.querySelector(".suti-btn").addEventListener("click",(e)=>{
-    e.preventDefault()
-    localStorage.setItem("suti-tajekoztato","elfogadva")
-    document.querySelector(".suti-tajekoztato").style.opacity=0
-    setTimeout(()=>document.querySelector(".suti-tajekoztato").style.display="none",350)
-  })
-}
-else{
-  document.querySelector(".suti-tajekoztato").style.display="none"
-}
-
-/* Kapcsolat */
+/* jQuery + PHP - Contact Form */
 
 $(document).ready(function(){
   $('#kapcsolat-form').on('submit', function(e){
@@ -398,14 +421,14 @@ $(document).ready(function(){
             $('#valasztott-hidden').val('')
             $('#kapcsolat-form').hide()
             setTimeout(function () {
-              location.reload(true);
-            }, 5000);
+              location.reload(true)
+            }, 5000)
           }
-      });
+      })
     }
 
-  });
-});
+  })
+})
 
 
 
