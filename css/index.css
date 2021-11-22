@@ -549,7 +549,7 @@ section:nth-last-of-type(1){
     margin-top: 3px;
 }
 
-.arlista-infobox img{
+.arlista-infobox picture{
     max-width: 50%;
     align-self: center;
 }
@@ -1002,7 +1002,7 @@ section:nth-last-of-type(1){
     .arlista-infobox-info{
         margin-left: 0;
     }
-    .arlista-infobox img{
+    .arlista-infobox picture{
         margin-bottom: 2em;
         max-width: 100%;
     }
