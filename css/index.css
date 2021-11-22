@@ -132,6 +132,7 @@ a {
 
 #logo{
     width: 150px;
+    height: auto;
     visibility: visible;
     opacity: 1;
     transition: all 500ms;
@@ -141,7 +142,6 @@ a {
 #logo:hover{
     transform: scale(0.9);
 }
-
 
 .container{
     width: 100%;
@@ -1024,9 +1024,6 @@ section:nth-last-of-type(1){
  
     #dynamic-text{
         font-size: 3.9em;
-    }
-    #logo-90{
-        display: none;
     }
 
     .section-title{
