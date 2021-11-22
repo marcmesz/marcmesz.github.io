@@ -657,6 +657,7 @@ section:nth-last-of-type(1){
 .kapcsolat-form-uzenet{
     display: none;
     justify-content: center;
+    align-items: center;
     margin-bottom: 1.5rem;
 }
 
@@ -672,8 +673,6 @@ section:nth-last-of-type(1){
     display:flex;
     flex-direction:column;
     padding: 2em;
-    display: flex;
-    flex-direction: column;
     background-color: white;
     max-width: 800px;
     margin: 3em auto;
