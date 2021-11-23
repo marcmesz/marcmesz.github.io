@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
 @font-face {
     font-family: Primary;
     src: url('../fonts/HugeGothic-Bold-hun-5.woff2') format('woff2');
@@ -223,7 +223,7 @@ h2{
 
 #blinking-cursor{
     font-family: sans-serif;
-    line-height: 1.2em;
+    line-height: 1.3em;
     position: absolute;
 }
 
@@ -1241,6 +1241,9 @@ section:nth-last-of-type(1){
     }
     .suti-tajekoztato a, .suti-tajekoztato p{
         text-align: center;
+    }
+    #blinking-cursor{
+        line-height: 1.35;
     }
 }
 
