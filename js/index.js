@@ -32,13 +32,13 @@ menuBtn.addEventListener("click",()=>{
   document.body.classList.toggle("nav-open")
 })
 
-navLinks.forEach(item=>item.addEventListener("click",()=>{
+Array.from(navLinks).forEach(item=>item.addEventListener("click",()=>{
   document.body.classList.toggle("nav-open")
-  navLinks.forEach(link=>link.classList.remove("current-link"))
+  Array.from(navLinks).forEach(link=>link.classList.remove("current-link"))
   item.classList.add("current-link")
 }))
 
-document.querySelectorAll(".adatvedelem-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
+Array.from(document.querySelectorAll(".adatvedelem-btn")).forEach(btn=>btn.addEventListener("click",(e)=>{
   e.preventDefault()
   document.body.classList.contains("impresszum-open") ? document.body.classList.remove("impresszum-open") : null
   document.body.classList.contains("cookie-kezeles-open") ? document.body.classList.remove("cookie-kezeles-open") : null
@@ -62,7 +62,7 @@ document.querySelector(".aszf-btn").addEventListener("click",(e)=>{
   document.body.classList.toggle("aszf-open")
 })
 
-document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListener("click",(e)=>{
+Array.from(document.querySelectorAll(".cookie-kezeles-btn")).forEach(btn=>btn.addEventListener("click",(e)=>{
   e.preventDefault()
   cookieButtons()
 }))
@@ -70,7 +70,7 @@ document.querySelectorAll(".cookie-kezeles-btn").forEach(btn=>btn.addEventListen
 
 
 /* Hidden Pages Buttons */
-document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click",()=>{
+Array.from(document.querySelectorAll(".btn-close")).forEach(btn=>btn.addEventListener("click",()=>{
   if(document.body.classList.contains("adatvedelem-open")){
     document.body.classList.remove("adatvedelem-open")
   }
@@ -89,30 +89,30 @@ document.querySelectorAll(".btn-close").forEach(btn=>btn.addEventListener("click
 /* Portfolio Buttons */
 
 const links = document.querySelectorAll(".portfolio-btn")
-links.forEach(link=>{
+Array.from(links).forEach(link=>{
   link.addEventListener("click",()=>{
-    links.forEach(item=>item.classList.remove("btn-current"))
+    Array.from(links).forEach(item=>item.classList.remove("btn-current"))
     const currentLink = link.getAttribute("id")
     document.getElementById(currentLink).classList.add("btn-current")
 
     if(currentLink==="btn-weboldal"){
-      document.querySelectorAll(".webaruhaz").forEach(item=>{
+      Array.from(document.querySelectorAll(".webaruhaz")).forEach(item=>{
         item.classList.add("portfolio-hidden")
       })
-      document.querySelectorAll(".weboldal").forEach(item=>{
+      Array.from(document.querySelectorAll(".weboldal")).forEach(item=>{
         item.classList.remove("portfolio-hidden")
       })
     }
     else if(currentLink==="btn-webaruhaz"){
-      document.querySelectorAll(".weboldal").forEach(item=>{
+      Array.from(document.querySelectorAll(".weboldal")).forEach(item=>{
         item.classList.add("portfolio-hidden")
       })
-      document.querySelectorAll(".webaruhaz").forEach(item=>{
+      Array.from(document.querySelectorAll(".webaruhaz")).forEach(item=>{
         item.classList.remove("portfolio-hidden")
       })
     }
     else{
-      document.querySelectorAll(".portfolio-item").forEach(item=>{
+      Array.from(document.querySelectorAll(".portfolio-item")).forEach(item=>{
         item.classList.remove("portfolio-hidden")
       })
     }
@@ -122,7 +122,7 @@ links.forEach(link=>{
 
 /* Prices Buttons */
 
-document.querySelectorAll(".arlista-btn").forEach(btn=>btn.addEventListener("click",()=>{
+Array.from(document.querySelectorAll(".arlista-btn")).forEach(btn=>btn.addEventListener("click",()=>{
   const valasztottKat = document.querySelector(".valasztott-kategoria")
   const valasztottHidden = document.querySelector(".valasztott-hidden")
   valasztottKat.className="valasztott-kategoria"
@@ -191,11 +191,11 @@ function liveBackGround(){
   window.onscroll = () => {
   window.scrollY > 200 ? navbar.classList.add('nav-active') : navbar.classList.remove('nav-active')
 
-  sections.forEach((section) => {
+  Array.from(sections).forEach((section) => {
   const sectionTop = section.offsetTop
   if(scrollY >= sectionTop - 500){
     currentSection=section.getAttribute("id")
-    navLinks.forEach(link=>{
+    Array.from(navLinks).forEach(link=>{
       link.classList.remove("current-link")
       currentSection===link.getAttribute("href").substring(1) ? link.classList.add("current-link") : null
     })
@@ -276,7 +276,7 @@ function setLanguage(){
     document.getElementById("btn-weboldal").textContent=data.allButtonText[2][setLang]
     document.getElementById("btn-webaruhaz").textContent=data.allButtonText[3][setLang]
     document.getElementById("btn-submit").textContent=data.allButtonText[5][setLang]
-    document.querySelectorAll(".arlista-btn").forEach(item=>item.textContent=data.allButtonText[4][setLang])
+    Array.from(document.querySelectorAll(".arlista-btn")).forEach(item=>item.textContent=data.allButtonText[4][setLang])
 
     for(let i = 0; i<data.sectionTitle.hu.length; i++){
       document.querySelectorAll(".nav__link")[i].textContent=data.sectionTitle[setLang][i]
@@ -314,8 +314,8 @@ function setLanguage(){
     for(let i = 0; i<data.businessWebshop.length; i++){
       document.querySelectorAll(".arlista-list-business")[i].textContent=data.businessWebshop[i][setLang]
     }
-    document.querySelectorAll(".amount").forEach(item=>!lang ? item.style.order=2 : null)
-    document.querySelectorAll(".tol").forEach(item=>{
+    Array.from(document.querySelectorAll(".amount")).forEach(item=>!lang ? item.style.order=2 : null)
+    Array.from(document.querySelectorAll(".tol")).forEach(item=>{
       if(!lang){
         item.style.order=1
         item.textContent="from"
@@ -325,7 +325,7 @@ function setLanguage(){
         item.textContent="-tól"
       }
     })
-    document.querySelectorAll(".ft").forEach(item=>{
+    Array.from(document.querySelectorAll(".ft")).forEach(item=>{
       if(!lang){
         item.style.order=3
         item.textContent="HUF"
