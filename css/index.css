@@ -974,7 +974,9 @@ section:nth-last-of-type(1){
     background-color: var(--clr-accent);
     border-radius: 50%;
 }
-
+.send-message{
+    color: var(--clr-light);
+}
 
 
 @media (min-width: 1450px){
