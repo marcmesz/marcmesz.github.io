@@ -7,7 +7,6 @@ const langBtn = document.getElementById("language-selector")
 const portfolioItemSpan = document.querySelectorAll(".portfolio-item-description")
 const portfolioItem = document.querySelectorAll(".portfolio-item")
 const menuBtn = document.querySelector(".nav-toggle")
-const year = document.querySelector(".footer-year")
 
 let currentPhrase = 0
 let isBlinking = true
@@ -140,9 +139,6 @@ Array.from(document.querySelectorAll(".arlista-btn")).forEach(btn => btn.addEven
       valasztottHidden.value = displayMessage
     })
 }))
-
-year.innerHTML = new Date().getFullYear()
-
 
 /* Functions */
 
