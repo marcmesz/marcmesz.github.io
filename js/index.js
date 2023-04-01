@@ -119,6 +119,26 @@ Array.from(links).forEach(link=>{
   })
 })
 
+/* Prices Buttons */
+
+Array.from(document.querySelectorAll(".arlista-btn")).forEach(btn=>btn.addEventListener("click",()=>{
+  const valasztottKat = document.querySelector(".valasztott-kategoria")
+  const valasztottHidden = document.querySelector(".valasztott-hidden")
+  valasztottKat.className="valasztott-kategoria"
+  valasztottKat.classList.add(btn.getAttribute("id"))
+  fetch("./js/content.json")
+  .then(res=>res.json())
+  .then(data=>{
+    lang ? setLang = "hu" : setLang = "en"
+    btn.getAttribute("id")==="btn-bemutatkozo-erdekel" ? displayMessage=data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang] : null
+    btn.getAttribute("id")==="btn-premium-erdekel" ? displayMessage=data.priceCategoriesTitle[1][setLang]+" "+data.website[setLang] : null
+    btn.getAttribute("id")==="btn-webaruhaz-erdekel" ? displayMessage=data.priceCategoriesTitle[2][setLang]+" "+data.webshop[setLang] : null
+    valasztottKat.style.display="block"
+    valasztottKat.textContent=data.chosenPlan[setLang]+displayMessage
+    valasztottHidden.value=displayMessage
+  })
+}))
+
 
 /* Functions */
 
@@ -254,6 +274,8 @@ function setLanguage(){
     document.getElementById("btn-osszes").textContent=data.allButtonText[1][setLang]
     document.getElementById("btn-weboldal").textContent=data.allButtonText[2][setLang]
     document.getElementById("btn-webaruhaz").textContent=data.allButtonText[3][setLang]
+    document.getElementById("btn-submit").textContent=data.allButtonText[5][setLang]
+
     Array.from(document.querySelectorAll(".arlista-btn")).forEach(item=>item.textContent=data.allButtonText[4][setLang])
 
     for(let i = 0; i<data.sectionTitle.hu.length; i++){
@@ -325,6 +347,10 @@ function setLanguage(){
     for(let i = 0; i<data.whichOneDescription.length; i++){
       document.querySelectorAll(".arlista-info-pelda-szoveg")[i].textContent=data.whichOneDescription[i][setLang]
     }
+
+    document.getElementById("kapcsolat-username").setAttribute("placeholder",data.contactUserPlaceholder[setLang])
+    document.getElementById("kapcsolat-useremail").setAttribute("placeholder",data.contactEmailPlaceholder[setLang])
+    document.getElementById("kapcsolat-usertext").setAttribute("placeholder",data.contactTextPlaceholder[setLang])
     
     if(document.querySelector(".valasztott-kategoria").classList[1] === "btn-bemutatkozo-erdekel"){
       document.querySelector(".valasztott-kategoria").textContent=data.chosenPlan[setLang]+data.priceCategoriesTitle[0][setLang]+" "+data.website[setLang]
@@ -346,6 +372,64 @@ function setLanguage(){
     document.querySelector(".impresszum-btn").textContent=data.imprint[setLang]
   })
 }
+
+/* jQuery + PHP - Contact Form */
+
+$(document).ready(function(){
+  $('#kapcsolat-form').on('submit', function(e){
+    e.preventDefault()
+    !setLang ? setLang="hu" : null
+    var name = $('#kapcsolat-username').val()
+    var email = $('#kapcsolat-useremail').val()
+    var text = $('#kapcsolat-usertext').val()
+    var hidden = $('#valasztott-hidden').val()
+    if(!name || !email || !text){
+      fetch('./js/content.json')
+      .then(res=>res.json())
+      .then(data=>{
+        $('.error-input').html(data.errorRequired[setLang])
+        $('.error-input').show()
+      })
+    }
+    else{
+      $('.error-input').html('')
+      $('.error-input').hide()
+      fetch('./js/content.json')
+      .then(res=>res.json())
+      .then(data=>{
+        $('.uzenet-kuldese').html(data.sendingMessage[setLang])
+      })
+      $('.kapcsolat-form-uzenet').attr("style","display:flex;")
+      $.ajax({
+          type: "POST",
+          url: 'https://www.qualiconnex.hu/backend/index.php',
+          data: {
+            name: name,
+            email: email,
+            text: text,
+            category: hidden,
+            setLang: setLang
+          },
+          success: function(data){
+            console.log(data)
+            $('.kapcsolat-form-uzenet').addClass("sikeres-uzenetkuldes box-style")
+            $('.kapcsolat-form-uzenet').html(data)
+            $('.valasztott-kategoria').html('')
+            $('.valasztott-kategoria').hide()
+            $('#kapcsolat-username').val('')
+            $('#kapcsolat-useremail').val('')
+            $('#kapcsolat-usertext').val('')
+            $('#valasztott-hidden').val('')
+            $('#kapcsolat-form').hide()
+            setTimeout(function () {
+              location.reload(true)
+            }, 5000)
+          }
+      })
+    }
+
+  })
+})
 
 
 
