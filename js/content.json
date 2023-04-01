@@ -361,6 +361,18 @@
         "hu": "Üzenet küldése...",
         "en": "Sending message..."
     },
+    "successMessage":{
+        "hu": "Sikeres üzenetküldés!",
+        "en": "Message sent successfully!"
+    },
+    "thankyouMessage": {
+        "hu": "Köszönjük üzenetét.",
+        "en": "Thank you for your message."
+    },
+    "getbackMessage":{
+        "hu": "Hamarosan válaszolunk a megadott e-mail címre.",
+        "en": "We will get back to you at the given address shortly."
+    },
     "footerCopyTextSpan": {
         "hu": "Honlapkészítés",
         "en": "Web Development"
