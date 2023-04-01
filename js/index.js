@@ -424,6 +424,9 @@ $(document).ready(function(){
             setTimeout(function () {
               location.reload(true)
             }, 5000)
+          },
+          error: function(data){
+            console.log(data)
           }
       })
     }
