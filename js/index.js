@@ -264,7 +264,7 @@ function setLanguage() {
       lang ? setImgTitle = "Switch to English" : setImgTitle = "Váltás Magyar nyelvre"
 
       document.documentElement.setAttribute("lang", setLang)
-      document.title = "WebJazz – " + data.pageTitle[setLang]
+      document.title = "Web-Market – " + data.pageTitle[setLang]
       document.getElementById("language-icon").setAttribute("src", "img/" + setLang + ".png")
       document.getElementById("language-selector").setAttribute("title", setImgTitle)
       document.getElementById("language-selector-title").textContent = setTitle
