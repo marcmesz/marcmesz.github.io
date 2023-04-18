@@ -119,6 +119,18 @@
     },
     "portfolioItems": [
         {
+            "hu": "étterem",
+            "en": "restaurant"
+        },
+        {
+            "hu": "e-cigaretta",
+            "en": "e-cigarette"
+        },
+        {
+            "hu": "egészségügy",
+            "en": "medical care"
+        },
+        {
             "hu": "egészségügy",
             "en": "medical care"
         },
