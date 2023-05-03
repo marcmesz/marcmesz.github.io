@@ -1319,6 +1319,10 @@ section:nth-last-of-type(1) {
         font-size: 1.3em;
     }
 
+    .szolgaltatasok-item-title{
+        font-size: 1.3em !important;
+    }
+
     #adatvedelmi-iranyelvek .leiras h4,
     #impresszum .leiras h4,
     #cookie-kezeles .leiras h4,
@@ -1570,9 +1574,15 @@ section:nth-last-of-type(1) {
     .szolgaltatasok-box {
         display: -ms-grid;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         margin-top: 2em;
         gap: .6em;
+    }
+
+    @media (max-width: 430px){
+        .szolgaltatasok-box {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
     }
 
     .szolgaltatasok-item {
@@ -1591,6 +1601,12 @@ section:nth-last-of-type(1) {
         gap: .7em;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    @media (max-width: 430px) {
+        .portfolio-wrap {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
     }
 
     .portfolio-item {
