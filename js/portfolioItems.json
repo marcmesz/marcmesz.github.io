@@ -1,0 +1,338 @@
+[
+  {
+    "url": "https://www.pebell-lakasfelujitas.hu",
+    "shortUrl": "pebell-lakasfelujitas.hu",
+    "src": "img/portfolio/webp/pebell.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Pebell - lakásfelújítás",
+      "category": "weboldal",
+      "desc": "lakásfelújítás"
+    },
+    "en": {
+      "title": "Pebell - home renovation",
+      "category": "website",
+      "desc": "home renovation"
+    }
+  },
+  {
+    "url": "https://www.borsohej.hu",
+    "shortUrl": "borsohej.hu",
+    "src": "img/portfolio/webp/borsohej.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Borsóhéj - Alapítvány",
+      "category": "weboldal",
+      "desc": "alapítvány"
+    },
+    "en": {
+      "title": "Borsóhéj - Foundation",
+      "category": "website",
+      "desc": "foundation"
+    }
+  },
+  {
+    "url": "https://www.gomby.hu",
+    "shortUrl": "gomby.hu",
+    "src": "img/portfolio/webp/gombyskitchen.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Gömby's Kitchen - Étterem",
+      "category": "weboldal",
+      "desc": "étterem"
+    },
+    "en": {
+      "title": "Gömby's Kitchen - Restaurant",
+      "category": "website",
+      "desc": "restaurant"
+    }
+  },
+  {
+    "url": "https://www.vapesquadshop.com",
+    "shortUrl": "vapesquadshop.com",
+    "src": "img/portfolio/webp/vapesquadshop.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "VapeSquad - Let's Vape",
+      "category": "webáruház",
+      "desc": "e-cigaretta"
+    },
+    "en": {
+      "title": "VapeSquad - Let's Vape",
+      "category": "webshop",
+      "desc": "e-cigarette"
+    }
+  },
+  {
+    "url": "https://www.glaselultrahang.hu",
+    "shortUrl": "glaselultrahang.hu",
+    "src": "img/portfolio/webp/glaselultrahang.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Dr. Glásel Éva ultrahang szakrendelés - Egészségügy",
+      "category": "weboldal",
+      "desc": "egészségügy"
+    },
+    "en": {
+      "title": "Dr. Éva Glásel ultrasound specialist appointment - Healthcare",
+      "category": "website",
+      "desc": "medical care"
+    }
+  },
+  {
+    "url": "https://www.expectteszt.hu",
+    "shortUrl": "expectteszt.hu",
+    "src": "img/portfolio/expectteszt.jpg",
+    "isHidden": false,
+    "hu": {
+      "title": "Termékenységi és terhességi tesztek - Egészségügy",
+      "category": "weboldal",
+      "desc": "egészségügy"
+    },
+    "en": {
+      "title": "Fertility and pregnancy tests - Healthcare",
+      "category": "website",
+      "desc": "medical care"
+    }
+  },
+  {
+    "url": "https://www.talenttestingservice.hu",
+    "shortUrl": "talenttestingservice.hu",
+    "src": "img/portfolio/talenttestingservice.jpg",
+    "isHidden": false,
+    "hu": {
+      "title": "Talent Testing Service Kft. - Egészségügy",
+      "category": "weboldal",
+      "desc": "egészségügy"
+    },
+    "en": {
+      "title": "Talent Testing Service Kft. - Healthcare",
+      "category": "website",
+      "desc": "medical care"
+    }
+  },
+  {
+    "url": "https://www.qualiconnex.hu",
+    "shortUrl": "qualiconnex.hu",
+    "src": "img/portfolio/webp/qualiconnex.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Qualiconnex - Villanyszerelés",
+      "category": "weboldal",
+      "desc": "villanyszerelés"
+    },
+    "en": {
+      "title": "Qualiconnex - Electrician",
+      "category": "website",
+      "desc": "electrician"
+    }
+  },
+  {
+    "url": "https://www.hajlasszogkft.hu",
+    "shortUrl": "hajlasszogkft.hu",
+    "src": "img/portfolio/webp/hajlasszog.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Hajlásszög Kft. - Tetőfedés",
+      "category": "weboldal",
+      "desc": "tetőfedés"
+    },
+    "en": {
+      "title": "Hajlásszög Kft. - Roofing company",
+      "category": "website",
+      "desc": "roofing company"
+    }
+  },
+  {
+    "url": "https://www.gepifoldmunka-daralas.hu",
+    "shortUrl": "gepifoldmunka-daralas.hu",
+    "src": "img/portfolio/webp/gepifoldmunka.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Gépi földmunka és darálás",
+      "category": "weboldal",
+      "desc": "gépi földmunka"
+    },
+    "en": {
+      "title": "Gépi földmunka és darálás - mechanical earthworks",
+      "category": "website",
+      "desc": "mechanical earthworks"
+    }
+  },
+  {
+    "url": "https://www.honeybeeamps.com",
+    "shortUrl": "honeybeeamps.com",
+    "src": "img/portfolio/webp/honeybeeamps.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Honey Bee Amps - Hangtechnika",
+      "category": "webáruház",
+      "desc": "hangtechnika"
+    },
+    "en": {
+      "title": "Honey Bee Amps - handwired amplifiers",
+      "category": "webshop",
+      "desc": "handwired amplifiers"
+    }
+  },
+  {
+    "url": "https://www.aluconcept.hu",
+    "shortUrl": "aluconcept.hu",
+    "src": "img/portfolio/webp/aluconcept.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Aluconcept Kft. Alumínium nyílászárók",
+      "category": "weboldal",
+      "desc": "alumínium nyílászárók"
+    },
+    "en": {
+      "title": "Aluconcept Kft. Aluminum doors and windows",
+      "category": "website",
+      "desc": "aluminum doors and windows"
+    }
+  },
+  {
+    "url": "https://www.goldpearl.hu",
+    "shortUrl": "goldpearl.hu",
+    "src": "img/portfolio/webp/goldpearl.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Goldpearl - háztartási tisztítószerek",
+      "category": "weboldal",
+      "desc": "háztartási tisztítószerek"
+    },
+    "en": {
+      "title": "Goldpearl - household cleaners",
+      "category": "website",
+      "desc": "household cleaners"
+    }
+  },
+  {
+    "url": "https://www.fedaszdental.com",
+    "shortUrl": "fedaszdental.com",
+    "src": "img/portfolio/webp/FedaszDentalcom.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Fedasz Dental - Fogászati Klinika",
+      "category": "weboldal",
+      "desc": "fogászati klinika"
+    },
+    "en": {
+      "title": "Fedasz Dental - dental clinic",
+      "category": "website",
+      "desc": "dental clinic"
+    }
+  },
+  {
+    "url": "https://www.fedaszdental.hu",
+    "shortUrl": "fedaszdental.hu",
+    "src": "img/portfolio/webp/FedaszDentalHu.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Fedasz Dental - Fogászati Klinika",
+      "category": "weboldal",
+      "desc": "fogászati klinika"
+    },
+    "en": {
+      "title": "Fedasz Dental - dental clinic",
+      "category": "website",
+      "desc": "dental clinic"
+    }
+  },
+  {
+    "url": "http://www.veneziasolymar.hu",
+    "shortUrl": "veneziasolymar.hu",
+    "src": "img/portfolio/webp/venezia.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Vezenia Solymár - Étterem & Pizzéria",
+      "category": "weboldal",
+      "desc": "étterem"
+    },
+    "en": {
+      "title": "Vezenia Solymár - Restaurant & Pizzeria",
+      "category": "website",
+      "desc": "restaurant"
+    }
+  },
+  {
+    "url": "https://www.threee.hu",
+    "shortUrl": "threee.hu",
+    "src": "img/portfolio/webp/threee.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "THREEE Kft. - Női Ruházat",
+      "category": "webáruház",
+      "desc": "női ruházat"
+    },
+    "en": {
+      "title": "THREEE Kft. - Women's clothing",
+      "category": "webshop",
+      "desc": "women's clothing"
+    }
+  },
+  {
+    "url": "http://www.jaak-coop.hu",
+    "shortUrl": "jaak-coop.hu",
+    "src": "img/portfolio/webp/jaak.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Jaak-Coop Kft. - Kenőanyag és Akkumulátor",
+      "category": "weboldal",
+      "desc": "kenőanyag és akkumulátor"
+    },
+    "en": {
+      "title": "Jaak-Coop Kft. - Motor oil and battery",
+      "category": "website",
+      "desc": "motor oil and battery"
+    }
+  },
+  {
+    "url": "http://www.szilagyi-huto.hu",
+    "shortUrl": "szilagyi-huto.hu",
+    "src": "img/portfolio/webp/htk.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Szilágyi Hűtő-Klíma Szerviz",
+      "category": "weboldal",
+      "desc": "hűtő-klíma szerviz"
+    },
+    "en": {
+      "title": "Szilágyi Refrigeration and Air Conditioning Service",
+      "category": "website",
+      "desc": "refrigerator and air conditioning"
+    }
+  },
+  {
+    "url": "http://www.strack.hu",
+    "shortUrl": "strack.hu",
+    "src": "img/portfolio/webp/strack.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Strack Kft. - Szerszámgyártó",
+      "category": "weboldal",
+      "desc": "szerszámgyártó"
+    },
+    "en": {
+      "title": "Strack Kft. - Tool manufacturer",
+      "category": "website",
+      "desc": "tool manufacturer"
+    }
+  },
+  {
+    "url": "https://www.skpshop.hu",
+    "shortUrl": "skpshop.hu",
+    "src": "img/portfolio/webp/skp.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Schwarzkopf Magyarország - Fodrászat és Kozmetika",
+      "category": "webáruház",
+      "desc": "fodrászat és kozmetika"
+    },
+    "en": {
+      "title": "Schwarzkopf Hungary - hairdressing and cosmetics",
+      "category": "webshop",
+      "desc": "hairdressing and cosmetics"
+    }
+  }
+]
