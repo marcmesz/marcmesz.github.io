@@ -119,6 +119,14 @@
     },
     "portfolioItems": [
         {
+            "hu": "lakásfelújítás",
+            "en": "home renovation"
+        },
+        {
+            "hu": "alapítvány",
+            "en": "foundation"
+        },
+        {
             "hu": "étterem",
             "en": "restaurant"
         },
@@ -135,16 +143,16 @@
             "en": "medical care"
         },
         {
+            "hu": "egészségügy",
+            "en": "medical care"
+        },
+        {
             "hu": "villanyszerelés",
             "en": "electrician"
         },
         {
             "hu": "tetőfedés",
             "en": "roofing company"
-        },
-        {
-            "hu": "női ruházat",
-            "en": "women's clothing"
         },
         {
             "hu": "gépi földmunka",
