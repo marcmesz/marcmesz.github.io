@@ -7,10 +7,6 @@ const navLinks = document.querySelectorAll(".nav__link")
 const sections = document.querySelectorAll("section")
 const blinkingCursor = document.getElementById("blinking-cursor")
 const langBtn = document.getElementById("language-selector")
-const portfolioItemSpan = document.querySelectorAll(
-  ".portfolio-item-description"
-)
-const portfolioItem = document.querySelectorAll(".portfolio-item")
 const menuBtn = document.querySelector(".nav-toggle")
 
 let currentPhrase = 0
