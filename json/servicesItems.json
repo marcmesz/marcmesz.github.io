@@ -1,0 +1,57 @@
+[
+    {
+        "icon": "fa-laptop-code",
+        "hu": {
+            "title": "Honlapkészítés",
+            "content": "Mobilbarát és funkciógazdag weboldalak készítése egyedi vagy WordPress rendszeren. Modern és trendeket követő letisztult webes megjelenés."
+        },
+        "en": {
+            "title": "Website",
+            "content": "Creating mobile-friendly websites full of features with WordPress or custom built system. With modern and trendy clean web look."
+        }
+    },
+    {
+        "icon": "fa-shopping-cart",
+        "hu": {
+            "title": "Webáruház",
+            "content": "Az egyszerű üzemeltetés mellett olyan funkciókkal ruházzuk fel webáruházadat, melyek növelik a forgalmat és a vásárlói élményt is."
+        },
+        "en": {
+            "title": "Webshop",
+            "content": "In addition to easy operation, we provide your web store with features that increase traffic and the customer experience."
+        }
+    },
+    {
+        "icon": "fa-magic",
+        "hu": {
+            "title": "Branding",
+            "content": "Az arculat, logótervezés során a legkreatívabb megoldásokra törekszünk vállalkozásod sikeres megjelenése érdekében."
+        },
+        "en": {
+            "title": "Branding",
+            "content": "During the brand and logo design, we strive for the most creative solutions for the successful appearance of your business."
+        }
+    },
+    {
+        "icon": "fa-life-ring",
+        "hu": {
+            "title": "Karbantartás",
+            "content": "A webhely optimalizálása, rendszeres biztonsági másolat készítése. Bővítmények frissítése. Tartalmak feltöltése."
+        },
+        "en": {
+            "title": "Support",
+            "content": "Optimizing the performance of the website. Creating backup monthly. Updating extensions. Uploading content."
+        }
+    },
+    {
+        "icon": "fa-search",
+        "hu": {
+            "title": "SEO",
+            "content": "Keresőoptimalizálás a megfelelő kulcsszavakra, hogy a webhely minél jobb helyezést érjen el a keresők találatai között."
+        },
+        "en": {
+            "title": "SEO",
+            "content": "Search engine optimization for the right keywords to help your site rank better in search engine results like Google."
+        }
+    }
+]

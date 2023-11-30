@@ -1,5 +1,5 @@
 import { setPortfolioItems } from "./portfolioItems.js"
-setPortfolioItems("hu")
+import { setServicesItems } from "./servicesItems.js"
 
 const text = document.getElementById("text")
 const navbar = document.querySelector(".navbar")
@@ -9,22 +9,20 @@ const blinkingCursor = document.getElementById("blinking-cursor")
 const langBtn = document.getElementById("language-selector")
 const menuBtn = document.querySelector(".nav-toggle")
 
-let currentPhrase = 0
 let isBlinking = true
+let lang = true
+let currentPhrase = 0
 let currentChar = 0
 let currentReverse = 0
-let lang = true
-let setLang = ""
-let setTitle = ""
-let setImgTitle = ""
-let myString, displayMessage
+let myString, displayMessage, setImgTitle, setTitle, setLang
 
 checkCookie()
 displayCharacters()
 liveBackGround()
 displayHiddenPages()
-
-const cursorBlinking = setInterval(setBlinker, 450)
+setPortfolioItems("hu")
+setServicesItems("hu")
+setInterval(setBlinker, 450)
 
 langBtn.addEventListener("click", () => {
   lang = !lang
@@ -152,7 +150,7 @@ Array.from(document.querySelectorAll(".arlista-btn")).forEach((btn) =>
     const valasztottHidden = document.querySelector(".valasztott-hidden")
     valasztottKat.className = "valasztott-kategoria"
     valasztottKat.classList.add(btn.getAttribute("id"))
-    fetch("./js/content.json")
+    fetch("../json/content.json")
       .then((res) => res.json())
       .then((data) => {
         lang ? (setLang = "hu") : (setLang = "en")
@@ -317,7 +315,7 @@ function cookieButtons() {
 }
 
 function setLanguage() {
-  fetch("./js/content.json")
+  fetch("../json/content.json")
     .then((res) => res.json())
     .then((data) => {
       lang ? (setLang = "hu") : (setLang = "en")
@@ -363,13 +361,6 @@ function setLanguage() {
           data.sectionTitle[setLang][i + 1]
         document.querySelectorAll(".section-subtitle")[i].textContent =
           data.sectionSubTitle[setLang][i]
-      }
-      for (let i = 0; i < data.servicesItems.length; i++) {
-        document.querySelectorAll(".szolgaltatasok-item-title")[i].textContent =
-          data.servicesItems[i].title[setLang]
-        document.querySelectorAll(".szolgaltatasok-item-content")[
-          i
-        ].textContent = data.servicesItems[i].content[setLang]
       }
 
       for (let i = 0; i < data.priceCategoriesTitle.length; i++) {
@@ -497,6 +488,7 @@ function setLanguage() {
       document.querySelector(".impresszum-btn").textContent =
         data.imprint[setLang]
       setPortfolioItems(setLang)
+      setServicesItems(setLang)
     })
 }
 

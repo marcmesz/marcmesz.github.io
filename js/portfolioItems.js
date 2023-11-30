@@ -1,5 +1,5 @@
 export function setPortfolioItems(lang) {
-  fetch("../js/portfolioItems.json")
+  fetch("../json/portfolioItems.json")
     .then((res) => res.json())
     .then((portfolioItems) => {
       const wrapper = document.querySelector(".portfolio-wrap")

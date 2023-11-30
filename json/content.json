@@ -52,59 +52,6 @@
             "Got a question? Need an offer?"
         ]
     },
-    "servicesItems": [
-        {
-            "title": {
-                "hu": "Honlapkészítés",
-                "en": "Website"
-            },
-            "content": {
-                "hu": "Mobilbarát és funkciógazdag weboldalak készítése egyedi vagy WordPress rendszeren. Modern és trendeket követő letisztult webes megjelenés.",
-                "en": "Creating mobile-friendly websites full of features with WordPress or custom built system. With modern and trendy clean web look."
-            }
-        },
-        {
-            "title": {
-                "hu": "Webáruház",
-                "en": "Webshop"
-            },
-            "content": {
-                "hu": "Az egyszerű üzemeltetés mellett olyan funkciókkal ruházzuk fel webáruházadat, melyek növelik a forgalmat és a vásárlói élményt is.",
-                "en": "In addition to easy operation, we provide your web store with features that increase traffic and the customer experience."
-            }
-        },
-        {
-            "title": {
-                "hu": "Branding",
-                "en": "Branding"
-            },
-            "content": {
-                "hu": "Az arculat, logótervezés során a legkreatívabb megoldásokra törekszünk vállalkozásod sikeres megjelenése érdekében.",
-                "en": "During the brand and logo design, we strive for the most creative solutions for the successful appearance of your business."
-            }
-        },
-        {
-            "title": {
-                "hu": "Karbantartás",
-                "en": "Support"
-            },
-            "content": {
-                "hu": "A webhely optimalizálása, rendszeres biztonsági másolat készítése. Bővítmények frissítése. Tartalmak feltöltése.",
-                "en": "Optimizing the performance of the website. Creating backup monthly. Updating extensions. Uploading content."
-            }
-        },
-        {
-            "title": {
-                "hu": "SEO",
-                "en": "SEO"
-            },
-            "content": {
-                "hu": "Keresőoptimalizálás a megfelelő kulcsszavakra, hogy a webhely minél jobb helyezést érjen el a keresők találatai között.",
-                "en": "Search engine optimization for the right keywords to help your site rank better in search engine results like Google."
-            }
-        }
-
-    ],
     "servicesFooterText": {
         "hu": "Mobilbarát kialakítás, minden eszközön jól olvasható tartalom.",
         "en": "Responsive design, easy-to-read content on all devices."
