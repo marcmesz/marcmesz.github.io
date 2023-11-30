@@ -17,7 +17,7 @@ let lang = true
 let setLang = ""
 let setTitle = ""
 let setImgTitle = ""
-let myString
+let myString, displayMessage
 
 checkCookie()
 displayCharacters()
