@@ -503,7 +503,7 @@ $(document).ready(function () {
     var text = $("#kapcsolat-usertext").val()
     var hidden = $("#valasztott-hidden").val()
     if (!name || !email || !text) {
-      fetch("./js/content.json")
+      fetch("../json/content.json")
         .then((res) => res.json())
         .then((data) => {
           $(".error-input").html(data.errorRequired[setLang])
@@ -513,7 +513,7 @@ $(document).ready(function () {
       $(".error-input").html("")
       $(".error-input").hide()
       $("#btn-submit").prop("disabled", true)
-      fetch("./js/content.json")
+      fetch("../json/content.json")
         .then((res) => res.json())
         .then((data) => {
           $(".uzenet-kuldese").html(data.sendingMessage[setLang])
@@ -529,7 +529,7 @@ $(document).ready(function () {
           category: hidden
         },
         success: function (data) {
-          fetch("./js/content.json")
+          fetch("../json/content.json")
             .then((res) => res.json())
             .then((data) => {
               const thankYou = `
