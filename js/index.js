@@ -521,7 +521,7 @@ $(document).ready(function () {
       $(".kapcsolat-form-uzenet").attr("style", "display:flex;")
       $.ajax({
         type: "POST",
-        url: "https://www.qualiconnex.hu/backend/index.php",
+        url: "https://www.honeybeeamps.com/backend/email/index.php",
         data: {
           name: name,
           email: email,
