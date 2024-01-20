@@ -115,7 +115,7 @@
     "url": "https://www.qualiconnex.hu",
     "shortUrl": "qualiconnex.hu",
     "src": "img/portfolio/webp/qualiconnex.webp",
-    "isHidden": false,
+    "isHidden": true,
     "hu": {
       "title": "Qualiconnex - Villanyszerelés",
       "category": "weboldal",
