@@ -1,5 +1,21 @@
 [
   {
+    "url": "https://www.amerikaivasak.hu",
+    "shortUrl": "amerikaivasak.hu",
+    "src": "img/portfolio/webp/amerikaivasak.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Amerikai vasak - Solymár-Szalay Kft.",
+      "category": "weboldal",
+      "desc": "amerikai autók"
+    },
+    "en": {
+      "title": "Amerikai vasak - Solymár-Szalay Kft.",
+      "category": "website",
+      "desc": "american cars"
+    }
+  },
+  {
     "url": "https://www.pebell-lakasfelujitas.hu",
     "shortUrl": "pebell-lakasfelujitas.hu",
     "src": "img/portfolio/webp/pebell.webp",
