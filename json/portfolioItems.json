@@ -3,7 +3,7 @@
     "url": "https://www.rejtelyfalo.hu/",
     "shortUrl": "rejtelyfalo.hu",
     "src": "img/portfolio/webp/rejtelyfalo.webp",
-    "isHidden": true,
+    "isHidden": false,
     "hu": {
       "title": "Rejtélyfaló - Kalandtúrák",
       "category": "weboldal",
