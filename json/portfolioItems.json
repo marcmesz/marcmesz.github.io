@@ -1,5 +1,21 @@
 [
   {
+    "url": "https://www.szentivaniiskola.hu/",
+    "shortUrl": "szentivaniiskola.hu",
+    "src": "img/portfolio/webp/szentivaniiskola.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Pilisszentiváni Német Nemzetiségi Általános Iskola",
+      "category": "weboldal",
+      "desc": "Pilisszentiváni iskola"
+    },
+    "en": {
+      "title": "Pilisszentiváni Német Nemzetiségi Általános Iskola",
+      "category": "website",
+      "desc": "School of Pilisszentiván"
+    }
+  },
+  {
     "url": "https://www.toplakoauto.hu/",
     "shortUrl": "toplakoauto.hu",
     "src": "img/portfolio/webp/toplakoauto.webp",
