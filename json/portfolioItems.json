@@ -1,5 +1,21 @@
 [
   {
+    "url": "https://www.dozsaugyved.hu/",
+    "shortUrl": "dozsaugyved.hu",
+    "src": "img/portfolio/webp/dozsaugyved.webp",
+    "isHidden": false,
+    "hu": {
+      "title": "Dr. Dózsa Ernő - Ügyvédi iroda",
+      "category": "weboldal",
+      "desc": "Ügyvédi iroda"
+    },
+    "en": {
+      "title": "Dr. Dózsa Ernő - Law firm",
+      "category": "website",
+      "desc": "Law firm"
+    }
+  },
+  {
     "url": "https://www.szentivaniiskola.hu/",
     "shortUrl": "szentivaniiskola.hu",
     "src": "img/portfolio/webp/szentivaniiskola.webp",
