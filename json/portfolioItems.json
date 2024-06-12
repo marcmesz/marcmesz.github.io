@@ -1,24 +1,10 @@
 [
   {
-    "url": "https://www.dozsaugyved.hu/",
-    "shortUrl": "dozsaugyved.hu",
-    "src": "img/portfolio/webp/dozsaugyved.webp",
-    "isHidden": false,
-    "hu": {
-      "title": "Dr. Dózsa Ernő - Ügyvédi iroda",
-      "category": "weboldal",
-      "desc": "Ügyvédi iroda"
-    },
-    "en": {
-      "title": "Dr. Dózsa Ernő - Law firm",
-      "category": "website",
-      "desc": "Law firm"
-    }
-  },
-  {
     "url": "https://www.szentivaniiskola.hu/",
     "shortUrl": "szentivaniiskola.hu",
     "src": "img/portfolio/webp/szentivaniiskola.webp",
+    "author": "isti",
+    "date": "2024-06-12",
     "isHidden": false,
     "hu": {
       "title": "Pilisszentiváni Német Nemzetiségi Általános Iskola",
@@ -35,6 +21,7 @@
     "url": "https://www.toplakoauto.hu/",
     "shortUrl": "toplakoauto.hu",
     "src": "img/portfolio/webp/toplakoauto.webp",
+    "author": "isti",
     "isHidden": false,
     "hu": {
       "title": "Toplakóautó.hu - Válaszd a legjobbat!",
@@ -51,6 +38,7 @@
     "url": "https://www.rejtelyfalo.hu/",
     "shortUrl": "rejtelyfalo.hu",
     "src": "img/portfolio/webp/rejtelyfalo.webp",
+    "author": "isti",
     "isHidden": false,
     "hu": {
       "title": "Rejtélyfaló - Kalandtúrák",
@@ -67,6 +55,7 @@
     "url": "https://www.tapinthatolathatatlan.hu/",
     "shortUrl": "tapinthatolathatatlan.hu",
     "src": "img/portfolio/webp/tapinthatolathatatlan.webp",
+    "author": "isti",
     "isHidden": true,
     "hu": {
       "title": "Tapintható láthatatlan - Domborművek",
@@ -83,6 +72,7 @@
     "url": "https://www.amerikaivasak.hu",
     "shortUrl": "amerikaivasak.hu",
     "src": "img/portfolio/webp/amerikaivasak.webp",
+    "author": "isti",
     "isHidden": false,
     "hu": {
       "title": "Amerikai vasak - Solymár-Szalay Kft.",
@@ -99,6 +89,7 @@
     "url": "https://www.glaselultrahang.hu",
     "shortUrl": "glaselultrahang.hu",
     "src": "img/portfolio/webp/glaselultrahang.webp",
+    "author": "isti",
     "isHidden": false,
     "hu": {
       "title": "Dr. Glásel Éva ultrahang szakrendelés - Egészségügy",
@@ -115,6 +106,7 @@
     "url": "https://www.expectteszt.hu",
     "shortUrl": "expectteszt.hu",
     "src": "img/portfolio/expectteszt.jpg",
+    "author": "isti",
     "isHidden": false,
     "hu": {
       "title": "Termékenységi és terhességi tesztek - Egészségügy",
@@ -128,9 +120,27 @@
     }
   },
   {
+    "url": "https://www.dozsaugyved.hu/",
+    "shortUrl": "dozsaugyved.hu",
+    "src": "img/portfolio/webp/dozsaugyved.webp",
+    "author": "barni",
+    "isHidden": false,
+    "hu": {
+      "title": "Dr. Dózsa Ernő - Ügyvédi iroda",
+      "category": "weboldal",
+      "desc": "Ügyvédi iroda"
+    },
+    "en": {
+      "title": "Dr. Dózsa Ernő - Law firm",
+      "category": "website",
+      "desc": "Law firm"
+    }
+  },
+  {
     "url": "https://www.pebell-lakasfelujitas.hu",
     "shortUrl": "pebell-lakasfelujitas.hu",
     "src": "img/portfolio/webp/pebell.webp",
+    "author": "barni",
     "isHidden": false,
     "hu": {
       "title": "Pebell - lakásfelújítás",
@@ -147,6 +157,7 @@
     "url": "https://www.borsohej.hu",
     "shortUrl": "borsohej.hu",
     "src": "img/portfolio/webp/borsohej.webp",
+    "author": "barni",
     "isHidden": false,
     "hu": {
       "title": "Borsóhéj - Alapítvány",
@@ -163,6 +174,7 @@
     "url": "https://www.gomby.hu",
     "shortUrl": "gomby.hu",
     "src": "img/portfolio/webp/gombyskitchen.webp",
+    "author": "barni",
     "isHidden": false,
     "hu": {
       "title": "Gömby's Kitchen - Étterem",
@@ -179,6 +191,7 @@
     "url": "https://www.vapesquadwholesale.com/",
     "shortUrl": "vapesquadwholesale.com",
     "src": "img/portfolio/webp/vapesquadshop.webp",
+    "author": "barni",
     "isHidden": false,
     "hu": {
       "title": "VapeSquad - Let's Vape",
@@ -195,6 +208,7 @@
     "url": "https://www.talenttestingservice.hu",
     "shortUrl": "talenttestingservice.hu",
     "src": "img/portfolio/talenttestingservice.jpg",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Talent Testing Service Kft. - Egészségügy",
@@ -211,6 +225,7 @@
     "url": "https://www.qualiconnex.hu",
     "shortUrl": "qualiconnex.hu",
     "src": "img/portfolio/webp/qualiconnex.webp",
+    "author": "marci",
     "isHidden": true,
     "hu": {
       "title": "Qualiconnex - Villanyszerelés",
@@ -227,6 +242,7 @@
     "url": "https://www.hajlasszogkft.hu",
     "shortUrl": "hajlasszogkft.hu",
     "src": "img/portfolio/webp/hajlasszog.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Hajlásszög Kft. - Tetőfedés",
@@ -243,6 +259,7 @@
     "url": "https://www.gepifoldmunka-daralas.hu",
     "shortUrl": "gepifoldmunka-daralas.hu",
     "src": "img/portfolio/webp/gepifoldmunka.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Gépi földmunka és darálás",
@@ -259,6 +276,7 @@
     "url": "https://www.honeybeeamps.com",
     "shortUrl": "honeybeeamps.com",
     "src": "img/portfolio/webp/honeybeeamps.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Honey Bee Amps - Hangtechnika",
@@ -275,6 +293,7 @@
     "url": "https://www.aluconcept.hu",
     "shortUrl": "aluconcept.hu",
     "src": "img/portfolio/webp/aluconcept.webp",
+    "author": "isti",
     "isHidden": false,
     "hu": {
       "title": "Aluconcept Kft. Alumínium nyílászárók",
@@ -291,6 +310,7 @@
     "url": "https://www.goldpearl.hu",
     "shortUrl": "goldpearl.hu",
     "src": "img/portfolio/webp/goldpearl.webp",
+    "author": "isti",
     "isHidden": false,
     "hu": {
       "title": "Goldpearl - háztartási tisztítószerek",
@@ -307,6 +327,7 @@
     "url": "https://www.fedaszdental.com",
     "shortUrl": "fedaszdental.com",
     "src": "img/portfolio/webp/FedaszDentalcom.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Fedasz Dental - Fogászati Klinika",
@@ -323,6 +344,7 @@
     "url": "https://www.fedaszdental.hu",
     "shortUrl": "fedaszdental.hu",
     "src": "img/portfolio/webp/FedaszDentalHu.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Fedasz Dental - Fogászati Klinika",
@@ -339,6 +361,7 @@
     "url": "http://www.veneziasolymar.hu",
     "shortUrl": "veneziasolymar.hu",
     "src": "img/portfolio/webp/venezia.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Vezenia Solymár - Étterem & Pizzéria",
@@ -355,6 +378,7 @@
     "url": "https://www.threee.hu",
     "shortUrl": "threee.hu",
     "src": "img/portfolio/webp/threee.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "THREEE Kft. - Női Ruházat",
@@ -371,6 +395,7 @@
     "url": "http://www.jaak-coop.hu",
     "shortUrl": "jaak-coop.hu",
     "src": "img/portfolio/webp/jaak.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Jaak-Coop Kft. - Kenőanyag és Akkumulátor",
@@ -387,6 +412,7 @@
     "url": "http://www.szilagyi-huto.hu",
     "shortUrl": "szilagyi-huto.hu",
     "src": "img/portfolio/webp/htk.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Szilágyi Hűtő-Klíma Szerviz",
@@ -403,6 +429,7 @@
     "url": "http://www.strack.hu",
     "shortUrl": "strack.hu",
     "src": "img/portfolio/webp/strack.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Strack Kft. - Szerszámgyártó",
@@ -419,6 +446,7 @@
     "url": "https://www.skpshop.hu",
     "shortUrl": "skpshop.hu",
     "src": "img/portfolio/webp/skp.webp",
+    "author": "marci",
     "isHidden": false,
     "hu": {
       "title": "Schwarzkopf Magyarország - Fodrászat és Kozmetika",
