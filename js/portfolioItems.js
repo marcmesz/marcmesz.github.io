@@ -2,9 +2,12 @@ export function setPortfolioItems(lang) {
   fetch("../json/portfolioItems.json")
     .then((res) => res.json())
     .then((portfolioItems) => {
-      const allItemsCount = portfolioItems?.length ?? 0
+      const filteredItems = portfolioItems?.filter(
+        (item) => item.author !== "isti" && !item.isHidden
+      )
+      const allItemsCount = filteredItems?.length ?? 0
       const websiteCount =
-        portfolioItems?.filter((p) => p?.hu?.category === "weboldal")?.length ??
+        filteredItems?.filter((p) => p?.hu?.category === "weboldal")?.length ??
         0
       const webshopCount = allItemsCount - websiteCount
 
@@ -20,14 +23,14 @@ export function setPortfolioItems(lang) {
 
       const wrapper = document.querySelector(".portfolio-wrap")
       let wrapperInnerHtml = ""
-      for (let item of portfolioItems) {
+      for (let item of filteredItems) {
         const isNew = isNewItem(item.date)
           ? `<div class="ribbon"><span>${
               lang === "hu" ? "ÚJ" : "NEW"
             }</span></div>`
           : ""
-        if (!item.isHidden) {
-          wrapperInnerHtml += `
+
+        wrapperInnerHtml += `
           <div class="portfolio-item box-style ${item.hu.category.replaceAll(
             "á",
             "a"
@@ -37,8 +40,8 @@ export function setPortfolioItems(lang) {
           <a href="${item.url}" target="_blank" rel="noopener"
           title="${item[lang].title}"> ${item.shortUrl} <span
           class="portfolio-item-description">${item[lang].category} · ${
-            item[lang].desc
-          }</span> </a>
+          item[lang].desc
+        }</span> </a>
           </div>
           
           
@@ -51,7 +54,6 @@ export function setPortfolioItems(lang) {
           ${isNew}
           </div>
         `
-        }
       }
       wrapper.innerHTML = wrapperInnerHtml
     })
