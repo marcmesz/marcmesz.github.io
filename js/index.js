@@ -46,44 +46,35 @@ Array.from(navLinks).forEach((item) =>
 Array.from(document.querySelectorAll(".adatvedelem-btn")).forEach((btn) =>
   btn.addEventListener("click", (e) => {
     e.preventDefault()
-    document.body.classList.contains("impresszum-open")
-      ? document.body.classList.remove("impresszum-open")
-      : null
-    document.body.classList.contains("cookie-kezeles-open")
-      ? document.body.classList.remove("cookie-kezeles-open")
-      : null
-    document.body.classList.contains("aszf-open")
-      ? document.body.classList.remove("aszf-open")
-      : null
+    document.body.classList.contains("impresszum-open") &&
+      document.body.classList.remove("impresszum-open")
+    document.body.classList.contains("cookie-kezeles-open") &&
+      document.body.classList.remove("cookie-kezeles-open")
+    document.body.classList.contains("aszf-open") &&
+      document.body.classList.remove("aszf-open")
     document.body.classList.toggle("adatvedelem-open")
   })
 )
 
 document.querySelector(".impresszum-btn").addEventListener("click", (e) => {
   e.preventDefault()
-  document.body.classList.contains("adatvedelem-open")
-    ? document.body.classList.remove("adatvedelem-open")
-    : null
-  document.body.classList.contains("cookie-kezeles-open")
-    ? document.body.classList.remove("cookie-kezeles-open")
-    : null
-  document.body.classList.contains("aszf-open")
-    ? document.body.classList.remove("aszf-open")
-    : null
+  document.body.classList.contains("adatvedelem-open") &&
+    document.body.classList.remove("adatvedelem-open")
+  document.body.classList.contains("cookie-kezeles-open") &&
+    document.body.classList.remove("cookie-kezeles-open")
+  document.body.classList.contains("aszf-open") &&
+    document.body.classList.remove("aszf-open")
   document.body.classList.toggle("impresszum-open")
 })
 
 document.querySelector(".aszf-btn").addEventListener("click", (e) => {
   e.preventDefault()
-  document.body.classList.contains("adatvedelem-open")
-    ? document.body.classList.remove("adatvedelem-open")
-    : null
-  document.body.classList.contains("cookie-kezeles-open")
-    ? document.body.classList.remove("cookie-kezeles-open")
-    : null
-  document.body.classList.contains("impresszum-open")
-    ? document.body.classList.remove("impresszum-open")
-    : null
+  document.body.classList.contains("adatvedelem-open") &&
+    document.body.classList.remove("adatvedelem-open")
+  document.body.classList.contains("cookie-kezeles-open") &&
+    document.body.classList.remove("cookie-kezeles-open")
+  document.body.classList.contains("impresszum-open") &&
+    document.body.classList.remove("impresszum-open")
   document.body.classList.toggle("aszf-open")
 })
 
@@ -299,18 +290,14 @@ function getCookie(cname) {
 }
 
 function cookieButtons() {
-  document.body.classList.contains("impresszum-open")
-    ? document.body.classList.remove("impresszum-open")
-    : null
-  document.body.classList.contains("adatvedelem-open")
-    ? document.body.classList.remove("adatvedelem-open")
-    : null
-  document.body.classList.contains("aszf-open")
-    ? document.body.classList.remove("aszf-open")
-    : null
-  document.body.classList.contains("impresszum-open")
-    ? document.body.classList.remove("impresszum-open")
-    : null
+  document.body.classList.contains("impresszum-open") &&
+    document.body.classList.remove("impresszum-open")
+  document.body.classList.contains("adatvedelem-open") &&
+    document.body.classList.remove("adatvedelem-open")
+  document.body.classList.contains("aszf-open") &&
+    document.body.classList.remove("aszf-open")
+  document.body.classList.contains("impresszum-open") &&
+    document.body.classList.remove("impresszum-open")
   document.body.classList.toggle("cookie-kezeles-open")
 }
 
