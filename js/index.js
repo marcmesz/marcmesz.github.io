@@ -46,44 +46,35 @@ Array.from(navLinks).forEach((item) =>
 Array.from(document.querySelectorAll(".adatvedelem-btn")).forEach((btn) =>
   btn.addEventListener("click", (e) => {
     e.preventDefault()
-    document.body.classList.contains("impresszum-open")
-      ? document.body.classList.remove("impresszum-open")
-      : null
-    document.body.classList.contains("cookie-kezeles-open")
-      ? document.body.classList.remove("cookie-kezeles-open")
-      : null
-    document.body.classList.contains("aszf-open")
-      ? document.body.classList.remove("aszf-open")
-      : null
+    document.body.classList.contains("impresszum-open") &&
+      document.body.classList.remove("impresszum-open")
+    document.body.classList.contains("cookie-kezeles-open") &&
+      document.body.classList.remove("cookie-kezeles-open")
+    document.body.classList.contains("aszf-open") &&
+      document.body.classList.remove("aszf-open")
     document.body.classList.toggle("adatvedelem-open")
   })
 )
 
 document.querySelector(".impresszum-btn").addEventListener("click", (e) => {
   e.preventDefault()
-  document.body.classList.contains("adatvedelem-open")
-    ? document.body.classList.remove("adatvedelem-open")
-    : null
-  document.body.classList.contains("cookie-kezeles-open")
-    ? document.body.classList.remove("cookie-kezeles-open")
-    : null
-  document.body.classList.contains("aszf-open")
-    ? document.body.classList.remove("aszf-open")
-    : null
+  document.body.classList.contains("adatvedelem-open") &&
+    document.body.classList.remove("adatvedelem-open")
+  document.body.classList.contains("cookie-kezeles-open") &&
+    document.body.classList.remove("cookie-kezeles-open")
+  document.body.classList.contains("aszf-open") &&
+    document.body.classList.remove("aszf-open")
   document.body.classList.toggle("impresszum-open")
 })
 
 document.querySelector(".aszf-btn").addEventListener("click", (e) => {
   e.preventDefault()
-  document.body.classList.contains("adatvedelem-open")
-    ? document.body.classList.remove("adatvedelem-open")
-    : null
-  document.body.classList.contains("cookie-kezeles-open")
-    ? document.body.classList.remove("cookie-kezeles-open")
-    : null
-  document.body.classList.contains("impresszum-open")
-    ? document.body.classList.remove("impresszum-open")
-    : null
+  document.body.classList.contains("adatvedelem-open") &&
+    document.body.classList.remove("adatvedelem-open")
+  document.body.classList.contains("cookie-kezeles-open") &&
+    document.body.classList.remove("cookie-kezeles-open")
+  document.body.classList.contains("impresszum-open") &&
+    document.body.classList.remove("impresszum-open")
   document.body.classList.toggle("aszf-open")
 })
 
@@ -299,18 +290,14 @@ function getCookie(cname) {
 }
 
 function cookieButtons() {
-  document.body.classList.contains("impresszum-open")
-    ? document.body.classList.remove("impresszum-open")
-    : null
-  document.body.classList.contains("adatvedelem-open")
-    ? document.body.classList.remove("adatvedelem-open")
-    : null
-  document.body.classList.contains("aszf-open")
-    ? document.body.classList.remove("aszf-open")
-    : null
-  document.body.classList.contains("impresszum-open")
-    ? document.body.classList.remove("impresszum-open")
-    : null
+  document.body.classList.contains("impresszum-open") &&
+    document.body.classList.remove("impresszum-open")
+  document.body.classList.contains("adatvedelem-open") &&
+    document.body.classList.remove("adatvedelem-open")
+  document.body.classList.contains("aszf-open") &&
+    document.body.classList.remove("aszf-open")
+  document.body.classList.contains("impresszum-open") &&
+    document.body.classList.remove("impresszum-open")
   document.body.classList.toggle("cookie-kezeles-open")
 }
 
@@ -491,3 +478,73 @@ function setLanguage() {
       setServicesItems(setLang)
     })
 }
+
+/* jQuery + PHP - Contact Form */
+$(document).ready(function () {
+  $("#kapcsolat-form").on("submit", function (e) {
+    e.preventDefault()
+    !setLang ? (setLang = "hu") : null
+    var name = $("#kapcsolat-username").val()
+    var email = $("#kapcsolat-useremail").val()
+    var text = $("#kapcsolat-usertext").val()
+    var hidden = $("#valasztott-hidden").val()
+    if (!name || !email || !text) {
+      fetch("../json/content.json")
+        .then((res) => res.json())
+        .then((data) => {
+          $(".error-input").html(data.errorRequired[setLang])
+          $(".error-input").show()
+        })
+    } else {
+      $(".error-input").html("")
+      $(".error-input").hide()
+      $("#btn-submit").prop("disabled", true)
+      fetch("../json/content.json")
+        .then((res) => res.json())
+        .then((data) => {
+          $(".uzenet-kuldese").html(data.sendingMessage[setLang])
+        })
+      $(".kapcsolat-form-uzenet").attr("style", "display:flex;")
+      $.ajax({
+        type: "POST",
+        url: "https://www.honeybeeamps.com/backend/email/index.php",
+        data: {
+          name: name,
+          email: email,
+          text: text,
+          category: hidden
+        },
+        success: function (data) {
+          fetch("../json/content.json")
+            .then((res) => res.json())
+            .then((data) => {
+              const thankYou = `
+              <div class="custom-thank-you">
+                <p class="sikeres-uzenet-p">${data.successMessage[setLang]}</p>
+                <p class="megadott-cimre">${data.thankyouMessage[setLang]}</p>
+                <p class="megadott-cimre">${data.getbackMessage[setLang]}</p>
+              </div>
+              `
+              $(".kapcsolat-form-uzenet").addClass(
+                "sikeres-uzenetkuldes box-style"
+              )
+              $(".kapcsolat-form-uzenet").html(thankYou)
+              $(".valasztott-kategoria").html("")
+              $(".valasztott-kategoria").hide()
+              $("#kapcsolat-username").val("")
+              $("#kapcsolat-useremail").val("")
+              $("#kapcsolat-usertext").val("")
+              $("#valasztott-hidden").val("")
+              $("#kapcsolat-form").hide()
+              setTimeout(function () {
+                location.reload(true)
+              }, 5000)
+            })
+        },
+        error: function (data) {
+          console.log(data)
+        }
+      })
+    }
+  })
+})
